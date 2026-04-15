@@ -2,8 +2,9 @@ import type { Metadata } from "next"
 import Image from "next/image"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
-import { Card, CardContent } from "@/components/ui/card"
-import { chairman, teamMembers } from "@/data/team"
+import { ChairmanCard } from "@/components/shared/chairman-card"
+import { TeamMemberCard } from "@/components/shared/team-member-card"
+import { teamMembers } from "@/data/team"
 
 export const metadata: Metadata = {
   title: "எங்களைப் பற்றி",
@@ -67,40 +68,8 @@ export default function AboutPage() {
               </div>
 
               {/* Chairman Card */}
-              <div className="lg:col-span-1">
-                <Card className="overflow-hidden border-0 shadow-lg sticky top-24">
-                  <CardContent className="p-0">
-                    <div className="relative aspect-square bg-muted">
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-gold/20 flex items-center justify-center">
-                        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary/30 overflow-hidden bg-primary/10">
-                          <Image
-                            src="/images/team/chairman.jpg"
-                            alt={chairman.name}
-                            width={160}
-                            height={160}
-                            className="object-cover w-full h-full"
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement
-                              target.style.display = "none"
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-6 text-center">
-                      <h3 className="text-xl font-bold text-primary mb-1">
-                        {chairman.name}
-                      </h3>
-                      <p className="text-gold font-medium mb-2">{chairman.role}</p>
-                      <p className="text-sm text-muted-foreground">
-                        {chairman.organization}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {chairman.location}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
+              <div className="lg:col-span-1 sticky top-24">
+                <ChairmanCard />
               </div>
             </div>
           </div>
@@ -165,35 +134,12 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
               {teamMembers.map((member) => (
-                <Card key={member.id} className="overflow-hidden border-0 shadow-md">
-                  <CardContent className="p-0">
-                    <div className="relative aspect-square bg-muted">
-                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-gold/10">
-                        <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/30 overflow-hidden">
-                          <Image
-                            src={member.image || "/images/team/placeholder.jpg"}
-                            alt={member.name}
-                            width={80}
-                            height={80}
-                            className="rounded-full object-cover"
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement
-                              target.style.display = "none"
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-3 text-center">
-                      <h3 className="font-medium text-sm text-foreground truncate">
-                        {member.name}
-                      </h3>
-                      <p className="text-xs text-muted-foreground">
-                        {member.role}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
+                <TeamMemberCard
+                  key={member.id}
+                  name={member.name}
+                  role={member.role}
+                  image={member.image}
+                />
               ))}
             </div>
           </div>
