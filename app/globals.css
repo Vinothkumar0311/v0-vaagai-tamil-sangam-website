@@ -4,48 +4,52 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(0.985 0.002 247);
-  --foreground: oklch(0.205 0.015 247);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.205 0.015 247);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.205 0.015 247);
-  --primary: oklch(0.47 0.1 175);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.96 0.015 85);
-  --secondary-foreground: oklch(0.35 0.08 85);
-  --muted: oklch(0.96 0.005 247);
-  --muted-foreground: oklch(0.45 0.015 247);
-  --accent: oklch(0.65 0.17 55);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0.01 247);
-  --input: oklch(0.9 0.01 247);
-  --ring: oklch(0.47 0.1 175);
-  --chart-1: oklch(0.47 0.1 175);
-  --chart-2: oklch(0.65 0.17 55);
-  --chart-3: oklch(0.55 0.12 175);
-  --chart-4: oklch(0.75 0.15 55);
-  --chart-5: oklch(0.60 0.08 175);
-  --radius: 0.75rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.205 0.015 247);
-  --sidebar-primary: oklch(0.47 0.1 175);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.96 0.015 85);
-  --sidebar-accent-foreground: oklch(0.35 0.08 85);
-  --sidebar-border: oklch(0.9 0.01 247);
-  --sidebar-ring: oklch(0.47 0.1 175);
+  /* Design System Colors - Green Theme */
+  --background: #FFFFFF;
+  --foreground: #000000;
+  --card: #FFFFFF;
+  --card-foreground: #000000;
+  --popover: #FFFFFF;
+  --popover-foreground: #000000;
+  --primary: #1B5E20;
+  --primary-foreground: #FFFFFF;
+  --secondary: #4CAF50;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F2F2F2;
+  --muted-foreground: #9E9E9E;
+  --accent: #4CAF50;
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF0000;
+  --destructive-foreground: #FFFFFF;
+  --border: #E0E0E0;
+  --input: #F2F2F2;
+  --ring: #1B5E20;
+  --chart-1: #1B5E20;
+  --chart-2: #4CAF50;
+  --chart-3: #81C784;
+  --chart-4: #A5D6A7;
+  --chart-5: #C8E6C9;
+  --radius: 1rem;
+  --sidebar: #1B5E20;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #4CAF50;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #2E7D32;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #E0E0E0;
+  --sidebar-ring: #1B5E20;
   
-  /* Custom Vaagai theme colors */
-  --teal: oklch(0.47 0.1 175);
-  --teal-light: oklch(0.55 0.12 175);
-  --teal-dark: oklch(0.35 0.09 175);
-  --gold: oklch(0.65 0.17 55);
-  --gold-light: oklch(0.78 0.14 55);
-  --gold-dark: oklch(0.52 0.15 55);
-  --cream: oklch(0.97 0.015 85);
+  /* Extended Theme Variables */
+  --text-primary: #000000;
+  --text-secondary: #9E9E9E;
+  --input-fill: #F2F2F2;
+  --error: #FF0000;
+  
+  /* Green Shades for Hover States */
+  --primary-light: #2E7D32;
+  --primary-dark: #0D3311;
+  --secondary-light: #66BB6A;
+  --secondary-dark: #388E3C;
 }
 
 .dark {
@@ -86,13 +90,8 @@
 @theme inline {
   --font-sans: var(--font-noto-sans-tamil), 'Geist', 'Geist Fallback', system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
-  --color-teal: var(--teal);
-  --color-teal-light: var(--teal-light);
-  --color-teal-dark: var(--teal-dark);
-  --color-gold: var(--gold);
-  --color-gold-light: var(--gold-light);
-  --color-gold-dark: var(--gold-dark);
-  --color-cream: var(--cream);
+  
+  /* Core Theme Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -112,15 +111,32 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  
+  /* Extended Design System Colors */
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-input-fill: var(--input-fill);
+  --color-error: var(--error);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary-dark: var(--secondary-dark);
+  
+  /* Chart Colors */
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  
+  /* Border Radius */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  
+  /* Sidebar Colors */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
