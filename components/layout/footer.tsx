@@ -1,3 +1,4 @@
+import React from "react"
 import Link from "next/link"
 import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react"
 
@@ -105,12 +106,30 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-white/10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/60">
-            <p>&copy; {new Date().getFullYear()} வாகை தமிழ்ச்சங்கம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
-            <p className="text-center md:text-right">
-              <span className="italic">{"\"தேமதுரத் தமிழோசை உலகமெல்லாம் பரவும் வகை செய்தல் வேண்டும்\""}</span>
-              <span className="block md:inline md:ml-2">- பாரதியார்</span>
-            </p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white/60">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                <span className="text-xs">வா</span>
+              </div>
+              <p>&copy; {new Date().getFullYear()} - வாகை தமிழ்ச்சங்கம்</p>
+            </div>
+            
+            <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 uppercase text-[10px] tracking-wider font-medium">
+              {[
+                { label: "முகப்பு", href: "/" },
+                { label: "செயல்பாடுகள்", href: "/activities" },
+                { label: "பாடத்திட்டம்", href: "/syllabus" },
+                { label: "தொடர்புக்கு", href: "/contact" },
+                { label: "Publication", href: "/publications" },
+              ].map((link, i) => (
+                <React.Fragment key={link.href}>
+                  <Link href={link.href} className="hover:text-gold transition-colors">
+                    {link.label}
+                  </Link>
+                  {i < 4 && <span className="opacity-20 text-xs">|</span>}
+                </React.Fragment>
+              ))}
+            </nav>
           </div>
         </div>
       </div>

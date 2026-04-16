@@ -2,7 +2,9 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import { getAssetPath } from "@/lib/paths"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {
@@ -64,17 +66,25 @@ export function ActivitiesSection() {
         </Card>
 
         {/* Activity Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {activities.map((activity) => (
             <Card
               key={activity.id}
               className={cn(
-                "overflow-hidden border-0 shadow-lg",
+                "overflow-hidden border-0 shadow-lg transition-transform hover:-translate-y-1",
                 activity.theme === "teal" && "bg-teal text-white",
                 activity.theme === "gold" && "bg-gold text-white",
                 activity.theme === "cream" && "bg-cream text-foreground"
               )}
             >
+              <div className="relative aspect-video">
+                <Image
+                  src={getAssetPath(activity.image)}
+                  alt={activity.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <CardHeader className="pb-2">
                 <CardTitle
                   className={cn(
@@ -95,7 +105,7 @@ export function ActivitiesSection() {
                   </p>
                 )}
                 <p className={cn(
-                  "text-sm leading-relaxed",
+                  "text-sm leading-relaxed line-clamp-3",
                   activity.theme === "cream" ? "text-foreground/80" : "text-current/90"
                 )}>
                   {activity.description}
