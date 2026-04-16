@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { Navbar } from "@/components/layout/navbar"
-import { Footer } from "@/components/layout/footer"
+import { PageShell } from "@/components/layout/page-shell"
+import { PageHeader } from "@/components/shared/page-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -45,84 +45,51 @@ const socialLinks = [
 
 export default function ContactPage() {
   return (
-    <>
-      <Navbar />
-      <main className="pt-20">
-        {/* Page Header */}
-        <section className="bg-primary py-16 md:py-24">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              தொடர்புக்கு
-            </h1>
-            <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              எங்களுடன் தொடர்புகொள்ள கீழே உள்ள படிவத்தை நிரப்பவும் அல்லது நேரடியாக தொடர்புகொள்ளவும்
-            </p>
-          </div>
-        </section>
+    <PageShell>
+      <PageHeader
+        title="தொடர்புக்கு"
+        description="எங்களுடன் தொடர்புகொள்ள கீழே உள்ள படிவத்தை நிரப்பவும் அல்லது நேரடியாக தொடர்புகொள்ளவும்"
+      />
 
-        {/* Contact Content */}
-        <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <Card className="border shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-primary">
-                    எங்களுக்கு எழுதுங்கள்
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <form className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name">பெயர் *</Label>
-                        <Input
-                          id="name"
-                          placeholder="உங்கள் பெயர்"
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">தொலைபேசி எண்</Label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          placeholder="+91 98765 43210"
-                        />
-                      </div>
+      {/* Contact Content */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <Card className="border shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl text-primary">எங்களுக்கு எழுதுங்கள்</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">பெயர் *</Label>
+                      <Input id="name" placeholder="உங்கள் பெயர்" required />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">மின்னஞ்சல் *</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="example@email.com"
-                        required
-                      />
+                      <Label htmlFor="phone">தொலைபேசி எண்</Label>
+                      <Input id="phone" type="tel" placeholder="+91 98765 43210" />
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">தலைப்பு *</Label>
-                      <Input
-                        id="subject"
-                        placeholder="உங்கள் செய்தியின் தலைப்பு"
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="message">செய்தி *</Label>
-                      <Textarea
-                        id="message"
-                        placeholder="உங்கள் செய்தியை இங்கே எழுதுங்கள்..."
-                        rows={5}
-                        required
-                      />
-                    </div>
-                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
-                      அனுப்பு
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">மின்னஞ்சல் *</Label>
+                    <Input id="email" type="email" placeholder="example@email.com" required />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">தலைப்பு *</Label>
+                    <Input id="subject" placeholder="உங்கள் செய்தியின் தலைப்பு" required />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="message">செய்தி *</Label>
+                    <Textarea id="message" placeholder="உங்கள் செய்தியை இங்கே எழுதுங்கள்..." rows={5} required />
+                  </div>
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                    அனுப்பு
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
 
               {/* Contact Info */}
               <div className="space-y-6">
@@ -191,11 +158,9 @@ export default function ContactPage() {
                   </div>
                 </Card>
               </div>
-            </div>
           </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+        </div>
+      </section>
+    </PageShell>
   )
 }

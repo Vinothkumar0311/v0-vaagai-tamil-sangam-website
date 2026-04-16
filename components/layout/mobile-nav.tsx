@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { Menu, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { navigation, isDropdown } from "@/data/navigation"
@@ -23,11 +22,11 @@ import {
 interface MobileNavProps {
   scrolled: boolean
   isHomePage: boolean
+  pathname: string
 }
 
-export function MobileNav({ scrolled, isHomePage }: MobileNavProps) {
+export function MobileNav({ scrolled, isHomePage, pathname }: MobileNavProps) {
   const [open, setOpen] = React.useState(false)
-  const pathname = usePathname()
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -56,18 +55,18 @@ export function MobileNav({ scrolled, isHomePage }: MobileNavProps) {
           </SheetTitle>
         </SheetHeader>
         <nav className="flex flex-col p-4">
-          {navigation.map((item, index) => {
+          {navigation.map((item) => {
             if (isDropdown(item)) {
               return (
-                <Collapsible key={index} className="w-full">
+                <Collapsible key={item.label} className="w-full">
                   <CollapsibleTrigger className="flex items-center justify-between w-full py-3 px-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted/50 rounded-md transition-colors">
                     {item.label}
                     <ChevronDown className="h-4 w-4 transition-transform duration-200 [&[data-state=open]>svg]:rotate-180" />
                   </CollapsibleTrigger>
                   <CollapsibleContent className="pl-4 space-y-1">
-                    {item.items.map((subItem, subIndex) => (
+                    {item.items.map((subItem) => (
                       <Link
-                        key={subIndex}
+                        key={subItem.href}
                         href={subItem.href}
                         onClick={() => setOpen(false)}
                         className={cn(
@@ -89,7 +88,7 @@ export function MobileNav({ scrolled, isHomePage }: MobileNavProps) {
 
             return (
               <Link
-                key={index}
+                key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={cn(

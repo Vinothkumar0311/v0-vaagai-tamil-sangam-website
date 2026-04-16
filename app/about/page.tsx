@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
-import { Navbar } from "@/components/layout/navbar"
-import { Footer } from "@/components/layout/footer"
+import { PageShell } from "@/components/layout/page-shell"
+import { PageHeader } from "@/components/shared/page-header"
 import { ChairmanCard } from "@/components/shared/chairman-card"
 import { TeamMemberCard } from "@/components/shared/team-member-card"
 import { teamMembers } from "@/data/team"
@@ -21,59 +21,50 @@ const visionPoints = [
 
 export default function AboutPage() {
   return (
-    <>
-      <Navbar />
-      <main className="pt-20">
-        {/* Page Header */}
-        <section className="bg-primary py-16 md:py-24">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              எங்களைப் பற்றி
-            </h1>
-            <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              வாகை தமிழ்ச்சங்கம் - தமிழ் மொழி, இலக்கியம், பண்பாடு வளர்ச்சிக்கான அமைப்பு
-            </p>
-          </div>
-        </section>
+    <PageShell>
+      <PageHeader
+        title="எங்களைப் பற்றி"
+        description="வாகை தமிழ்ச்சங்கம் - தமிழ் மொழி, இலக்கியம், பண்பாடு வளர்ச்சிக்கான அமைப்பு"
+      />
 
-        {/* About Content */}
-        <section className="py-16 md:py-24 bg-cream">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-              {/* Main Content */}
-              <div className="lg:col-span-2">
-                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">
-                  வாகை தமிழ்ச்சங்கம் - அறிமுகம்
-                </h2>
-                <div className="prose prose-lg max-w-none text-foreground/80 space-y-4">
-                  <p className="leading-relaxed">
-                    தமிழன்னையின் மணிமகுடத்தில் மற்றுமொரு மாணிக்கமாய் மிளிர்கிறது நமது வாகை தமிழ்ச்சங்கம். 
-                    தமிழக அரசு அனுமதி பெற்று, தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் 
-                    சிந்தனை & திறன்களுடன் அனைத்து தரப்பினரிடமும் ஊக்குவித்தலையும் வளர்த்தலையும் 
-                    மேம்படுத்துதலையும் நோக்கமாகக்கொண்டு வாகை தமிழ்ச்சங்கம் இயங்கி வருகிறது.
-                  </p>
-                  <p className="leading-relaxed">
-                    நமது வாகை தமிழ்ச்சங்கம், தமிழ்நாடு அரசு மற்றும் இந்திய அரசின் மேலும் பல செயல்திட்டங்களின் 
-                    கீழும் அனுமதி பெற்ற தன்னார்வலர், தமிழ்சார்ந்த சமூக சேவை நோக்கம் கொண்ட அமைப்பாகும். 
-                    மதுரை உலக தமிழ்ச் சங்கத்தின் அதிகாரபூர்வ உறுப்பினராக இணைந்து மட்டுமின்றி, 
-                    உள்நாட்டு & பன்னாட்டு அளவிலான பலதரப்பட்ட மக்கள் வயது வேறுபாடின்றி நமது வாகை தமிழ்ச்சங்கத்தில் 
-                    இணைந்து தத்தமது திறன்களை மேம்படுத்தவும் வெளிக்கொணரவுமான களமாகத் திகழ்ந்து வருகிறது.
-                  </p>
-                  <p className="leading-relaxed">
-                    இவ்வமைப்பின் தொடர் சாதனைகளுக்க் காரணம் என்னுடன் பயணித்து வரும் தமிழ்ச்சான்றோரும் 
-                    வாகை தமிழ்ச்சங்க குடும்ப உறுப்பினருமே ஆவர். தொடர்ந்து தமிழ்ப்பணியாற்றிட 
-                    உந்துதலாக இருக்கும் அனைவருக்கும் நன்றிகளைத் தெரிவித்துக்கொள்கிறேன்.
-                  </p>
-                </div>
-              </div>
-
-              {/* Chairman Card */}
-              <div className="lg:col-span-1 sticky top-24">
-                <ChairmanCard />
+      {/* About Content */}
+      <section className="py-16 md:py-24 bg-cream">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            {/* Main Content */}
+            <div className="lg:col-span-2">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-6">
+                வாகை தமிழ்ச்சங்கம் - அறிமுகம்
+              </h2>
+              <div className="prose prose-lg max-w-none text-foreground/80 space-y-4">
+                <p className="leading-relaxed">
+                  தமிழன்னையின் மணிமகுடத்தில் மற்றுமொரு மாணிக்கமாய் மிளிர்கிறது நமது வாகை தமிழ்ச்சங்கம். தமிழக அரசு
+                  அனுமதி பெற்று, தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் சிந்தனை &{" "}
+                  திறன்களுடன் அனைத்து தரப்பினரிடமும் ஊக்குவித்தலையும் வளர்த்தலையும் மேம்படுத்துதலையும் நோக்கமாகக்கொண்டு
+                  வாகை தமிழ்ச்சங்கம் இயங்கி வருகிறது.
+                </p>
+                <p className="leading-relaxed">
+                  நமது வாகை தமிழ்ச்சங்கம், தமிழ்நாடு அரசு மற்றும் இந்திய அரசின் மேலும் பல செயல்திட்டங்களின் கீழும் அனுமதி
+                  பெற்ற தன்னார்வலர், தமிழ்சார்ந்த சமூக சேவை நோக்கம் கொண்ட அமைப்பாகும். மதுரை உலக தமிழ்ச் சங்கத்தின்
+                  அதிகாரபூர்வ உறுப்பினராக இணைந்து மட்டுமின்றி, உள்நாட்டு & பன்னாட்டு அளவிலான பலதரப்பட்ட மக்கள் வயது
+                  வேறுபாடின்றி நமது வாகை தமிழ்ச்சங்கத்தில் இணைந்து தத்தமது திறன்களை மேம்படுத்தவும் வெளிக்கொணரவுமான களமாகத்
+                  திகழ்ந்து வருகிறது.
+                </p>
+                <p className="leading-relaxed">
+                  இவ்வமைப்பின் தொடர் சாதனைகளுக்க் காரணம் என்னுடன் பயணித்து வரும் தமிழ்ச்சான்றோரும் வாகை தமிழ்ச்சங்க குடும்ப
+                  உறுப்பினருமே ஆவர். தொடர்ந்து தமிழ்ப்பணியாற்றிட உந்துதலாக இருக்கும் அனைவருக்கும் நன்றிகளைத்
+                  தெரிவித்துக்கொள்கிறேன்.
+                </p>
               </div>
             </div>
+
+            {/* Chairman Card */}
+            <div className="lg:col-span-1 sticky top-24">
+              <ChairmanCard />
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Vision & Mission */}
         <section className="py-16 md:py-24 bg-background">
@@ -144,8 +135,6 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
-    </>
+    </PageShell>
   )
 }

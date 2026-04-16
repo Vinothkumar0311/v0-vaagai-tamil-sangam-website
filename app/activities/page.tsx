@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
-import { Navbar } from "@/components/layout/navbar"
-import { Footer } from "@/components/layout/footer"
+import { PageShell } from "@/components/layout/page-shell"
+import { PageHeader } from "@/components/shared/page-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { activities, competitionPoem } from "@/data/activities"
 import { cn } from "@/lib/utils"
@@ -40,33 +40,28 @@ const activityCategories = [
 
 export default function ActivitiesPage() {
   return (
-    <>
-      <Navbar />
-      <main className="pt-20">
-        {/* Page Header */}
-        <section className="bg-primary py-16 md:py-24">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              போட்டிகளும் விருதுகளும்
-            </h1>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              ஒவ்வொருவருக்குள்ளும் பல திறமைகள் ஒளிந்திருக்கும், அவற்றை வெளிக்கொணருவதில் போட்டிகளுக்கு 
-              இன்றியமையாத பங்குள்ளது.
+    <PageShell>
+      <PageHeader
+        title="போட்டிகளும் விருதுகளும்"
+        description={
+          <>
+            ஒவ்வொருவருக்குள்ளும் பல திறமைகள் ஒளிந்திருக்கும், அவற்றை வெளிக்கொணருவதில் போட்டிகளுக்கு இன்றியமையாத
+            பங்குள்ளது.
+          </>
+        }
+      />
+
+      {/* About Competitions */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <p className="text-lg text-foreground/80 leading-relaxed">
+              தமிழார்வலர்களின் தமிழ்க் கல்வியின் ஆழ அகலத்தையும், மொழித்திறன்களையும், கவின்கலை, நுண்கலைத் திறன்களையும்
+              வெளிப்படுத்தும் அவற்றிற்குரிய அங்கீகாரம் பெறுவதற்கும் களமாக வாகை தமிழ்ச்சங்கம் ஆண்டுமுழுவதும்
+              அல்வத்திங்களுக்கந்த தலைப்புகளில் பல்வேறு வகைமைகளில் போட்டிகளை நடத்திப் பரிசுகளையும் விருதுகளையும் வழங்கி
+              வருகிறது.
             </p>
           </div>
-        </section>
-
-        {/* About Competitions */}
-        <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center mb-12">
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                தமிழார்வலர்களின் தமிழ்க் கல்வியின் ஆழ அகலத்தையும், மொழித்திறன்களையும், 
-                கவின்கலை, நுண்கலைத் திறன்களையும் வெளிப்படுத்தும் அவற்றிற்குரிய அங்கீகாரம் 
-                பெறுவதற்கும் களமாக வாகை தமிழ்ச்சங்கம் ஆண்டுமுழுவதும் அல்வத்திங்களுக்கந்த 
-                தலைப்புகளில் பல்வேறு வகைமைகளில் போட்டிகளை நடத்திப் பரிசுகளையும் விருதுகளையும் வழங்கி வருகிறது.
-              </p>
-            </div>
 
             {/* Competition Poem */}
             <Card className="max-w-3xl mx-auto mb-16 bg-muted/50 border-primary/10">
@@ -125,35 +120,27 @@ export default function ActivitiesPage() {
                 </Card>
               ))}
             </div>
-          </div>
-        </section>
+        </div>
+      </section>
 
         {/* Activity Categories */}
-        <section className="py-16 md:py-24 bg-cream">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary text-center mb-12">
-              எங்கள் செயல்பாடுகள்
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {activityCategories.map((category) => (
-                <Card key={category.id} id={category.id} className="border shadow-md hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <CardTitle className="text-lg text-primary">
-                      {category.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">
-                      {category.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+      <section className="py-16 md:py-24 bg-cream">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary text-center mb-12">எங்கள் செயல்பாடுகள்</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {activityCategories.map((category) => (
+              <Card key={category.id} id={category.id} className="border shadow-md hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-lg text-primary">{category.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{category.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+        </div>
+      </section>
+    </PageShell>
   )
 }

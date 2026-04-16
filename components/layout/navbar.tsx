@@ -20,9 +20,7 @@ export function Navbar() {
   const isHomePage = pathname === "/"
 
   React.useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
+    const handleScroll = () => setScrolled(window.scrollY > 50)
     handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -56,34 +54,36 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            {navigation.map((item, index) => (
+            {navigation.map((item) => (
               <NavItem
-                key={index}
+                key={isDropdown(item) ? item.label : item.href}
                 item={item}
                 scrolled={scrolled}
                 isHomePage={isHomePage}
+                pathname={pathname}
               />
             ))}
           </div>
 
           {/* Mobile Menu */}
-          <MobileNav scrolled={scrolled} isHomePage={isHomePage} />
+          <MobileNav scrolled={scrolled} isHomePage={isHomePage} pathname={pathname} />
         </nav>
       </div>
     </header>
   )
 }
 
-function NavItem({
+const NavItem = React.memo(function NavItem({
   item,
   scrolled,
   isHomePage,
+  pathname,
 }: {
   item: NavElement
   scrolled: boolean
   isHomePage: boolean
+  pathname: string
 }) {
-  const pathname = usePathname()
   const textColor = scrolled || !isHomePage ? "text-foreground" : "text-white"
   const hoverColor = scrolled || !isHomePage ? "hover:text-primary" : "hover:text-gold-light"
 
@@ -137,4 +137,4 @@ function NavItem({
       {item.label}
     </Link>
   )
-}
+})
