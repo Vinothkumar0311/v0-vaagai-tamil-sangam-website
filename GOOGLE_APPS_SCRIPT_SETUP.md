@@ -66,6 +66,13 @@ function doGet() {
    GOOGLE_APPS_SCRIPT_URL=https://script.google.com/macros/s/..../exec
    ```
 
+3. **For GitHub Deployment:**
+   - Go to your GitHub Repository -> **Settings** -> **Secrets and variables** -> **Actions**.
+   - Click **New repository secret**.
+   - Name: `GOOGLE_APPS_SCRIPT_URL`.
+   - Secret: Paste your Web App URL.
+   - This allows GitHub Actions to fetch the data during the build process.
+
 ## 4. Drive Folder Permissions
 
 1. Go to your [Google Drive Folder](https://drive.google.com/drive/folders/1Ox1q3FBgJqPxsS6jL7UMCGi3PTnBc2VE).

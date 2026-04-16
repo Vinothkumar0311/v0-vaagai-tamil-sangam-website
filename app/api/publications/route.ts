@@ -38,11 +38,13 @@ function getSortKey(label: string): number {
   return parseInt(vol + iss)
 }
 
+export const dynamic = "force-static"
+
 export async function GET() {
   if (!GAS_URL) return NextResponse.json({ error: "Config missing" }, { status: 503 })
 
   try {
-    const res = await fetch(GAS_URL, { cache: 'no-store' })
+    const res = await fetch(GAS_URL)
     const rawData: any[] = await res.json()
 
     if (!Array.isArray(rawData)) throw new Error("Invalid response")
