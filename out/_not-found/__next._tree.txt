@@ -1,3 +1,3 @@
 :HL["/v0-vaagai-tamil-sangam-website/_next/static/chunks/0suxlph6q_~rq.css","style"]
-:HL["/v0-vaagai-tamil-sangam-website/_next/static/chunks/13.i108jfbbfk.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"uNVWzzgG7WnZrBD1l9n3N"}
+:HL["/v0-vaagai-tamil-sangam-website/_next/static/chunks/0-je099ex7099.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"MNbqiLFmoIUz4Eh1x5oK3"}

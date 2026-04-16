@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { getAssetPath } from "@/lib/paths"
 
 const visionPoints = [
   "தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் சிந்தனை & திறன்களுடன் அனைத்து தரப்பினரிடமும் ஊக்குவித்தலும், வளர்த்தலும், மேம்படுத்துதலும்.",
@@ -16,7 +17,7 @@ export function VisionMission() {
           {/* Image */}
           <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="/images/deity/tamil-thaai.jpg"
+              src={getAssetPath("/images/deity/tamil-thaai.jpg")}
               alt="Tamil Thaai"
               fill
               className="object-cover"

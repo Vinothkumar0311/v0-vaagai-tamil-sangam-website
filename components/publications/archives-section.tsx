@@ -2,7 +2,22 @@
 
 import { useEffect, useState } from "react"
 import { Loader2, Download } from "lucide-react"
-import type { PublicationIssue, PublicationArticle } from "@/app/api/publications/route"
+
+export interface PublicationArticle {
+  id: string
+  name: string
+  title: string
+  viewUrl: string
+  downloadUrl: string
+  createdTime: string
+}
+
+export interface PublicationIssue {
+  id: string
+  label: string
+  issueKey: string
+  articles: PublicationArticle[]
+}
 
 interface ApiResponse {
   issues?: PublicationIssue[]
@@ -19,13 +34,40 @@ export function ArchivesSection() {
     setLoading(true)
     setError(null)
     try {
-      const res = await fetch("/api/publications")
-      const data: ApiResponse = await res.json()
-      if (!res.ok || data.error) throw new Error(data.error || "Failed to load")
-      setIssues(data.issues || [])
-      // Expand the first issue by default
-      if (data.issues && data.issues.length > 0) {
-        setExpandedIssue(data.issues[0].id)
+      const gasUrl = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL
+      if (!gasUrl) throw new Error("Configuration missing")
+
+      const res = await fetch(gasUrl)
+      const rawData = await res.json()
+      
+      if (!Array.isArray(rawData)) throw new Error("Invalid response from Drive")
+
+      // Helper for sorting
+      const getSortKey = (label: string): number => {
+        const volMatch = label.match(/Volume\s*(\d+)/i)
+        const issMatch = label.match(/Issue\s*(\d+)/i)
+        const vol = volMatch ? volMatch[1].padStart(3, '0') : '000'
+        const iss = issMatch ? issMatch[1].padStart(3, '0') : '000'
+        return parseInt(vol + iss)
+      }
+
+      const formattedIssues: PublicationIssue[] = rawData.map(item => ({
+        id: item.id,
+        label: item.issueLabel,
+        issueKey: item.issueLabel.toUpperCase(),
+        articles: item.articles.map((art: any) => ({
+          id: art.id,
+          name: art.name,
+          title: art.name.replace(/\.pdf$/i, ""),
+          viewUrl: `https://drive.google.com/file/d/${art.id}/view`,
+          downloadUrl: `https://drive.google.com/uc?export=download&id=${art.id}`,
+          createdTime: art.createdTime,
+        })).sort((a: any, b: any) => a.name.localeCompare(b.name, undefined, { numeric: true }))
+      })).sort((a, b) => getSortKey(b.label) - getSortKey(a.label))
+
+      setIssues(formattedIssues)
+      if (formattedIssues.length > 0) {
+        setExpandedIssue(formattedIssues[0].id)
       }
     } catch (err: any) {
       setError(err.message)

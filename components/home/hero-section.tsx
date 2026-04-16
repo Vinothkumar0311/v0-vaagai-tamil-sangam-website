@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { getAssetPath } from "@/lib/paths"
 
 export function HeroSection() {
   return (
@@ -6,7 +7,7 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero/temple-prayer.jpg"
+          src={getAssetPath("/images/hero/temple-prayer.jpg")}
           alt="Tamil cultural heritage"
           fill
           priority
