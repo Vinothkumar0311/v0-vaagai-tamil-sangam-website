@@ -3,7 +3,8 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
   output: 'export',
-  basePath: isProd ? '/v0-vaagai-tamil-sangam-website' : '',
+  // Removed basePath for custom domain support
+  basePath: '',
   typescript: {
     ignoreBuildErrors: true,
   },
