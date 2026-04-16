@@ -69,8 +69,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ta" className={`${geist.variable} ${geistMono.variable} ${notoSansTamil.variable}`}>
-      <body className="font-sans antialiased bg-background text-foreground">
+    <html lang="ta" className={`${geist.variable} ${geistMono.variable} ${notoSansTamil.variable} h-full`}>
+      <body className="font-sans antialiased bg-background text-foreground h-full">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
