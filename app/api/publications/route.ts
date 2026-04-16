@@ -41,7 +41,8 @@ function getSortKey(label: string): number {
 export const dynamic = "force-static"
 
 export async function GET() {
-  if (!GAS_URL) return NextResponse.json({ error: "Config missing" }, { status: 503 })
+  // During build if GAS_URL is missing, return empty instead of failing build
+  if (!GAS_URL) return NextResponse.json({ issues: [], warning: "Config missing" })
 
   try {
     const res = await fetch(GAS_URL)

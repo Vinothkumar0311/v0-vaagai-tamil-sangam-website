@@ -25,7 +25,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
 
 jobs:
   # Build job
@@ -37,20 +37,18 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "20"
           cache: "npm"
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
           static_site_generator: next
       - name: Install dependencies
-        run: npm install --legacy-peer-deps --no-audit --no-fund
+        run: npm install
       - name: Build with Next.js
         run: npm run build
         env:
           GOOGLE_APPS_SCRIPT_URL: ${{ secrets.GOOGLE_APPS_SCRIPT_URL }}
-          NEXT_PUBLIC_IGNORE_LINT: true
-          ESLINT_NO_DEV_ERRORS: true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
