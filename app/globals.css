@@ -143,10 +143,10 @@
   --radius-2xl: calc(var(--radius) + 8px);
   
   /* Brand Colors Matrix */
-  --color-teal: var(--teal);
-  --color-gold: var(--gold);
-  --color-gold-light: var(--gold-light);
-  --color-cream: var(--cream);
+  --color-teal: #0F766E;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F9D71C;
+  --color-cream: #FFFDD0;
 
   /* Sidebar Colors */
   --color-sidebar: var(--sidebar);
