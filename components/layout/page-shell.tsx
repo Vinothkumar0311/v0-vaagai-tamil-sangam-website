@@ -10,9 +10,9 @@ interface PageShellProps {
 
 export function PageShell({ children, mainClassName }: PageShellProps) {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col w-full">
       <Navbar />
-      <main className={cn("flex-grow", mainClassName)}>{children}</main>
+      <main className={cn("w-full", mainClassName)}>{children}</main>
       <Footer />
     </div>
   )
