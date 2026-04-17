@@ -2,7 +2,9 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, ChevronDown } from "lucide-react"
+import { getAssetPath } from "@/lib/paths"
 import { cn } from "@/lib/utils"
 import { navigation, isDropdown } from "@/data/navigation"
 import { Button } from "@/components/ui/button"
@@ -48,8 +50,13 @@ export function MobileNav({ scrolled, isHomePage, pathname }: MobileNavProps) {
       <SheetContent side="right" className="w-[300px] sm:w-[350px] p-0">
         <SheetHeader className="p-4 border-b bg-primary/5">
           <SheetTitle className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/20">
-              <span className="text-primary font-bold">வா</span>
+            <div className="relative w-10 h-10 rounded-full bg-white flex items-center justify-center border-2 border-primary/20 overflow-hidden">
+              <Image
+                src={getAssetPath("/icon.svg")}
+                alt="Vaagai Tamilsangam Logo"
+                fill
+                className="object-contain p-1"
+              />
             </div>
             <span className="text-primary font-semibold">வாகை தமிழ்ச்சங்கம்</span>
           </SheetTitle>

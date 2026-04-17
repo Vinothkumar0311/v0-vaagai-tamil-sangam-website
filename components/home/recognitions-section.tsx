@@ -52,7 +52,7 @@ export function RecognitionsSection() {
           {/* Scrollable Container */}
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide px-8 py-4 snap-x snap-mandatory"
+            className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide px-4 md:px-8 py-4 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {recognitions.map((recognition) => (
@@ -105,12 +105,12 @@ export function RecognitionsSection() {
               />
             </div>
 
-            <div className="relative z-10 p-8 md:p-12 text-center">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center border-2 border-white/20">
-                  <span className="text-white font-bold text-xl">வா</span>
+            <div className="relative z-10 p-6 md:p-12 text-center">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-3 mb-6">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 flex items-center justify-center border-2 border-white/20">
+                  <span className="text-white font-bold text-lg md:text-xl">வா</span>
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-white">
+                <h3 className="text-lg md:text-2xl font-bold text-white">
                   வாகை தமிழ்ச்சங்க பொறுப்பாளர்கள்
                 </h3>
               </div>

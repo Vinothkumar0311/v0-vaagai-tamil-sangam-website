@@ -309,22 +309,34 @@ export default function PublicationsPage() {
         <div className="container mx-auto px-4 pb-24 space-y-24">
           
           {/* AIM Section */}
-          <section id="aim" className="scroll-mt-32 max-w-5xl mx-auto">
-            <div className="flex items-center gap-4 mb-8 border-b pb-4">
-              <Target className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl font-bold text-primary">நோக்கம் (AIM)</h2>
-            </div>
-            <div className="bg-cream/30 p-8 rounded-2xl border border-primary/10">
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                <p>
-                  'கல் தோன்றி மண் தோன்றாக் காலத்தே வாளொடு முன் தோன்றிய மூத்தகுடி' தமிழர்களின் வாழ்க்கையோடு இயைந்து வாழ்வியல் மேம்பாட்டிற்கு அடிப்படையாகத் திகழும் தமிழ்மொழி, கால மாற்றத்திற்கேற்ப நாகரிகமும் பண்பாடும் அடைந்து காணப்படுகிறது. உலக அறிஞர்கள் தமிழர்களின் தமிழ்மொழியை வியந்தது மட்டுமின்றி அதன் தொன்மையை ஆராய்ந்து கொண்டே இருக்கிறார்கள். அவர்கள் ஆய்வின்படி இலக்கியங்களே தமிழ்மொழியின் வெளிப்பாடுகளாக அமைகின்றன. பன்னாட்டு அளவில் இன்று புலம் பெயர்ந்த தமிழர்கள் தாம் வாழ்கின்ற சூழலில் தங்கள் பண்பாட்டையும் நாகரிகத்தையும் பாதுகாத்து வருகிறார்கள். செம்மொழியாக தமிழ் உயர்ந்து நிற்பதற்கு முக்கிய காரணம் அதன் தொன்மைத் தன்மையே ஆகும். தமிழினம், தமிழ்மொழி, தமிழ் இலக்கியங்கள் ஆகிய அனைத்தும் மிகத் தொன்மை வாய்ந்தவை. தமிழின் தொன்மையை தமிழ் இலக்கியங்களும் அதன் வழி நாம் அறிந்து கொண்ட மூவேந்தர் வரலாறும் உணர்த்தும். இத்தகைய தொல் சிறப்பு வாய்ந்த தமிழ் மொழியை தொன்மைக் காலம் முதல் இந்த தொழில்நுட்பக் காலம் வரை நாம் எத்தனை கொண்டாடினாலும் அதன் புகழுக்கு அத்தனை ஈடாகாது. எதிர்கால தலைமுறையினருக்கு தமிழ்மொழியின் சிறப்புகள் மற்றும் தமிழர்களின் பண்பாட்டு விழுமியங்களை ஆவணப்படுத்துதல் இச்செயல்பாட்டின் நோக்கமாகும்.
-                </p>
-                <div className="h-px bg-primary/20 w-full my-6"></div>
-                <p>
-                  'When the stone appeared and the soil did not appear, the sword appeared first' The Tamil language, which is the basis for the development of the lifestyle of the Tamils, has become civilized and cultured with the change of time. World scholars have not only admired the Tamil language of the Tamils but also continue to research its antiquity. According to their research, literature is the expression of the Tamil language. Today, Tamils who have migrated internationally are preserving their culture and civilization in the environment in which they live. The main reason for Tamil's rise as a classical language is its antiquity. The Tamil people, the Tamil language, and Tamil literature are all very ancient. The antiquity of Tamil is conveyed by Tamil literature and the history of the Three Kingdoms that we have learned through it. No matter how much we celebrate such a unique Tamil language from ancient times to this technological age, its glory cannot be compared to it. The aim of this activity is to document the specialties of the Tamil language and the cultural values of the Tamils for future generations.
-                </p>
-              </div>
-            </div>
+          <section id="aim" className="scroll-mt-32 max-w-5xl mx-auto px-1">
+             <div className="flex items-center gap-3 mb-6 border-b border-primary/10 pb-4">
+               <div className="p-2 rounded-lg bg-primary/10">
+                <Target className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+               </div>
+               <h2 className="text-2xl md:text-3xl font-bold text-primary">நோக்கம் (AIM)</h2>
+             </div>
+             
+             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-primary/10 shadow-lg">
+               <div className="p-6 md:p-8 bg-primary/5 border-b lg:border-b-0 lg:border-r border-primary/10">
+                 <div className="flex items-center gap-2 mb-4">
+                   <div className="w-1.5 h-6 bg-primary rounded-full"></div>
+                   <h3 className="font-bold text-primary uppercase tracking-wider text-xs">Tamil Version</h3>
+                 </div>
+                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed text-pretty">
+                   'கல் தோன்றி மண் தோன்றாக் காலத்தே வாளொடு முன் தோன்றிய மூத்தகுடி' தமிழர்களின் வாழ்க்கையோடு இயைந்து வாழ்வியல் மேம்பாட்டிற்கு அடிப்படையாகத் திகழும் தமிழ்மொழி, கால மாற்றத்திற்கேற்ப நாகரிகமும் பண்பாடும் அடைந்து காணப்படுகிறது. உலக அறிஞர்கள் தமிழர்களின் தமிழ்மொழியை வியந்தது மட்டுமின்றி அதன் தொன்மையை ஆராய்ந்து கொண்டே இருக்கிறார்கள். அவர்கள் ஆய்வின்படி இலக்கியங்களே தமிழ்மொழியின் வெளிப்பாடுகளாக அமைகின்றன. பன்னாட்டு அளவில் இன்று புலம் பெயர்ந்த தமிழர்கள் தாம் வாழ்கின்ற சூழலில் தங்கள் பண்பாட்டையும் நாகரிகத்தையும் பாதுகாத்து வருகிறார்கள். செம்மொழியாக தமிழ் உயர்ந்து நிற்பதற்கு முக்கிய காரணம் அதன் தொன்மைத் தன்மையே ஆகும். தமிழினம், தமிழ்மொழி, தமிழ் இலக்கியங்கள் ஆகிய அனைத்தும் மிகத் தொன்மை வாய்ந்தவை. தமிழின் தொன்மையை தமிழ் இலக்கியங்களும் அதன் வழி நாம் அறிந்து கொண்ட மூவேந்தர் வரலாறும் உணர்த்தும். இத்தகைய தொல் சிறப்பு வாய்ந்த தமிழ் மொழியை தொன்மைக் காலம் முதல் இந்த தொழில்நுட்பக் காலம் வரை நாம் எத்தனை கொண்டாடினாலும் அதன் புகழுக்கு அத்தனை ஈடாகாது. எதிர்கால தலைமுறையினருக்கு தமிழ்மொழியின் சிறப்புகள் மற்றும் தமிழர்களின் பண்பாட்டு விழுமியங்களை ஆவணப்படுத்துதல் இச்செயல்பாட்டின் நோக்கமாகும்.
+                 </p>
+               </div>
+               <div className="p-6 md:p-8 bg-white">
+                 <div className="flex items-center gap-2 mb-4">
+                   <div className="w-1.5 h-6 bg-gold rounded-full"></div>
+                   <h3 className="font-bold text-gold uppercase tracking-wider text-xs">English Version</h3>
+                 </div>
+                 <p className="text-base md:text-lg text-muted-foreground leading-relaxed italic text-pretty">
+                   'When the stone appeared and the soil did not appear, the sword appeared first' The Tamil language, which is the basis for the development of the lifestyle of the Tamils, has become civilized and cultured with the change of time. World scholars have not only admired the Tamil language of the Tamils but also continue to research its antiquity. According to their research, literature is the expression of the Tamil language. Today, Tamils who have migrated internationally are preserving their culture and civilization in the environment in which they live. The main reason for Tamil's rise as a classical language is its antiquity. The Tamil people, the Tamil language, and Tamil literature are all very ancient. The antiquity of Tamil is conveyed by Tamil literature and the history of the Three Kingdoms that we have learned through it. No matter how much we celebrate such a unique Tamil language from ancient times to this technological age, its glory cannot be compared to it. The aim of this activity is to document the specialties of the Tamil language and the cultural values of the Tamils for future generations.
+                 </p>
+               </div>
+             </div>
           </section>
 
           {/* About Section */}
@@ -368,20 +380,31 @@ export default function PublicationsPage() {
           </section>
 
           {/* Guidelines Section */}
-          <section id="guidelines" className="scroll-mt-32 max-w-5xl mx-auto">
-             <div className="flex items-center gap-4 mb-8 border-b pb-4">
-               <ScrollText className="w-8 h-8 text-primary" />
-               <h2 className="text-3xl font-bold text-primary">ஆய்வுக் கட்டுரை நெறிமுறைகள் (Guidelines)</h2>
+          <section id="guidelines" className="scroll-mt-32 max-w-5xl mx-auto px-1">
+             <div className="flex items-center gap-3 mb-6 border-b border-primary/10 pb-4">
+               <div className="p-2 rounded-lg bg-primary/10">
+                <ScrollText className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+               </div>
+               <h2 className="text-2xl md:text-3xl font-bold text-primary">வழிகாட்டுதல்கள் (Guidelines)</h2>
              </div>
-             <div className="space-y-6">
+             <div className="grid gap-4 md:gap-6">
                {guidelinesList.map((guideline, index) => (
-                 <div key={index} className="flex gap-6 p-6 rounded-2xl border bg-white shadow-sm hover:shadow-md transition-shadow">
-                   <div className="shrink-0 w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-lg">
-                     {index + 1}
+                 <div key={index} className="group relative flex flex-col sm:flex-row gap-4 p-4 md:p-6 rounded-2xl border bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/20">
+                   <div className="flex items-center gap-4 sm:flex-col sm:gap-2 sm:shrink-0">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm md:text-base shadow-sm">
+                      {index + 1}
+                    </div>
+                    <div className="sm:hidden h-px flex-grow bg-primary/10"></div>
                    </div>
-                   <div className="space-y-3 flex-grow">
-                     <p className="text-lg font-medium text-foreground leading-relaxed">{guideline.tamil}</p>
-                     <p className="text-base text-muted-foreground leading-relaxed italic border-l-4 border-primary/20 pl-4">{guideline.english}</p>
+                   <div className="space-y-4 flex-grow">
+                     <div className="space-y-2">
+                        <span className="text-[10px] uppercase tracking-wider font-bold text-primary/60">Tamil Content</span>
+                        <p className="text-base md:text-lg font-medium text-foreground leading-relaxed text-pretty">{guideline.tamil}</p>
+                     </div>
+                     <div className="space-y-2 pt-2 border-t border-dashed border-primary/10">
+                        <span className="text-[10px] uppercase tracking-wider font-bold text-primary/40">English Translation</span>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed italic text-pretty">{guideline.english}</p>
+                     </div>
                    </div>
                  </div>
                ))}

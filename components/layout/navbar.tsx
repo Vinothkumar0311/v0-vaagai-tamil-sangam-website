@@ -2,8 +2,10 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { ChevronDown } from "lucide-react"
+import { getAssetPath } from "@/lib/paths"
 import { cn } from "@/lib/utils"
 import { navigation, isDropdown, type NavElement } from "@/data/navigation"
 import {
@@ -38,13 +40,19 @@ export function Navbar() {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden border-2 border-primary/20">
-              <span className="text-primary font-bold text-lg md:text-xl">வா</span>
+          <Link href="/" className="flex items-center gap-2 md:gap-3 group shrink-0">
+            <div className="relative w-10 h-10 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-primary/20 shadow-sm transition-transform group-hover:scale-105">
+              <Image
+                src={getAssetPath("/icon.svg")}
+                alt="Vaagai Tamilsangam Logo"
+                fill
+                className="object-contain p-0.5 md:p-1"
+                priority
+              />
             </div>
             <span
               className={cn(
-                "font-semibold text-lg md:text-xl transition-colors",
+                "font-semibold text-base md:text-xl transition-colors truncate max-w-[150px] sm:max-w-none",
                 scrolled || !isHomePage ? "text-primary" : "text-white"
               )}
             >
