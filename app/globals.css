@@ -50,6 +50,12 @@
   --primary-dark: #0D3311;
   --secondary-light: #66BB6A;
   --secondary-dark: #388E3C;
+
+  /* Brand Colors */
+  --teal: #0F766E;
+  --gold: #D4AF37;
+  --gold-light: #F9D71C;
+  --cream: #FFFDD0;
 }
 
 .dark {
@@ -136,6 +142,12 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
   
+  /* Brand Colors Matrix */
+  --color-teal: var(--teal);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-cream: var(--cream);
+
   /* Sidebar Colors */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
