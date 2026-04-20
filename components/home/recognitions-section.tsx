@@ -1,7 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
+import { ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { recognitions, organizationInfo } from "@/data/recognitions"
@@ -11,7 +12,7 @@ export function RecognitionsSection() {
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const scrollAmount = 300
+      const scrollAmount = 450
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -20,107 +21,165 @@ export function RecognitionsSection() {
   }
 
   return (
-    <section className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-24 md:py-32 bg-[#FDFCF6] relative overflow-hidden">
+      {/* Abstract Background Patterns */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -mr-48 -mt-48" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -ml-48 -mb-48" />
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            அங்கீகாரங்களும் அனுமதிகளும்
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <h2 className="text-4xl md:text-6xl font-black text-[#004D40] mb-6 leading-tight">
+            அங்கீகாரங்களும் <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007084] to-primary">
+              அனுமதிகளும்
+            </span>
           </h2>
+          <p className="text-lg text-gray-600 font-medium">
+            வாகை தமிழ்ச்சங்கம் பெற்றுள்ள அதிகாரப்பூர்வ அங்கீகாரங்கள் மற்றும் அரசு அனுமதிகள்
+          </p>
         </div>
 
-        {/* Recognitions Carousel */}
-        <div className="relative">
-          {/* Scroll Buttons */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm shadow-md hover:bg-background rounded-full"
-            onClick={() => scroll("left")}
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm shadow-md hover:bg-background rounded-full"
-            onClick={() => scroll("right")}
-          >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
+        {/* Recognitions Carousel Container */}
+        <div className="relative group max-w-[1400px] mx-auto">
+          {/* Left Navigation Button */}
+          <div className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-20">
+            <Button
+              variant="outline"
+              size="icon"
+              className="w-12 h-12 rounded-full border-2 bg-white/80 backdrop-blur-sm shadow-lg hover:bg-primary hover:text-white transition-all duration-300 transform group-hover:scale-110"
+              onClick={() => scroll("left")}
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </Button>
+          </div>
+
+          {/* Right Navigation Button */}
+          <div className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-20">
+            <Button
+              variant="outline"
+              size="icon"
+              className="w-12 h-12 rounded-full border-2 bg-white/80 backdrop-blur-sm shadow-lg hover:bg-primary hover:text-white transition-all duration-300 transform group-hover:scale-110"
+              onClick={() => scroll("right")}
+            >
+              <ChevronRight className="h-6 w-6" />
+            </Button>
+          </div>
 
           {/* Scrollable Container */}
           <div
             ref={scrollRef}
-            className="flex gap-4 md:gap-6 overflow-x-auto scrollbar-hide px-4 md:px-8 py-4 snap-x snap-mandatory"
+            className="flex gap-8 overflow-x-auto scrollbar-hide px-4 py-10 snap-x snap-mandatory"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {recognitions.map((recognition) => (
-              <Card
+            {recognitions.map((recognition, index) => (
+              <div 
                 key={recognition.id}
-                className="flex-shrink-0 w-[280px] md:w-[320px] snap-center border shadow-md"
+                className="flex-shrink-0 w-[380px] md:w-[500px] snap-center perspective-1000"
               >
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    {/* Logo Placeholder */}
-                    <div className="w-16 h-16 flex-shrink-0 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20">
-                      <span className="text-primary font-bold text-xs text-center">
-                        {recognition.nameEn.slice(0, 4)}
-                      </span>
-                    </div>
-                    {/* Content */}
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-foreground mb-1">
-                        {recognition.name}
-                      </h3>
-                      {recognition.registrationNo && (
-                        <p className="text-xs text-muted-foreground mb-2">
-                          {recognition.registrationNo}
-                        </p>
-                      )}
-                    </div>
+                <Card className="group/card relative h-full overflow-hidden border-none bg-white shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.12)] transition-all duration-500 rounded-[2.5rem]">
+                  {/* Decorative Elements */}
+                  <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary/40 via-primary to-primary/40" />
+                  <div className="absolute top-4 right-6 opacity-5 group-hover/card:opacity-10 transition-opacity">
+                    <ShieldCheck className="w-24 h-24 text-primary" />
                   </div>
-                  <p className="text-sm text-foreground/70 mt-4 leading-relaxed">
-                    {recognition.description}
-                  </p>
-                </CardContent>
-              </Card>
+
+                  <CardContent className="p-0 flex h-full">
+                    {/* Logo Section */}
+                    <div className="w-[38%] bg-gray-50 flex flex-col items-center justify-center p-6 border-r border-gray-100">
+                      <div className="relative w-full aspect-square bg-white rounded-3xl shadow-inner-lg p-4 flex items-center justify-center transform group-hover/card:scale-110 transition-transform duration-500">
+                        {recognition.logo ? (
+                          <div className="relative w-full h-full">
+                            <Image
+                              src={recognition.logo}
+                              alt={recognition.nameEn}
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
+                        ) : (
+                          <div className="w-full h-full rounded-2xl bg-primary/5 flex items-center justify-center border border-primary/10">
+                            <span className="text-primary font-black text-2xl">
+                              {recognition.nameEn.slice(0, 1)}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Content Section */}
+                    <div className="w-[62%] p-8 flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-black text-[#004D40] mb-4 leading-tight group-hover/card:text-primary transition-colors">
+                          {recognition.name}
+                        </h3>
+                        <p className="text-sm text-gray-500 leading-relaxed font-medium line-clamp-6 group-hover/card:text-gray-700 transition-colors">
+                          {recognition.description}
+                        </p>
+                      </div>
+                      
+                      <div className="mt-6 flex items-center justify-between">
+                        <div className="h-1 w-12 bg-primary/20 rounded-full" />
+                        <span className="text-[10px] font-bold text-gray-300">#00{index + 1}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Organization Info Banner */}
-        <div className="mt-12">
-          <div className="relative rounded-2xl overflow-hidden">
-            {/* Background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-teal-light to-primary" />
-            
-            {/* Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div 
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                }}
-              />
-            </div>
-
-            <div className="relative z-10 p-6 md:p-12 text-center">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-3 mb-6">
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/10 flex items-center justify-center border-2 border-white/20">
-                  <span className="text-white font-bold text-lg md:text-xl">வா</span>
-                </div>
-                <h3 className="text-lg md:text-2xl font-bold text-white">
-                  வாகை தமிழ்ச்சங்க பொறுப்பாளர்கள்
-                </h3>
+        {/* Organization Info Banner - Redesigned as a 'Seal of Excellence' */}
+        <div className="mt-24 max-w-5xl mx-auto">
+          <div className="relative p-1 bg-gradient-to-r from-primary/30 via-[#007084]/20 to-primary/30 rounded-[3rem] shadow-xl">
+            <div className="relative bg-white rounded-[2.9rem] p-8 md:p-12 overflow-hidden">
+              {/* Background watermark */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none">
+                <h4 className="text-[10rem] font-black whitespace-nowrap">VAAGAI TRUST</h4>
               </div>
-              <p className="text-white/90 max-w-3xl mx-auto mb-6">
-                {organizationInfo.registrationNote}
-              </p>
+
+              <div className="relative flex flex-col md:flex-row items-center gap-10">
+                <div className="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary to-[#007084] p-1 flex items-center justify-center shadow-2xl transform hover:rotate-6 transition-transform">
+                  <div className="w-full h-full rounded-full border-4 border-white/20 flex flex-col items-center justify-center text-white">
+                    <span className="text-4xl md:text-5xl font-black">வா</span>
+                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest mt-1">Vaagai</span>
+                  </div>
+                </div>
+
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl md:text-3xl font-black text-[#004D40] mb-4">
+                    நிர்வாகப் பொறுப்பாளர்கள் & <span className="text-primary">அங்கீகாரங்கள்</span>
+                  </h3>
+                  <p className="text-gray-600 text-lg leading-relaxed font-medium">
+                    &quot;{organizationInfo.registrationNote}&quot;
+                  </p>
+                  
+                  <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                    {["SRG NAMAKKAL 143", "NGO DARPAN REG", "MSME REGISTERED", "AICTE PARTNER"].map((tag) => (
+                      <span key={tag} className="px-4 py-1.5 bg-gray-50 border border-gray-100 rounded-lg text-[10px] font-black text-gray-400 uppercase tracking-widest hover:border-primary/30 hover:text-primary transition-all cursor-default">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        .shadow-inner-lg {
+          box-shadow: inset 0 2px 10px 0 rgba(0, 0, 0, 0.06);
+        }
+      `}</style>
     </section>
   )
 }
