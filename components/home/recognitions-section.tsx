@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { recognitions, organizationInfo } from "@/data/recognitions"
+import { getAssetPath } from "@/lib/paths"
 
 export function RecognitionsSection() {
   const scrollRef = React.useRef<HTMLDivElement>(null)
@@ -141,9 +142,13 @@ export function RecognitionsSection() {
 
               <div className="relative flex flex-col md:flex-row items-center gap-10">
                 <div className="flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary to-[#007084] p-1 flex items-center justify-center shadow-2xl transform hover:rotate-6 transition-transform">
-                  <div className="w-full h-full rounded-full border-4 border-white/20 flex flex-col items-center justify-center text-white">
-                    <span className="text-4xl md:text-5xl font-black">வா</span>
-                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest mt-1">Vaagai</span>
+                  <div className="w-full h-full rounded-full border-4 border-white/20 flex items-center justify-center bg-white overflow-hidden relative">
+                    <Image
+                      src={getAssetPath("/icon.svg")}
+                      alt="Logo"
+                      fill
+                      className="object-contain p-4"
+                    />
                   </div>
                 </div>
 
