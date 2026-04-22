@@ -50,17 +50,24 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
+import { GitHubPagesRedirect } from '@/components/github-pages-redirect'
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  // Only enable Vercel Analytics if we are actually on Vercel
+  const isVercel = process.env.VERCEL === '1' || process.env.NEXT_PUBLIC_VERCEL_ENV !== undefined
+
   return (
     <html lang="ta" className={`${geist.variable} ${geistMono.variable} ${notoSansTamil.variable} min-h-full`}>
       <body className="font-sans antialiased bg-background text-foreground">
+        <GitHubPagesRedirect />
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === 'production' && isVercel && <Analytics />}
       </body>
     </html>
   )
 }
+

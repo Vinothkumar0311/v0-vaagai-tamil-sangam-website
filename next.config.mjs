@@ -6,6 +6,7 @@ const nextConfig = {
   // Only use static export when IS_EXPORT is true (e.g. in GitHub Actions)
   // This allows local dynamic routes to still work during npm run dev.
   output: isExport ? "export" : undefined,
+  trailingSlash: true,
   
   typescript: {
     ignoreBuildErrors: true,
