@@ -14,14 +14,21 @@ export function GitHubPagesRedirect() {
     if (typeof window !== "undefined") {
       const urlParams = new URLSearchParams(window.location.search)
       const redirectPath = urlParams.get("p")
+      const redirectHash = urlParams.get("h")
       
       if (redirectPath) {
-        // Clean up the URL by removing the redirect param
-        // and navigate to the actual intended page
-        router.replace(redirectPath)
+        // Construct the full internal URL, preserving hash if present
+        const fullPath = redirectPath + (redirectHash ? "#" + redirectHash : "")
+        
+        // Use router.replace to navigate without adding a duplicate 404 entry in history
+        router.replace(fullPath)
+        
+        // Clean the URL bar of the ?p= redirect params immediately
+        window.history.replaceState(null, "", redirectPath)
       }
     }
   }, [router])
 
   return null
 }
+

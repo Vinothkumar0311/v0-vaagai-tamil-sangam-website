@@ -1,18 +1,18 @@
 /** @type {import('next').NextConfig} */
 
-const isExport = process.env.IS_EXPORT === 'true';
-
 const nextConfig = {
-  // Only use static export when IS_EXPORT is true (e.g. in GitHub Actions)
-  // This allows local dynamic routes to still work during npm run dev.
-  output: isExport ? "export" : undefined,
+  // Always use static export to generate the "out" folder
+  output: "export",
+  
+  // Mandatory for GitHub Pages deep-linking and consistent paths
   trailingSlash: true,
   
   typescript: {
     ignoreBuildErrors: true,
   },
+  
   images: {
-    unoptimized: true,
+    unoptimized: true, // Required for static export
   },
 }
 

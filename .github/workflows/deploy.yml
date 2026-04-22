@@ -46,21 +46,11 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build with Next.js
-        run: |
-          # The app has dynamic API/Admin routes that break static export.
-          # We hide them during the build so GitHub Pages is happy.
-          mkdir -p .next-hidden
-          [ -d app/api ] && mv app/api .next-hidden/
-          [ -d app/admin ] && mv app/admin .next-hidden/
-          
-          npm run build
-          
-          # Restore them after build (optional but good practice)
-          mv .next-hidden/api app/api
-          mv .next-hidden/admin app/admin
+        run: npm run build
         env:
           GOOGLE_APPS_SCRIPT_URL: ${{ secrets.GOOGLE_APPS_SCRIPT_URL }}
           IS_EXPORT: "true"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
