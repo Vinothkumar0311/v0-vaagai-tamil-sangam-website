@@ -67,12 +67,11 @@ export default async function MandramIndividualPage({ params }: PageProps) {
 
         {/*
           EventsSection subscribes to Firestore in real-time on the client.
-          Static mandram.events are shown first (instant, no flicker),
-          then replaced with live DB events once the listener connects.
+          It starts with an empty state and instantly fetches live DB events.
         */}
         <EventsSection
           mandramSlug={slug}
-          initialEvents={mandram.events}
+          initialEvents={[]}
         />
       </main>
 

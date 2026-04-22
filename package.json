@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "mkdir -p .next-hidden && [ -d app/api ] && mv app/api .next-hidden/api || true && [ -d app/admin ] && mv app/admin .next-hidden/admin || true",
-    "build": "next build",
-    "postbuild": "[ -d .next-hidden/api ] && mv .next-hidden/api app/api || true && [ -d .next-hidden/admin ] && mv .next-hidden/admin app/admin || true && rm -rf .next-hidden",
+    "prebuild": "mkdir -p .next-hidden && [ -d app/api ] && mv app/api .next-hidden/api || true",
+    "build": "IS_EXPORT=true next build",
+    "postbuild": "[ -d .next-hidden/api ] && mv .next-hidden/api app/api || true && rm -rf .next-hidden",
     "start": "next start",
     "lint": "eslint .",
     "export": "npm run build"

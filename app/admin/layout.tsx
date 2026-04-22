@@ -1,19 +1,46 @@
-import { getSession } from "@/lib/auth"
-import { redirect } from "next/navigation"
+"use client"
+
+import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { getAssetPath } from "@/lib/paths"
-import { LayoutDashboard, CalendarDays, LogOut, ChevronRight } from "lucide-react"
+import { LayoutDashboard, CalendarDays, ChevronRight, Loader2 } from "lucide-react"
+import { LogoutButton } from "@/components/admin/LogoutButton"
 
-export default async function AdminLayout({
+export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const session = await getSession()
+  const router = useRouter()
+  const [session, setSession] = useState<any>(null)
+  const [loading, setLoading] = useState(true)
 
-  if (!session) {
-    redirect("/login")
+  useEffect(() => {
+    const rawSession = localStorage.getItem("vaagai-session")
+    if (!rawSession) {
+      router.push("/login")
+      return
+    }
+    
+    try {
+      const data = JSON.parse(rawSession)
+      if (data.expiresAt < Date.now()) {
+        localStorage.removeItem("vaagai-session")
+        router.push("/login")
+      } else {
+        setSession(data)
+      }
+    } catch {
+      router.push("/login")
+    } finally {
+      setLoading(false)
+    }
+  }, [router])
+
+  if (loading || !session) {
+    return <div className="min-h-screen flex items-center justify-center bg-muted/20"><Loader2 className="w-8 h-8 animate-spin text-primary" /></div>
   }
 
   return (
@@ -61,22 +88,20 @@ export default async function AdminLayout({
         </div>
 
         <div className="p-4 border-t border-slate-800">
-          <form action="/api/auth/logout" method="POST">
-             <button type="submit" className="flex items-center gap-3 px-3 py-3 w-full rounded-lg hover:bg-red-900/30 text-slate-300 hover:text-red-400 transition-colors">
-                <LogOut className="w-5 h-5" />
-                <span className="text-sm font-medium">Logout</span>
-             </button>
-          </form>
+          <LogoutButton variant="sidebar" />
         </div>
       </aside>
 
       {/* Main Content */}
       <main className="flex-1 overflow-x-hidden min-h-screen">
         <header className="bg-white px-8 py-5 border-b shadow-sm sticky top-0 z-0 flex items-center justify-between">
-           <h1 className="text-xl font-bold text-slate-800">Administration Management</h1>
-           <div className="text-sm text-slate-500 font-medium">
-             Vaagai Tamilsangam
+           <div>
+             <h1 className="text-xl font-bold text-slate-800">Administration Management</h1>
+             <div className="text-sm text-slate-500 font-medium">
+               Vaagai Tamilsangam
+             </div>
            </div>
+           <LogoutButton variant="header" />
         </header>
         <div className="p-8">
           {children}
@@ -85,3 +110,4 @@ export default async function AdminLayout({
     </div>
   )
 }
+

@@ -13,6 +13,8 @@ import { Trash2, Loader2, UploadCloud, ImageIcon, Pencil, X, Check } from "lucid
 import { toast } from "sonner"
 import Image from "next/image"
 import { driveToImageUrl } from "@/lib/utils"
+import { firestore } from "@/lib/firebase"
+import { collection, doc, setDoc, getDocs, deleteDoc, query, where, updateDoc } from "firebase/firestore"
 
 // ── Component ──────────────────────────────────────────────────────────────
 
@@ -48,25 +50,34 @@ export default function AdminEventsPage() {
 
   const fetchSessionAndEvents = async () => {
     try {
-      const sessionRes = await fetch("/api/auth/session")
-      const sessionData = await sessionRes.json()
-      setSession(sessionData.session)
+      const raw = localStorage.getItem("vaagai-session")
+      if (!raw) throw new Error()
+      const sessionData = JSON.parse(raw)
+      setSession(sessionData)
 
-      if (sessionData.session?.role === "club") {
-        setMandram(sessionData.session.mandram)
+      if (sessionData?.role === "club") {
+        setMandram(sessionData.mandram)
       }
 
-      await fetchEvents()
+      await fetchEvents(sessionData)
     } catch {
       toast.error("Failed to authenticate session.")
     }
   }
 
-  const fetchEvents = async () => {
+  const fetchEvents = async (currentSession = session) => {
     setIsFetching(true)
-    const res = await fetch("/api/events")
-    if (res.ok) {
-      setEvents(await res.json())
+    try {
+      if (!currentSession) return
+      let eventsQuery: any = collection(firestore, "events")
+      if (currentSession.role === "club") {
+        eventsQuery = query(collection(firestore, "events"), where("mandram", "==", currentSession.mandram))
+      }
+      const snapshot = await getDocs(eventsQuery)
+      const eventsList = snapshot.docs.map(d => ({ id: d.id, ...(d.data() as any) }))
+      setEvents(eventsList)
+    } catch (e) {
+      console.error(e)
     }
     setIsFetching(false)
   }
@@ -102,14 +113,17 @@ export default function AdminEventsPage() {
     const base64 = await toBase64(fileObj)
     const base64Data = base64.split(",")[1]
 
-    const res = await fetch("/api/upload", {
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzc_YMcrZxzp7F5W7aZdqiYiv2t37iNeY-I9jF92FiTEej4mH_q9D_rAQBtvuY8t1v9/exec";
+    const res = await fetch(APPS_SCRIPT_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ file: base64Data, fileName: fileObj.name, contentType: fileObj.type }),
+      body: JSON.stringify({ action: "upload", base64: base64Data, fileName: fileObj.name, mimeType: fileObj.type }),
     })
-
-    const data = await res.json()
-    if (!data.success) throw new Error(data.error)
+    
+    // Some static host setups require text/plain content-type in fetch, but typically stringifying directly is enough if mode is no-cors, but we need response.
+    // If we face CORS, we could use no-cors but we wouldn't get the URL. Apps script supports CORS when returning valid JSON response.
+    const text = await res.text()
+    const data = JSON.parse(text)
+    if (data.status !== "success") throw new Error(data.message || data.error)
     return data.url as string
   }
 
@@ -143,27 +157,25 @@ export default function AdminEventsPage() {
 
     try {
       toast.loading("Publishing event...", { id: "publishing" })
-      const res = await fetch("/api/events", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          title,
-          date,
-          description,
-          image: imageUrl,
-          type,
-          mandram: session?.role === "admin" ? mandram : session?.mandram,
-        }),
-      })
-
-      if (res.ok) {
-        setTitle(""); setDate(""); setDescription(""); setFile(null); setPreviewUrl(null)
-        if (session?.role === "admin") setMandram("")
-        await fetchEvents()
-        toast.success("Event published!", { id: "publishing" })
-      } else {
-        toast.error("Failed to publish event.", { id: "publishing" })
+      
+      const eventId = Math.random().toString(36).substring(7)
+      const newEvent = {
+        id: eventId,
+        title,
+        date,
+        description,
+        image: imageUrl,
+        type,
+        mandram: session?.role === "admin" ? mandram : session?.mandram,
+        createdAt: new Date().toISOString()
       }
+      
+      await setDoc(doc(firestore, "events", eventId), newEvent)
+
+      setTitle(""); setDate(""); setDescription(""); setFile(null); setPreviewUrl(null)
+      if (session?.role === "admin") setMandram("")
+      await fetchEvents(session)
+      toast.success("Event published!", { id: "publishing" })
     } catch {
       toast.error("An error occurred", { id: "publishing" })
     } finally {
@@ -218,20 +230,19 @@ export default function AdminEventsPage() {
 
     try {
       toast.loading("Saving changes...", { id: "editing" })
-      const res = await fetch(`/api/events?id=${editingEvent.id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title: editTitle, date: editDate, description: editDescription, image: imageUrl, type }),
+      
+      await updateDoc(doc(firestore, "events", editingEvent.id), {
+        title: editTitle,
+        date: editDate,
+        description: editDescription,
+        image: imageUrl,
+        type,
+        updatedAt: new Date().toISOString()
       })
 
-      if (res.ok) {
-        await fetchEvents()
-        toast.success("Event updated!", { id: "editing" })
-        closeEdit()
-      } else {
-        const err = await res.json()
-        toast.error(err.error || "Failed to update.", { id: "editing" })
-      }
+      await fetchEvents(session)
+      toast.success("Event updated!", { id: "editing" })
+      closeEdit()
     } catch {
       toast.error("An error occurred.", { id: "editing" })
     } finally {
@@ -244,11 +255,11 @@ export default function AdminEventsPage() {
   const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to delete this event?")) return
     toast.loading("Deleting event...", { id: "deleting" })
-    const res = await fetch(`/api/events?id=${id}`, { method: "DELETE" })
-    if (res.ok) {
-      fetchEvents()
+    try {
+      await deleteDoc(doc(firestore, "events", id))
+      fetchEvents(session)
       toast.success("Event deleted.", { id: "deleting" })
-    } else {
+    } catch {
       toast.error("Failed to delete event", { id: "deleting" })
     }
   }

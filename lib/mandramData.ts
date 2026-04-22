@@ -1,10 +1,3 @@
-export interface MandramEvent {
-  title: string
-  date: string
-  image: string
-  description: string
-  type: "upcoming" | "past"
-}
 
 export interface Mandram {
   slug: string
@@ -14,7 +7,6 @@ export interface Mandram {
   objective: string
   features: { title: string; desc: string }[]
   banner: string
-  events: MandramEvent[]
   themeColor: string
 }
 
@@ -31,10 +23,6 @@ export const mandramsData: Mandram[] = [
       { title: "சான்றிதழ்கள்", desc: "பங்கேற்பாளர்களுக்குச் சான்றிதழ்கள் வழங்கி ஊக்குவித்தல்." }
     ],
     banner: "/images/activities/awards.png",
-    events: [
-      { title: "புத்தக வாசிப்பு", date: "2025-01-10", description: "மாதாந்திர புத்தக வாசிப்பு நிகழ்வு", image: "/images/placeholder.jpg", type: "past" },
-      { title: "கலந்துரையாடல்", date: "2025-02-15", description: "இலக்கிய கலந்துரையாடல்", image: "/images/placeholder.jpg", type: "upcoming" }
-    ],
     themeColor: "text-teal-700"
   },
   {
@@ -49,7 +37,6 @@ export const mandramsData: Mandram[] = [
       { title: "மாதாந்திர நிகழ்வு", desc: "கவிதைகள், கட்டுரை, மற்றும் பேச்சுப்போட்டிகள் மூலம் திறன்களை வெளிக்கொணர்தல்." }
     ],
     banner: "/images/activities/children-group.png",
-    events: [],
     themeColor: "text-teal-500"
   },
   {
@@ -64,7 +51,6 @@ export const mandramsData: Mandram[] = [
       { title: "நாட்டு நடப்பு", desc: "நாட்டின் முக்கியச் செய்திகளை அறிந்து கொள்ள வழிவகுத்தல்." }
     ],
     banner: "/images/activities/magalir-masi.png",
-    events: [],
     themeColor: "text-pink-600"
   },
   {
@@ -79,7 +65,6 @@ export const mandramsData: Mandram[] = [
       { title: "மாணவர் பங்களிப்பு", desc: "மாணவர்களிடையே திருக்குறள் சிந்தனைகளை ஆழமாகப் பதிய வைத்தல்." }
     ],
     banner: "/images/activities/chithirai.png",
-    events: [],
     themeColor: "text-orange-600"
   },
   {
@@ -94,7 +79,6 @@ export const mandramsData: Mandram[] = [
       { title: "சமூகத் தொடர்பு", desc: "திறம்பட சமூகத்துடன் தொடர்பு கொள்ளும் திறனை மேம்படுத்துதல்." }
     ],
     banner: "/images/activities/aani.png",
-    events: [],
     themeColor: "text-blue-600"
   }
 ]

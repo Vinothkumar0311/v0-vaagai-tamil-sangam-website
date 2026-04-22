@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 
+// This variable is set in the build script to trigger static export
+const isExport = process.env.IS_EXPORT === 'true';
+
 const nextConfig = {
-  // Always use static export to generate the "out" folder
-  output: "export",
+  // Static export mode for GitHub Pages
+  output: isExport ? "export" : undefined,
   
   // Mandatory for GitHub Pages deep-linking and consistent paths
   trailingSlash: true,

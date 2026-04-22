@@ -9,6 +9,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Lock, Mail } from "lucide-react"
+import { firestore } from "@/lib/firebase"
+import { doc, getDoc } from "firebase/firestore"
+import bcrypt from "bcryptjs"
 
 export default function LoginPage() {
   const [email, setEmail] = useState("")
@@ -23,20 +26,41 @@ export default function LoginPage() {
     setLoading(true)
 
     try {
-      const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      })
+      // Direct Firebase Auth via Client for GitHub Pages Static Build
 
-      if (res.ok) {
-        router.push("/admin/dashboard")
-        router.refresh() // To ensure layout reads new session
-      } else {
-        const data = await res.json()
-        setError(data.error || "Login failed")
+      const userDocRef = doc(firestore, "users", email)
+      const userDocSnap = await getDoc(userDocRef)
+
+      if (!userDocSnap.exists()) {
+        setError("Invalid credentials")
+        setLoading(false)
+        return
       }
-    } catch (err) {
+
+      const user = userDocSnap.data() as any
+      const isValid = await bcrypt.compare(password, user.passwordHash)
+
+      if (!isValid) {
+        setError("Invalid credentials")
+        setLoading(false)
+        return
+      }
+
+      const sessionData = {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+        mandram: user.mandram,
+        expiresAt: Date.now() + 86400 * 1000 // 1 day expiration
+      }
+      localStorage.setItem("vaagai-session", JSON.stringify(sessionData))
+
+      router.push("/admin/dashboard")
+      router.refresh()
+    } catch (err: any) {
+      console.error(err)
+      alert("Login Error: " + (err.message || String(err)))
       setError("An error occurred. Please try again.")
     } finally {
       setLoading(false)

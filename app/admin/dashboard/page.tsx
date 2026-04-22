@@ -1,12 +1,20 @@
-export const dynamic = "force-dynamic"
-import { getSession } from "@/lib/auth"
+"use client"
+import { useEffect, useState } from "react"
 import { mandramsData } from "@/lib/mandramData"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Calendar, Users, Activity } from "lucide-react"
+import { Calendar, Users, Activity, Loader2 } from "lucide-react"
 
-export default async function DashboardPage() {
-  const session = await getSession()
-  if (!session) return null
+export default function DashboardPage() {
+  const [session, setSession] = useState<any>(null)
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("vaagai-session")
+      if (raw) setSession(JSON.parse(raw))
+    } catch {}
+  }, [])
+
+  if (!session) return <div className="p-8 flex justify-center"><Loader2 className="animate-spin text-primary w-8 h-8"/></div>
 
   // Calculate some mock stats based on role
   let accessibleMandrams = 0
@@ -14,11 +22,11 @@ export default async function DashboardPage() {
 
   if (session.role === "admin") {
     accessibleMandrams = mandramsData.length
-    totalEvents = mandramsData.reduce((acc, m) => acc + (m.events?.length || 0), 0)
+    totalEvents = mandramsData.reduce((acc, m) => acc + ((m as any).events?.length || 0), 0)
   } else {
     accessibleMandrams = 1
     const myMandram = mandramsData.find(m => m.slug === session.mandram)
-    totalEvents = myMandram?.events?.length || 0
+    totalEvents = (myMandram as any)?.events?.length || 0
   }
 
   const mandramName = session.role === "admin" 
