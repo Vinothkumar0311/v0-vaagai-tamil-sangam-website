@@ -110,8 +110,15 @@ export async function verifyToken(token: string): Promise<AuthSession | null> {
 }
 
 export async function getSession(): Promise<AuthSession | null> {
-  const cookieStore = await cookies()
-  const token = cookieStore.get("vaagai-session")?.value
-  if (!token) return null
-  return await verifyToken(token)
+  try {
+    // Prevent build errors during static export collection
+    const cookieStore = await cookies()
+    const token = cookieStore.get("vaagai-session")?.value
+    if (!token) return null
+    return await verifyToken(token)
+  } catch (error) {
+    // If cookies() is called in a static context or before it's ready
+    return null
+  }
 }
+

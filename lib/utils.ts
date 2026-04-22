@@ -38,8 +38,15 @@ export function driveToImageUrl(url: string | undefined): string {
   }
 
   if (fileId) {
+    // If running on GitHub Pages (static), the server-side proxy /api/drive-image 
+    // won't exist. Fall back to direct Drive link which might work depending on CORS.
+    if (typeof window !== "undefined" && window.location.hostname.includes("github.io")) {
+      return `https://drive.google.com/uc?export=view&id=${fileId}`
+    }
+    
     return `/api/drive-image?id=${fileId}`
   }
+
 
   // Fallback – return original URL
   return url

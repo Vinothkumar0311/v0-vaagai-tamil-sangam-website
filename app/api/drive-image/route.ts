@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
 
+// This is a server-only proxy route — excluded from static export automatically
+// but we mark it explicitly to avoid build errors
+
 /**
  * Proxy route: /api/drive-image?id=FILE_ID
  * Fetches the Google Drive image server-side (no CORS / cookie issues)

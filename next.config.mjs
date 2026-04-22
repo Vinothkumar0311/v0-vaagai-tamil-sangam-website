@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
+
+const isExport = process.env.IS_EXPORT === 'true';
 
 const nextConfig = {
-  // Removed static export to support dynamic authentication APIs and cookies
-  // basePath: '',
+  // Only use static export when IS_EXPORT is true (e.g. in GitHub Actions)
+  // This allows local dynamic routes to still work during npm run dev.
+  output: isExport ? "export" : undefined,
+  
   typescript: {
     ignoreBuildErrors: true,
   },

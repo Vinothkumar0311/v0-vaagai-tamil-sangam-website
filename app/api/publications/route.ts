@@ -38,7 +38,7 @@ function getSortKey(label: string): number {
   return parseInt(vol + iss)
 }
 
-export const dynamic = "force-static"
+
 
 export async function GET() {
   // During build if GAS_URL is missing, return empty instead of failing build

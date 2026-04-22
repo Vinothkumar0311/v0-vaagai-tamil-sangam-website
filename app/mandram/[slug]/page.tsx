@@ -1,8 +1,6 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { mandrams, Mandram } from "@/lib/mandramData"
-import { firestore } from "@/lib/firebase"
-import { collection, query, where, getDocs } from "firebase/firestore"
 import { MandramHeader } from "@/components/mandram/MandramHeader"
 import { MandramSection } from "@/components/mandram/MandramSection"
 import { EventsSection } from "@/components/mandram/EventsSection"
@@ -14,10 +12,15 @@ interface PageProps {
   }>
 }
 
+// Pre-generate all mandram slug pages at build time for static export
 export async function generateStaticParams() {
-  return Object.keys(mandrams).map((slug) => ({
-    slug: slug,
-  }))
+  return [
+    { slug: "panuval" },
+    { slug: "mazhalai" },
+    { slug: "magalir" },
+    { slug: "kural" },
+    { slug: "manavar" },
+  ]
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -41,20 +44,10 @@ export default async function MandramIndividualPage({ params }: PageProps) {
 
   const mandram = mandramData as Mandram
 
-  // Server-side fetch for initial data (fast first paint / SSR)
-  // The client-side EventsSection will take over with a real-time Firestore listener
-  let initialEvents: any[] = []
-  try {
-    const eventsQuery = query(collection(firestore, "events"), where("mandram", "==", slug))
-    const snapshot = await getDocs(eventsQuery)
-    initialEvents = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-    initialEvents.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-  } catch (error) {
-    console.error("Failed fetching initial events:", error)
-  }
-
-  // Fallback to static mandram data if no DB events found yet
-  const fallbackEvents = initialEvents.length > 0 ? initialEvents : mandram.events
+  // NOTE: No server-side Firestore fetch here — we use static export (output: "export")
+  // which runs in GitHub Pages without a server. Events are loaded in real-time
+  // client-side by EventsSection via Firestore onSnapshot.
+  // Static mandram.events are used as a fallback if Firestore hasn't connected yet.
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -72,13 +65,14 @@ export default async function MandramIndividualPage({ params }: PageProps) {
           themeColor={mandram.themeColor}
         />
 
-        {/* 
-          Pass both the mandram slug (for real-time Firestore listener)
-          and initial server-fetched events (to avoid flicker on first load)
+        {/*
+          EventsSection subscribes to Firestore in real-time on the client.
+          Static mandram.events are shown first (instant, no flicker),
+          then replaced with live DB events once the listener connects.
         */}
         <EventsSection
           mandramSlug={slug}
-          initialEvents={fallbackEvents}
+          initialEvents={mandram.events}
         />
       </main>
 

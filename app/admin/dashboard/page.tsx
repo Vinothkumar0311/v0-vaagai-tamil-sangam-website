@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic"
 import { getSession } from "@/lib/auth"
 import { mandramsData } from "@/lib/mandramData"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
