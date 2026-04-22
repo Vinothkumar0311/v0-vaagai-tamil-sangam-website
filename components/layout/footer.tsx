@@ -111,7 +111,7 @@ export function Footer() {
               <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
                 <span className="text-xs">வா</span>
               </div>
-              <p>&copy; {new Date().getFullYear()} - வாகை தமிழ்ச்சங்கம்</p>
+              <p>&copy; 2025 Vaagai Tamil Sangam. All rights reserved.</p>
             </div>
             
             <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 uppercase text-[10px] tracking-wider font-medium">

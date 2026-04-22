@@ -27,29 +27,19 @@ export const navigation: NavElement[] = [
     labelEn: "Activities",
     items: [
       {
-        label: "தமிழ்த்திறன் வளர் மாதாந்திர செயல்பாடுகள்",
-        labelEn: "Monthly Tamil Skills Activities",
+        label: "மன்றங்கள்",
+        labelEn: "Mandrams",
+        href: "/mandram"
+      },
+      {
+        label: "மாதாந்திர செயல்பாடுகள்",
+        labelEn: "Monthly Activities",
         href: "/activities#monthly"
       },
       {
         label: "வளர்ச்சி மற்றும் மேம்பாடு",
-        labelEn: "Growth and Development",
+        labelEn: "Development",
         href: "/activities#development"
-      },
-      {
-        label: "வாகை மழலையர் மன்றம்",
-        labelEn: "Vaagai Children's Forum",
-        href: "/activities#children"
-      },
-      {
-        label: "வாகை மகளிர் மன்றம்",
-        labelEn: "Vaagai Women's Forum",
-        href: "/activities#women"
-      },
-      {
-        label: "வாகை பனுவல் மன்றம்",
-        labelEn: "Vaagai Literary Forum",
-        href: "/activities#literary"
       }
     ]
   },

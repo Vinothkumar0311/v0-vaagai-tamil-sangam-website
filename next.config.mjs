@@ -2,9 +2,8 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
-  output: 'export',
-  // Removed basePath for custom domain support
-  basePath: '',
+  // Removed static export to support dynamic authentication APIs and cookies
+  // basePath: '',
   typescript: {
     ignoreBuildErrors: true,
   },
