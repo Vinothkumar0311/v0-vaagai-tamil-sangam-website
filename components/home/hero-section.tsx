@@ -3,7 +3,7 @@ import { getAssetPath } from "@/lib/paths"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-end justify-start overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -19,14 +19,14 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <blockquote className="mb-6 md:mb-8">
-            <p className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-medium text-white leading-relaxed text-balance">
+      <div className="relative z-10 container mx-auto px-6 md:px-12 pb-24 md:pb-32 text-left">
+        <div className="max-w-3xl">
+          <blockquote className="mb-4 md:mb-6">
+            <p className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-medium text-white leading-relaxed text-balance">
               {'"தேமதுரத் தமிழோசை உலகமெல்லாம் பரவும் வகை செய்தல் வேண்டும்"'}
             </p>
           </blockquote>
-          <cite className="block text-gold-light text-base md:text-xl font-medium">
+          <cite className="block text-gold-light text-base md:text-lg font-medium">
             --பாரதியார்
           </cite>
         </div>

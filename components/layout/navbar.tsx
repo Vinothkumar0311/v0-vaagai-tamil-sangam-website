@@ -38,7 +38,7 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4">
-        <nav className="flex items-center justify-between h-16 md:h-20">
+        <nav className="flex items-center justify-between h-20 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 md:gap-3 group shrink-0">
             <div className="relative w-10 h-10 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-primary/20 shadow-sm transition-transform group-hover:scale-105">
@@ -52,7 +52,7 @@ export function Navbar() {
             </div>
             <span
               className={cn(
-                "font-semibold text-base md:text-xl transition-colors truncate max-w-[150px] sm:max-w-none",
+                "font-bold text-xl md:text-4xl transition-colors truncate max-w-[600px] sm:max-w-none leading-tight py-1",
                 scrolled || !isHomePage ? "text-primary" : "text-white"
               )}
             >

@@ -40,25 +40,30 @@ export function ArchivesSection() {
       const res = await fetch(gasUrl)
       const rawData = await res.json()
       
-      if (!Array.isArray(rawData)) throw new Error("Invalid response from Drive")
+      if (!Array.isArray(rawData)) {
+        if (rawData && typeof rawData === 'object' && rawData.error) {
+          throw new Error(rawData.error)
+        }
+        throw new Error("Invalid response from Drive")
+      }
 
       // Helper for sorting
       const getSortKey = (label: string): number => {
         const volMatch = label.match(/Volume\s*(\d+)/i)
         const issMatch = label.match(/Issue\s*(\d+)/i)
-        const vol = volMatch ? volMatch[1].padStart(3, '0') : '000'
-        const iss = issMatch ? issMatch[1].padStart(3, '0') : '000'
+        const vol = (volMatch && volMatch[1]) ? volMatch[1].padStart(3, '0') : '000'
+        const iss = (issMatch && issMatch[1]) ? issMatch[1].padStart(3, '0') : '000'
         return parseInt(vol + iss)
       }
 
       const formattedIssues: PublicationIssue[] = rawData.map(item => ({
         id: item.id,
-        label: item.issueLabel,
-        issueKey: item.issueLabel.toUpperCase(),
-        articles: item.articles.map((art: any) => ({
+        label: item.issueLabel || "Unknown Issue",
+        issueKey: (item.issueLabel || "").toUpperCase(),
+        articles: (item.articles || []).map((art: any) => ({
           id: art.id,
-          name: art.name,
-          title: art.name.replace(/\.pdf$/i, ""),
+          name: art.name || "Untitled",
+          title: (art.name || "").replace(/\.pdf$/i, ""),
           viewUrl: `https://drive.google.com/file/d/${art.id}/view`,
           downloadUrl: `https://drive.google.com/uc?export=download&id=${art.id}`,
           createdTime: art.createdTime,

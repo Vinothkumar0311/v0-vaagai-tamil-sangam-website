@@ -8,6 +8,7 @@ const quickLinks = [
   { label: "பாடத்திட்டம்", href: "/syllabus" },
   { label: "வெளியீடுகள்", href: "/publications" },
   { label: "தொடர்புக்கு", href: "/contact" },
+  { label: "தனியுரிமைக் கொள்கை", href: "/privacy-policy" },
 ]
 
 const socialLinks = [
@@ -121,12 +122,13 @@ export function Footer() {
                 { label: "பாடத்திட்டம்", href: "/syllabus" },
                 { label: "Publication", href: "/publications" },
                 { label: "தொடர்புக்கு", href: "/contact" },
+                { label: "Privacy Policy", href: "/privacy-policy" },
               ].map((link, i) => (
                 <React.Fragment key={link.href}>
                   <Link href={link.href} className="hover:text-gold transition-colors">
                     {link.label}
                   </Link>
-                  {i < 4 && <span className="opacity-20 text-xs">|</span>}
+                  {i < 5 && <span className="opacity-20 text-xs">|</span>}
                 </React.Fragment>
               ))}
             </nav>

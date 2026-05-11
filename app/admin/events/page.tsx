@@ -86,8 +86,8 @@ export default function AdminEventsPage() {
     const selectedFile = e.target.files?.[0]
     if (!selectedFile) return
 
-    if (selectedFile.size > 2 * 1024 * 1024) {
-      toast.error("Image must be smaller than 2MB")
+    if (selectedFile.size > 5 * 1024 * 1024) {
+      toast.error("Image must be smaller than 5MB")
       return
     }
 
@@ -311,7 +311,7 @@ export default function AdminEventsPage() {
                     <input type="file" accept="image/*" onChange={e => handleFileChange(e, true)} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
                     <UploadCloud className="w-8 h-8 text-slate-400 mx-auto mb-3" />
                     <p className="text-sm font-medium text-slate-600">Click to upload new image</p>
-                    <p className="text-xs text-slate-400 mt-1">JPEG, PNG up to 2MB</p>
+                    <p className="text-xs text-slate-400 mt-1">JPEG, PNG up to 5MB</p>
                   </div>
                 )}
               </div>
@@ -392,7 +392,7 @@ export default function AdminEventsPage() {
                       <input type="file" accept="image/*" onChange={e => handleFileChange(e)} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" required />
                       <UploadCloud className="w-8 h-8 text-slate-400 mx-auto mb-3" />
                       <p className="text-sm font-medium text-slate-600">Click or drag image to upload</p>
-                      <p className="text-xs text-slate-400 mt-1">JPEG, PNG up to 2MB</p>
+                      <p className="text-xs text-slate-400 mt-1">JPEG, PNG up to 5MB</p>
                     </div>
                   )}
                 </div>

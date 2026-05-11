@@ -9,7 +9,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, description, className }: PageHeaderProps) {
   return (
-    <section className={cn("bg-primary py-16 md:py-24", className)}>
+    <section className={cn("bg-primary py-16 md:py-28", className)}>
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
           {title}
