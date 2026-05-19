@@ -39,21 +39,8 @@ export const metadata: Metadata = {
     description: 'தமிழ் மொழி, இலக்கியம், பண்பாடு வளர்ச்சிக்கான அமைப்பு'
   },
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/icon.svg',
+    apple: '/icon.svg',
   },
 }
 
@@ -63,17 +50,24 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
+import { GitHubPagesRedirect } from '@/components/github-pages-redirect'
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  // Only enable Vercel Analytics if we are actually on Vercel
+  const isVercel = process.env.VERCEL === '1' || process.env.NEXT_PUBLIC_VERCEL_ENV !== undefined
+
   return (
-    <html lang="ta" className={`${geist.variable} ${geistMono.variable} ${notoSansTamil.variable}`}>
+    <html lang="ta" className={`${geist.variable} ${geistMono.variable} ${notoSansTamil.variable} min-h-full`}>
       <body className="font-sans antialiased bg-background text-foreground">
+        <GitHubPagesRedirect />
         {children}
-        {process.env.NODE_ENV === 'production' && <Analytics />}
+        {process.env.NODE_ENV === 'production' && isVercel && <Analytics />}
       </body>
     </html>
   )
 }
+

@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import { getAssetPath } from "@/lib/paths"
 
 interface TeamMemberCardProps {
   name: string
@@ -21,7 +22,7 @@ export function TeamMemberCard({ name, role, image }: TeamMemberCardProps) {
             <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/30 overflow-hidden">
               {!imageError && image ? (
                 <Image
-                  src={image}
+                  src={getAssetPath(image)}
                   alt={name}
                   width={80}
                   height={80}
