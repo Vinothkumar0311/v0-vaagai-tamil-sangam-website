@@ -1,0 +1,1 @@
+# Prevent GitHub Pages Jekyll processing so that files in _next/ are successfully served.
