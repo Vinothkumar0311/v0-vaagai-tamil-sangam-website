@@ -1,5 +1,4 @@
 import Image from "next/image"
-import { getAssetPath } from "@/lib/paths"
 
 const visionPoints = [
   "தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் சிந்தனை & திறன்களுடன் அனைத்து தரப்பினரிடமும் ஊக்குவித்தலும், வளர்த்தலும், மேம்படுத்துதலும்.",
@@ -12,12 +11,12 @@ const visionPoints = [
 export function VisionMission() {
   return (
     <section className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-6 md:px-8 lg:px-12">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
-          <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src={getAssetPath("/images/deity/tamil-thaai.jpg")}
+              src="/images/deity/tamil-thaai.jpg"
               alt="Tamil Thaai"
               fill
               className="object-cover"

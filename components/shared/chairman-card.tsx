@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import { getAssetPath } from "@/lib/paths"
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { chairman } from "@/data/team"
@@ -17,7 +16,7 @@ export function ChairmanCard() {
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary/30 overflow-hidden bg-primary/10 flex items-center justify-center">
               {!imageError ? (
                 <Image
-                  src={getAssetPath("/images/team/chairman.jpg")}
+                  src="/images/team/chairman.jpg"
                   alt={chairman.name}
                   width={160}
                   height={160}
