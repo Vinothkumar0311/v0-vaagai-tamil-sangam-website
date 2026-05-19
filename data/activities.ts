@@ -5,6 +5,7 @@ export interface Activity {
   description: string
   quote?: string
   quoteAuthor?: string
+  image: string
   theme: 'teal' | 'gold' | 'cream'
 }
 
@@ -15,6 +16,7 @@ export const activities: Activity[] = [
     titleEn: "Margazhi Masi",
     description: "மங்களையராய் பிறப்பதற்கே நல்ல மாதவம் செய்திடல் வேண்டும்மா என்று கவிமணியின் கூற்றுக்கேற்ப மாதவத்தைச் செய்ய மாதத்திங்கள் நிகழ்வுகள் கொண்டாப்படுகின்றன.",
     quote: "மங்களையராய் பிறப்பதற்கே நல்ல மாதவம் செய்திடல் வேண்டும்மா",
+    image: "/images/activities/magalir-masi.png",
     theme: "teal"
   },
   {
@@ -24,6 +26,7 @@ export const activities: Activity[] = [
     description: "இருந்தமிழே உன்னால் இருந்தேன் – இளமையோர் விருந்தமிழ்தம் என்றாலும் வேண்டேன்... (தமிழ்விடு தூது) என்று புலவர்முதல் புன்சிரார்வரை ஒவ்வொரு தமிழரும் வியந்து போற்றும் அன்னைத் தமிழைக் கொண்டாடும் அழகிய திங்கள் சித்திரை.",
     quote: "இருந்தமிழே உன்னால் இருந்தேன் – இளமையோர் விருந்தமிழ்தம் என்றாலும் வேண்டேன்",
     quoteAuthor: "தமிழ்விடு தூது",
+    image: "/images/activities/chithirai.png",
     theme: "gold"
   },
   {
@@ -31,6 +34,7 @@ export const activities: Activity[] = [
     title: "அகமகிழ் ஆனி",
     titleEn: "Agamagizh Aani",
     description: "மழலையில் கல் என்றார் இன்றைப் ஞுதாடி, பசுமைத்து ஆனி போல் என்பது பழமொழி. சிறுவத்திலேயே சேதமிழின் களைகளாமும் கவின்களையும் மொழித்திறன்களையும் விற்றும் வளர்ச்சிக்கு வாகை சங்க, தமிழ் பேச, ஓரினிய முகலிய போட்டிகளை நடத்தி பழையவெறி மகிழார்.",
+    image: "/images/activities/aani.png",
     theme: "cream"
   }
 ]

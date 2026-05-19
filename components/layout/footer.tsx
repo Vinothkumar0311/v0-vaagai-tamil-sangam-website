@@ -1,5 +1,6 @@
+import React from "react"
 import Link from "next/link"
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react"
+import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Linkedin } from "lucide-react"
 
 const quickLinks = [
   { label: "முகப்பு", href: "/" },
@@ -7,18 +8,19 @@ const quickLinks = [
   { label: "பாடத்திட்டம்", href: "/syllabus" },
   { label: "வெளியீடுகள்", href: "/publications" },
   { label: "தொடர்புக்கு", href: "/contact" },
+  { label: "தனியுரிமைக் கொள்கை", href: "/privacy-policy" },
 ]
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61556917486232&mibextid=JRoKGi", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/vaagaitamilsangam?igsh=MWI3MjRvMnpmcDJ1Yw%3D%3D", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/%E0%AE%B5%E0%AE%BE%E0%AE%95%E0%AF%88-%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AF%8D%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%AE%E0%AF%8D/", label: "Linkedin" },
+  // { icon: Youtube, href: "#", label: "YouTube" },
 ]
 
 export function Footer() {
   return (
-    <footer className="bg-teal text-white">
+    <footer className="text-white border-t border-white/5" style={{ backgroundColor: '#0F766E' }}>
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
@@ -72,19 +74,19 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold-light flex-shrink-0 mt-0.5" />
                 <span className="text-white/80 text-sm">
-                  நாமக்கல், தமிழ்நாடு, இந்தியா
+                  தலைவர், 12 / 53 A 1, அத்தனூர் வடக்கு, அத்தனூர், நாமக்கல், தமிழ்நாடு, இந்தியா - 636301
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-gold-light flex-shrink-0" />
                 <a href="tel:+919876543210" className="text-white/80 hover:text-white text-sm transition-colors">
-                  +91 98765 43210
+                  +91 82482 72880
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-gold-light flex-shrink-0" />
-                <a href="mailto:info@vaagaitamilsangam.com" className="text-white/80 hover:text-white text-sm transition-colors">
-                  info@vaagaitamilsangam.com
+                <a href="mailto:vaagaitamilsangam@gmail.com" className="text-white/80 hover:text-white text-sm transition-colors">
+                  vaagaitamilsangam@gmail.com
                 </a>
               </li>
             </ul>
@@ -105,12 +107,31 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-white/10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/60">
-            <p>&copy; {new Date().getFullYear()} வாகை தமிழ்ச்சங்கம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
-            <p className="text-center md:text-right">
-              <span className="italic">{"\"தேமதுரத் தமிழோசை உலகமெல்லாம் பரவும் வகை செய்தல் வேண்டும்\""}</span>
-              <span className="block md:inline md:ml-2">- பாரதியார்</span>
-            </p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white/60">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                <span className="text-xs">வா</span>
+              </div>
+              <p>&copy; 2025 Vaagai Tamil Sangam. All rights reserved.</p>
+            </div>
+
+            <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 uppercase text-[10px] tracking-wider font-medium">
+              {[
+                { label: "முகப்பு", href: "/" },
+                { label: "செயல்பாடுகள்", href: "/activities" },
+                { label: "பாடத்திட்டம்", href: "/syllabus" },
+                { label: "Publication", href: "/publications" },
+                { label: "தொடர்புக்கு", href: "/contact" },
+                { label: "Privacy Policy", href: "/privacy-policy" },
+              ].map((link, i) => (
+                <React.Fragment key={link.href}>
+                  <Link href={link.href} className="hover:text-gold transition-colors">
+                    {link.label}
+                  </Link>
+                  {i < 5 && <span className="opacity-20 text-xs">|</span>}
+                </React.Fragment>
+              ))}
+            </nav>
           </div>
         </div>
       </div>
