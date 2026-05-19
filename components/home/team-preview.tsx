@@ -15,7 +15,7 @@ export function TeamPreview() {
       {/* Background patterns */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -mr-48 -mt-48" />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-[#004D40] mb-4 leading-tight">

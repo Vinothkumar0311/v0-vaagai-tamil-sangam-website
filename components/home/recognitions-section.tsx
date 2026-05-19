@@ -27,7 +27,7 @@ export function RecognitionsSection() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -mr-48 -mt-48" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -ml-48 -mb-48" />
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-6 md:px-8 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-20">
           <h2 className="text-4xl md:text-6xl font-black text-[#004D40] mb-6 leading-tight">
@@ -76,7 +76,7 @@ export function RecognitionsSection() {
             {recognitions.map((recognition, index) => (
               <div 
                 key={recognition.id}
-                className="flex-shrink-0 w-[380px] md:w-[500px] snap-center perspective-1000"
+                className="flex-shrink-0 w-[290px] sm:w-[380px] md:w-[500px] snap-center perspective-1000"
               >
                 <Card className="group/card relative h-full overflow-hidden border-none bg-white shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.12)] transition-all duration-500 rounded-[2.5rem]">
                   {/* Decorative Elements */}
