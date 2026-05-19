@@ -1,4 +1,5 @@
-import { PageShell } from "@/components/layout/page-shell"
+import { Navbar } from "@/components/layout/navbar"
+import { Footer } from "@/components/layout/footer"
 import { HeroSection } from "@/components/home/hero-section"
 import { AboutPreview } from "@/components/home/about-preview"
 import { VisionMission } from "@/components/home/vision-mission"
@@ -8,13 +9,17 @@ import { TeamPreview } from "@/components/home/team-preview"
 
 export default function HomePage() {
   return (
-    <PageShell>
+    <>
+      <Navbar />
+      <main>
         <HeroSection />
         <AboutPreview />
         <VisionMission />
         <ActivitiesSection />
         <RecognitionsSection />
         <TeamPreview />
-    </PageShell>
+      </main>
+      <Footer />
+    </>
   )
 }

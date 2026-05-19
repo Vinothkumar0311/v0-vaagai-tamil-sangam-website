@@ -2,9 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
-import { getAssetPath } from "@/lib/paths"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {
@@ -33,8 +31,8 @@ export function ActivitiesSection() {
   }, [api])
 
   return (
-    <section className="py-16 md:py-24 bg-background overflow-hidden">
-      <div className="container mx-auto px-6 md:px-8 lg:px-12">
+    <section className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
@@ -66,25 +64,17 @@ export function ActivitiesSection() {
         </Card>
 
         {/* Activity Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {activities.map((activity) => (
             <Card
               key={activity.id}
               className={cn(
-                "overflow-hidden border-0 shadow-lg transition-transform hover:-translate-y-1",
+                "overflow-hidden border-0 shadow-lg",
                 activity.theme === "teal" && "bg-teal text-white",
                 activity.theme === "gold" && "bg-gold text-white",
                 activity.theme === "cream" && "bg-cream text-foreground"
               )}
             >
-              <div className="relative aspect-video">
-                <Image
-                  src={getAssetPath(activity.image)}
-                  alt={activity.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
               <CardHeader className="pb-2">
                 <CardTitle
                   className={cn(
@@ -105,7 +95,7 @@ export function ActivitiesSection() {
                   </p>
                 )}
                 <p className={cn(
-                  "text-sm leading-relaxed line-clamp-3",
+                  "text-sm leading-relaxed",
                   activity.theme === "cream" ? "text-foreground/80" : "text-current/90"
                 )}>
                   {activity.description}
@@ -116,32 +106,33 @@ export function ActivitiesSection() {
         </div>
 
         {/* Event Slider */}
-        <div className="relative bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 rounded-2xl overflow-hidden p-6 md:p-12">
+        <div className="relative bg-gradient-to-r from-blue-400 via-blue-500 to-purple-500 rounded-2xl overflow-hidden p-8 md:p-12">
           {/* Decorative Elements */}
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-0 left-0 w-64 h-64 bg-red-500 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 right-0 w-64 h-64 bg-pink-500 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
           </div>
+
           <div className="relative z-10">
             <Carousel setApi={setApi} className="w-full">
               <CarouselContent>
                 {[1, 2, 3].map((slide) => (
                   <CarouselItem key={slide}>
-                    <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
+                    <div className="flex flex-col lg:flex-row items-center gap-8">
                       {/* Text */}
-                      <div className="w-full lg:w-1/2 text-white text-center lg:text-left">
-                        <h3 className="text-xl md:text-3xl font-bold mb-1">
+                      <div className="lg:w-1/2 text-white">
+                        <h3 className="text-2xl md:text-3xl font-bold mb-2">
                           வாகை தமிழ்ச்சங்கம்
                         </h3>
-                        <p className="text-2xl md:text-4xl font-bold text-gold-light">
+                        <p className="text-3xl md:text-4xl font-bold text-gold-light">
                           பட்டமளிப்பு விழா
                         </p>
                       </div>
                       {/* Image Placeholder */}
-                      <div className="w-full lg:w-1/2">
-                        <div className="relative aspect-video lg:aspect-[4/3] rounded-xl overflow-hidden bg-white/20 backdrop-blur-sm border-2 md:border-4 border-white/30 shadow-xl">
+                      <div className="lg:w-1/2">
+                        <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-white/20 backdrop-blur-sm border-4 border-white/30 shadow-xl">
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <p className="text-white/60 text-xs md:text-sm text-center p-4">
+                            <p className="text-white/60 text-center p-4">
                               நிகழ்வு புகைப்படம் {slide}
                             </p>
                           </div>
