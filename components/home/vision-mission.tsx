@@ -1,56 +1,55 @@
 import Image from "next/image"
 
-const visionPoints = [
-  "தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் சிந்தனை & திறன்களுடன் அனைத்து தரப்பினரிடமும் ஊக்குவித்தலும், வளர்த்தலும், மேம்படுத்துதலும்.",
-  "வாகை தமிழ்ச்சங்கம் தமிழின் கலாச்சார-மொழியியல் பாரம்பரியத்தில் ஆர்வமுள்ள அனைவரையும் ஒன்றிணைக்கும் நோக்கத்துடன் தொண்டாற்றும் ஒர் இலாப நோக்கற்ற, மதச்சார்பற்ற, கலாச்சார-சமூக அமைப்பாகும்.",
-  "கற்றல், கற்பித்தல், எழுதுதல், வாசித்தல் போன்ற திறன்களுக்குப் பயிற்சியளித்தலும், வெளிப்படுத்துதலும் மேம்படுத்துதலும் செய்தல்.",
-  "கருத்தரங்குகள், வினாடி வினாக்கள், ஆசிரிய-மாணவ மேம்பாட்டுத் திட்டங்கள், ஆய்வரங்கங்கள் ஆகிய நிகழ்வுகள் மூலம் தமிழ் வளர்ச்சிப் பணிகளில் ஈடுபடுதல்.",
-  "தலைசிறந்த தமிழ் ஆளுமைகள், சிறந்த கலைஞர்கள், துறைசார், திறன்சார்ந்த வல்லுநர்கள், அறிஞர்கள், ஆய்வாளர்கள், தன்னார்வலர்கள் ஆகியோருக்குப் பட்டங்களும் விருதுகளும் வழங்கிப் பெருமைப்படுத்துதல்."
-]
-
 export function VisionMission() {
   return (
-    <section className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image */}
-          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
             <Image
               src="/images/deity/tamil-thaai.jpg"
-              alt="Tamil Thaai"
+              alt="Tamil cultural imagery"
               fill
               className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
 
           {/* Content */}
           <div>
-            {/* Vision */}
-            <div className="mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                நோக்கு
-              </h2>
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் சிந்தனை & திறன்களுடன் 
-                அனைத்து தரப்பினரிடமும் ஊக்குவித்தலும், வளர்த்தலும், மேம்படுத்துதலும்.
-              </p>
-            </div>
+            <h2 className="section-heading text-left">நோக்கு</h2>
+            <p className="text-text-secondary mb-6">
+              தமிழ் மொழி, இலக்கியம், பண்பாட்டை உலகளாவிய அளவில் பரப்பி, தமிழ்
+              கலாச்சாரத்தைப் பாதுகாத்து வளர்க்கும் நோக்கு.
+            </p>
 
-            {/* Mission */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                போக்கு
-              </h2>
-              <ul className="space-y-4">
-                {visionPoints.map((point, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-2 h-2 mt-2.5 rounded-full bg-gold" />
-                    <p className="text-foreground/80 leading-relaxed">{point}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <h3 className="text-2xl font-bold text-primary mb-4">விஷயம்</h3>
+            <ul className="space-y-3 text-text-secondary">
+              <li className="flex gap-3">
+                <span className="w-2 h-2 rounded-full bg-secondary flex-shrink-0 mt-2" />
+                <span>
+                  தமிழ் மொழி, இலக்கியம், அறிவியல் ஆகியவற்றை வளர்க்க
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="w-2 h-2 rounded-full bg-secondary flex-shrink-0 mt-2" />
+                <span>
+                  தமிழ் பண்பாட்டை உலக சமூகத்திற்கு அறிமுகப்படுத்த
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="w-2 h-2 rounded-full bg-secondary flex-shrink-0 mt-2" />
+                <span>
+                  தமிழ் ஞான பாரம்பரியத்தை அடுத்த தலைமுறையுக்கு கொடுத்தளிக்க
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="w-2 h-2 rounded-full bg-secondary flex-shrink-0 mt-2" />
+                <span>
+                  தமிழ் மக்களுக்கு தமிழ் கல்வி மற்றும் பணிப்பயிற்சி வழங்க
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

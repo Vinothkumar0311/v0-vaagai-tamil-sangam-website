@@ -1,122 +1,68 @@
-"use client"
-
-import * as React from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { recognitions, organizationInfo } from "@/data/recognitions"
 
 export function RecognitionsSection() {
-  const scrollRef = React.useRef<HTMLDivElement>(null)
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = 300
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      })
-    }
-  }
+  const recognitions = [
+    {
+      name: "தமிழ்நாடு அரசு",
+      role: "Government Recognition",
+      year: "Registered Organization",
+    },
+    {
+      name: "MSME",
+      role: "Ministry of Small and Medium Enterprises",
+      year: "Registration No: TN/2022/001",
+    },
+    {
+      name: "AICTE",
+      role: "All India Council for Technical Education",
+      year: "Internship Provider",
+    },
+  ]
 
   return (
-    <section className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            அங்கீகாரங்களும் அனுமதிகளும்
-          </h2>
-        </div>
+    <section className="py-16 md:py-24 bg-muted/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="section-heading">அங்கீகாரங்கள் மற்றும் அணைமதிக்கள்</h2>
+        <p className="section-subheading">
+          வாகை தமிழ்ச்சங்கம் பல அரசு மற்றும் சர்வதேச அமைப்புக்களால் 
+          அங்கீகாரம் பெற்றுள்ளது.
+        </p>
 
-        {/* Recognitions Carousel */}
-        <div className="relative">
-          {/* Scroll Buttons */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm shadow-md hover:bg-background rounded-full"
-            onClick={() => scroll("left")}
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-background/80 backdrop-blur-sm shadow-md hover:bg-background rounded-full"
-            onClick={() => scroll("right")}
-          >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
-
-          {/* Scrollable Container */}
-          <div
-            ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide px-8 py-4 snap-x snap-mandatory"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {recognitions.map((recognition) => (
-              <Card
-                key={recognition.id}
-                className="flex-shrink-0 w-[280px] md:w-[320px] snap-center border shadow-md"
-              >
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    {/* Logo Placeholder */}
-                    <div className="w-16 h-16 flex-shrink-0 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20">
-                      <span className="text-primary font-bold text-xs text-center">
-                        {recognition.nameEn.slice(0, 4)}
-                      </span>
-                    </div>
-                    {/* Content */}
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-foreground mb-1">
-                        {recognition.name}
-                      </h3>
-                      {recognition.registrationNo && (
-                        <p className="text-xs text-muted-foreground mb-2">
-                          {recognition.registrationNo}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                  <p className="text-sm text-foreground/70 mt-4 leading-relaxed">
-                    {recognition.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Organization Info Banner */}
-        <div className="mt-12">
-          <div className="relative rounded-2xl overflow-hidden">
-            {/* Background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary via-teal-light to-primary" />
-            
-            {/* Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div 
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                }}
-              />
-            </div>
-
-            <div className="relative z-10 p-8 md:p-12 text-center">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center border-2 border-white/20">
-                  <span className="text-white font-bold text-xl">வா</span>
+        <div className="grid md:grid-cols-3 gap-8">
+          {recognitions.map((rec, idx) => (
+            <Card key={idx} className="border-l-4 border-l-primary hover:shadow-lg transition-shadow">
+              <CardContent className="pt-6">
+                <div className="text-4xl font-bold text-primary/20 mb-2">
+                  {(idx + 1).toString().padStart(2, "0")}
                 </div>
-                <h3 className="text-xl md:text-2xl font-bold text-white">
-                  வாகை தமிழ்ச்சங்க பொறுப்பாளர்கள்
+                <h3 className="text-xl font-bold text-primary mb-2">
+                  {rec.name}
                 </h3>
-              </div>
-              <p className="text-white/90 max-w-3xl mx-auto mb-6">
-                {organizationInfo.registrationNote}
-              </p>
+                <p className="text-text-secondary mb-2">{rec.role}</p>
+                <p className="text-sm text-primary font-medium">{rec.year}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="mt-12 bg-white rounded-lg p-8 border-l-4 border-l-secondary">
+          <h3 className="text-2xl font-bold text-primary mb-4">ஒற்றுமைக்கான உறுப்பினர்</h3>
+          <div className="grid md:grid-cols-4 gap-4">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-secondary">500+</div>
+              <p className="text-text-secondary">உறுப்பினர்கள்</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-secondary">50+</div>
+              <p className="text-text-secondary">நிகழ்ச்சிகள்</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-secondary">100+</div>
+              <p className="text-text-secondary">வெளியீடுகள்</p>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-secondary">25+</div>
+              <p className="text-text-secondary">வருடங்கள்</p>
             </div>
           </div>
         </div>

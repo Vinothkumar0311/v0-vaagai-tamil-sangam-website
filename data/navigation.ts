@@ -1,102 +1,45 @@
 export interface NavItem {
+  path: string
   label: string
-  labelEn?: string
-  href: string
+  submenu?: {
+    path: string
+    label: string
+  }[]
 }
 
-export interface NavDropdown {
-  label: string
-  labelEn?: string
-  items: NavItem[]
-}
-
-export type NavElement = NavItem | NavDropdown
-
-export function isDropdown(item: NavElement): item is NavDropdown {
-  return 'items' in item
-}
-
-export const navigation: NavElement[] = [
+export const navigation: NavItem[] = [
   {
+    path: "/",
     label: "முகப்பு",
-    labelEn: "Home",
-    href: "/"
   },
   {
+    path: "/about",
+    label: "பற்றி",
+  },
+  {
+    path: "/activities",
     label: "செயல்பாடுகள்",
-    labelEn: "Activities",
-    items: [
+    submenu: [
       {
-        label: "தமிழ்த்திறன் வளர் மாதாந்திர செயல்பாடுகள்",
-        labelEn: "Monthly Tamil Skills Activities",
-        href: "/activities#monthly"
+        path: "/activities#competitions",
+        label: "போட்டிகள்",
       },
       {
-        label: "வளர்ச்சி மற்றும் மேம்பாடு",
-        labelEn: "Growth and Development",
-        href: "/activities#development"
+        path: "/activities#events",
+        label: "நிகழ்ச்சிகள்",
       },
       {
-        label: "வாகை மழலையர் மன்றம்",
-        labelEn: "Vaagai Children's Forum",
-        href: "/activities#children"
+        path: "/syllabus",
+        label: "பாடக்குறிப்பு",
       },
-      {
-        label: "வாகை மகளிர் மன்றம்",
-        labelEn: "Vaagai Women's Forum",
-        href: "/activities#women"
-      },
-      {
-        label: "வாகை பனுவல் மன்றம்",
-        labelEn: "Vaagai Literary Forum",
-        href: "/activities#literary"
-      }
-    ]
+    ],
   },
   {
-    label: "பாடத்திட்டம்",
-    labelEn: "Syllabus",
-    href: "/syllabus"
+    path: "/publications",
+    label: "வெளியீடுகள்",
   },
   {
-    label: "தொடர்புக்கு",
-    labelEn: "Contact",
-    href: "/contact"
+    path: "/contact",
+    label: "தொடர்பு",
   },
-  {
-    label: "PUBLICATION",
-    labelEn: "Publication",
-    items: [
-      {
-        label: "AIM",
-        labelEn: "AIM",
-        href: "/publications#aim"
-      },
-      {
-        label: "About - Vaagai Tamilsangam",
-        labelEn: "About - Vaagai Tamilsangam",
-        href: "/publications#about"
-      },
-      {
-        label: "Research Themes",
-        labelEn: "Research Themes",
-        href: "/publications#research"
-      },
-      {
-        label: "Guidelines",
-        labelEn: "Guidelines",
-        href: "/publications#guidelines"
-      },
-      {
-        label: "Editorial Board",
-        labelEn: "Editorial Board",
-        href: "/publications#editorial"
-      },
-      {
-        label: "Archives",
-        labelEn: "Archives",
-        href: "/publications#archives"
-      }
-    ]
-  }
 ]
