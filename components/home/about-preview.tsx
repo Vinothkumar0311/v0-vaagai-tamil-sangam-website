@@ -2,8 +2,8 @@ import { ChairmanCard } from "@/components/shared/chairman-card"
 
 export function AboutPreview() {
   return (
-    <section className="py-16 md:py-24 bg-cream overflow-hidden">
-      <div className="container mx-auto px-6 md:px-8 lg:px-12">
+    <section className="py-16 md:py-24 bg-cream">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
           {/* About Text */}
           <div className="lg:col-span-2">
