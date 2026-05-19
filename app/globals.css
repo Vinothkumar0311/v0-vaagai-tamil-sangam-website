@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
   /* Design System Colors - Green Theme */
@@ -21,40 +24,29 @@
   --border: #E0E0E0;
   --input: #F2F2F2;
   --ring: #1B5E20;
-  --chart-1: #1B5E20;
-  --chart-2: #4CAF50;
-  --chart-3: #81C784;
-  --chart-4: #A5D6A7;
-  --chart-5: #C8E6C9;
-  --radius: 1rem;
-  --sidebar: #1B5E20;
-  --sidebar-foreground: #FFFFFF;
-  --sidebar-primary: #4CAF50;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #2E7D32;
-  --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #E0E0E0;
-  --sidebar-ring: #1B5E20;
-
-  /* Extended Theme Variables */
-  --text-primary: #000000;
-  --text-secondary: #9E9E9E;
-  --input-fill: #F2F2F2;
-  --error: #FF0000;
-
-  /* Green Shades for Hover States */
-  --primary-light: #2E7D32;
-  --primary-dark: #0D3311;
-  --secondary-light: #66BB6A;
-  --secondary-dark: #388E3C;
+  
+  /* Brand Colors */
+  --teal: #0F766E;
+  --gold: #D4AF37;
+  --gold-light: #F9D71C;
+  --cream: #FFFDD0;
 }
 
-@theme inline {
-  --font-sans: var(--font-noto-sans-tamil), "Geist", "Geist Fallback",
-    system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+}
 
-  /* Core Theme Colors */
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -75,69 +67,21 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Extended Design System Colors */
-  --color-text-primary: var(--text-primary);
-  --color-text-secondary: var(--text-secondary);
-  --color-input-fill: var(--input-fill);
-  --color-error: var(--error);
-  --color-primary-light: var(--primary-light);
-  --color-primary-dark: var(--primary-dark);
-  --color-secondary-light: var(--secondary-light);
-  --color-secondary-dark: var(--secondary-dark);
-
-  /* Chart Colors */
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-
-  /* Border Radius */
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-
-  /* Sidebar Colors */
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  /* Brand Colors */
+  --color-teal: var(--teal);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-cream: var(--cream);
+  
+  --font-sans: var(--font-noto-sans-tamil), 'Geist', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
 }
 
-/* Prevent hydration mismatch from browser extensions */
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-@layer components {
-  .container {
-    @apply mx-auto px-4 sm:px-6 lg:px-8;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
   }
-
-  .page-header {
-    @apply py-12 md:py-16 bg-gradient-to-b from-primary/5 to-transparent;
-  }
-
-  .section-heading {
-    @apply text-3xl md:text-4xl font-bold text-primary text-center mb-4;
-  }
-
-  .section-subheading {
-    @apply text-lg text-text-secondary text-center mb-8 max-w-2xl mx-auto;
-  }
-}
-
-/* Smooth scrolling behavior */
-@supports (scroll-behavior: smooth) {
-  html {
-    scroll-behavior: smooth;
+  body {
+    @apply bg-background text-foreground;
   }
 }

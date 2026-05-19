@@ -1,135 +1,137 @@
+import React from "react"
 import Link from "next/link"
-import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react"
+import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Linkedin } from "lucide-react"
+
+const quickLinks = [
+  { label: "முகப்பு", href: "/" },
+  { label: "செயல்பாடுகள்", href: "/activities" },
+  { label: "பாடத்திட்டம்", href: "/syllabus" },
+  { label: "வெளியீடுகள்", href: "/publications" },
+  { label: "தொடர்புக்கு", href: "/contact" },
+  { label: "தனியுரிமைக் கொள்கை", href: "/privacy-policy" },
+]
+
+const socialLinks = [
+  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61556917486232&mibextid=JRoKGi", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/vaagaitamilsangam?igsh=MWI3MjRvMnpmcDJ1Yw%3D%3D", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/%E0%AE%B5%E0%AE%BE%E0%AE%95%E0%AF%88-%E0%AE%A4%E0%AE%AE%E0%AE%BF%E0%AE%B4%E0%AF%8D%E0%AE%9A%E0%AF%8D%E0%AE%9A%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%AE%E0%AF%8D/", label: "Linkedin" },
+  // { icon: Youtube, href: "#", label: "YouTube" },
+]
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          {/* Organization Info */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">வாகை தமிழ்ச்சங்கம்</h3>
-            <p className="text-sm text-primary-foreground/80 mb-4">
-              Dedicated to preserving and promoting Tamil language, literature,
-              and cultural heritage.
+    <footer className="text-white border-t border-white/5" style={{ backgroundColor: '#0F766E' }}>
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <Link href="/" className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border-2 border-white/20">
+                <span className="font-bold text-lg">வா</span>
+              </div>
+              <span className="font-semibold text-xl">வாகை தமிழ்ச்சங்கம்</span>
+            </Link>
+            <p className="text-white/80 text-sm leading-relaxed mb-4">
+              தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் சிந்தனை & திறன்களுடன் அனைத்து தரப்பினரிடமும் ஊக்குவித்தலும், வளர்த்தலும், மேம்படுத்துதலும்.
             </p>
-            <div className="flex gap-4">
-              <a
-                href="#"
-                className="hover:text-secondary transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="hover:text-secondary transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="hover:text-secondary transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
+            <div className="flex items-center gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">குறிப்பு</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/about"
-                  className="hover:text-secondary transition-colors"
-                >
-                  பற்றி
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/activities"
-                  className="hover:text-secondary transition-colors"
-                >
-                  செயல்பாடுகள்
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/publications"
-                  className="hover:text-secondary transition-colors"
-                >
-                  வெளியீடுகள்
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="hover:text-secondary transition-colors"
-                >
-                  தொடர்பு
-                </Link>
-              </li>
+            <h3 className="font-semibold text-lg mb-4 text-gold-light">விரைவு இணைப்புகள்</h3>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white/80 hover:text-white text-sm transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4">தொடர்பு</h4>
-            <div className="space-y-3 text-sm">
-              <div className="flex gap-2">
-                <Mail className="w-4 h-4 flex-shrink-0 mt-1" />
-                <a
-                  href="mailto:info@vaagaitamilsangam.com"
-                  className="hover:text-secondary transition-colors"
-                >
-                  info@vaagaitamilsangam.com
+            <h3 className="font-semibold text-lg mb-4 text-gold-light">தொடர்பு</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-gold-light flex-shrink-0 mt-0.5" />
+                <span className="text-white/80 text-sm">
+                  தலைவர், 12 / 53 A 1, அத்தனூர் வடக்கு, அத்தனூர், நாமக்கல், தமிழ்நாடு, இந்தியா - 636301
+                </span>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-gold-light flex-shrink-0" />
+                <a href="tel:+919876543210" className="text-white/80 hover:text-white text-sm transition-colors">
+                  +91 82482 72880
                 </a>
-              </div>
-              <div className="flex gap-2">
-                <Phone className="w-4 h-4 flex-shrink-0 mt-1" />
-                <a
-                  href="tel:+914422345678"
-                  className="hover:text-secondary transition-colors"
-                >
-                  +91 44 2234 5678
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-gold-light flex-shrink-0" />
+                <a href="mailto:vaagaitamilsangam@gmail.com" className="text-white/80 hover:text-white text-sm transition-colors">
+                  vaagaitamilsangam@gmail.com
                 </a>
-              </div>
-              <div className="flex gap-2">
-                <MapPin className="w-4 h-4 flex-shrink-0 mt-1" />
-                <span>Chennai, Tamil Nadu, India</span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
 
-          {/* Bharathiyar Quote */}
-          <div className="bg-primary-light/30 rounded-lg p-4">
-            <p className="text-sm italic">
-              "தேமொழிந்த தமிழ்மொழியே உலகமெல்லாம் பாடிப் பரவச் செய்தல் வேண்டும்"
-            </p>
-            <p className="text-xs mt-2">- பாரதியார்</p>
+          {/* Affiliations */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4 text-gold-light">அங்கீகாரங்கள்</h3>
+            <ul className="space-y-2 text-sm text-white/80">
+              <li>TN Societies Act 1975</li>
+              <li>MSME Registered</li>
+              <li>AICTE Internship Provider</li>
+              <li>NGO Darpan</li>
+              <li>NCS Registered</li>
+            </ul>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-primary-foreground/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p>
-              &copy; {new Date().getFullYear()} வாகை தமிழ்ச்சங்கம். All rights
-              reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link href="#" className="hover:text-secondary transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:text-secondary transition-colors">
-                Terms of Service
-              </Link>
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-6 border-t border-white/10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white/60">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                <span className="text-xs">வா</span>
+              </div>
+              <p>&copy; 2025 Vaagai Tamil Sangam. All rights reserved.</p>
             </div>
+
+            <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 uppercase text-[10px] tracking-wider font-medium">
+              {[
+                { label: "முகப்பு", href: "/" },
+                { label: "செயல்பாடுகள்", href: "/activities" },
+                { label: "பாடத்திட்டம்", href: "/syllabus" },
+                { label: "Publication", href: "/publications" },
+                { label: "தொடர்புக்கு", href: "/contact" },
+                { label: "Privacy Policy", href: "/privacy-policy" },
+              ].map((link, i) => (
+                <React.Fragment key={link.href}>
+                  <Link href={link.href} className="hover:text-gold transition-colors">
+                    {link.label}
+                  </Link>
+                  {i < 5 && <span className="opacity-20 text-xs">|</span>}
+                </React.Fragment>
+              ))}
+            </nav>
           </div>
         </div>
       </div>

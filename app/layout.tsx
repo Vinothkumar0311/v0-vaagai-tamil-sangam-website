@@ -1,47 +1,73 @@
-import type { Metadata, Viewport } from "next"
-import { Noto_Sans_Tamil } from "next/font/google"
-import "./globals.css"
-import { Navbar } from "@/components/layout/navbar"
-import { Footer } from "@/components/layout/footer"
+import type { Metadata, Viewport } from 'next'
+import { Geist, Geist_Mono, Noto_Sans_Tamil } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import './globals.css'
 
-const notoSansTamil = Noto_Sans_Tamil({ subsets: ["tamil"] })
+const geist = Geist({ 
+  subsets: ["latin"],
+  variable: "--font-geist"
+})
+
+const geistMono = Geist_Mono({ 
+  subsets: ["latin"],
+  variable: "--font-geist-mono"
+})
+
+const notoSansTamil = Noto_Sans_Tamil({
+  subsets: ["tamil"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-noto-sans-tamil",
+  display: "swap"
+})
 
 export const metadata: Metadata = {
-  title: "வாகை தமிழ்ச்சங்கம் - Vaagai Tamilsangam",
-  description:
-    "வாகை தமிழ்ச்சங்கம் - Tamil cultural and linguistic organization dedicated to preserving and promoting Tamil language, literature, and cultural heritage.",
-  keywords:
-    "Tamil, Tamilsangam, Tamil language, Tamil culture, Tamil literature",
-  authors: [{ name: "Vaagai Tamilsangam" }],
+  title: {
+    default: 'வாகை தமிழ்ச்சங்கம் | Vaagai Tamilsangam',
+    template: '%s | வாகை தமிழ்ச்சங்கம்'
+  },
+  description: 'தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் சிந்தனை & திறன்களுடன் அனைத்து தரப்பினரிடமும் ஊக்குவித்தலும், வளர்த்தலும், மேம்படுத்துதலும்.',
+  keywords: ['தமிழ்', 'தமிழ்ச்சங்கம்', 'வாகை', 'Tamil', 'Vaagai', 'Tamil Sangam', 'Tamil Culture', 'Tamil Literature'],
+  authors: [{ name: 'Vaagai Tamilsangam' }],
+  creator: 'Vaagai Tamilsangam',
+  publisher: 'Vaagai Tamilsangam',
   openGraph: {
-    title: "வாகை தமிழ்ச்சங்கம் - Vaagai Tamilsangam",
-    description: "Tamil cultural and linguistic organization",
-    type: "website",
+    type: 'website',
+    locale: 'ta_IN',
+    alternateLocale: 'en_IN',
+    siteName: 'வாகை தமிழ்ச்சங்கம்',
+    title: 'வாகை தமிழ்ச்சங்கம் | Vaagai Tamilsangam',
+    description: 'தமிழ் மொழி, இலக்கியம், பண்பாடு வளர்ச்சிக்கான அமைப்பு'
+  },
+  icons: {
+    icon: '/icon.svg',
+    apple: '/icon.svg',
   },
 }
 
 export const viewport: Viewport = {
-  width: "device-width",
+  themeColor: '#0F766E',
+  width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  themeColor: "#1B5E20",
 }
+
+import { GitHubPagesRedirect } from '@/components/github-pages-redirect'
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
+  // Only enable Vercel Analytics if we are actually on Vercel
+  const isVercel = process.env.VERCEL === '1' || process.env.NEXT_PUBLIC_VERCEL_ENV !== undefined
+
   return (
-    <html lang="ta" className="bg-background scroll-smooth">
-      <body
-        className={`${notoSansTamil.className} min-h-screen flex flex-col bg-background text-text-primary antialiased`}
-      >
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+    <html lang="ta" className={`${geist.variable} ${geistMono.variable} ${notoSansTamil.variable} min-h-full`}>
+      <body className="font-sans antialiased bg-background text-foreground">
+        <GitHubPagesRedirect />
+        {children}
+        {process.env.NODE_ENV === 'production' && isVercel && <Analytics />}
       </body>
     </html>
   )
 }
+
