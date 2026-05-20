@@ -27,23 +27,6 @@ export default function MandramsListingPage() {
         </div>
       </section>
 
-      {/* Additional Info Section */}
-      <section className="py-16 bg-muted/30 border-t border-border">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h2 className="text-3xl font-bold text-primary mb-6">போட்டிகளும் விருதுகளும்</h2>
-          <p className="text-lg text-foreground/70 leading-relaxed mb-8">
-            ஒவ்வொருவருக்குள்ளும் பல திறமைகள் ஒளிந்திருக்கும், அவற்றை வெளிக்கொணருவதில் போட்டிகளுக்கு இன்றியமையாத பங்குள்ளது. 
-            தமிழார்வலர்களின் தமிழ்க் கல்வியின் ஆழ அகலத்தையும், மொழித்திறன்களையும், கவின்கலை, நுண்கலைத் திறன்களையும் 
-            வெளிப்படுத்தவும் அவற்றிற்குரிய அங்கீகாரம் பெறுவதற்கும் களமாக வாகை தமிழ்ச்சங்கம் ஆண்டுமுழுவதும் 
-            பல்வேறு வகைமைகளில் போட்டிகளை நடத்திப் பரிசுகளையும் விருதுகளையும் வழங்கி வருகிறது.
-          </p>
-          <div className="inline-flex items-center gap-2 text-gold font-bold text-xl text-center flex-col sm:flex-row">
-             <span className="w-12 h-1 bg-gold rounded-full hidden sm:block" />
-             வெற்றி பெறுவோம் வாகை சூடுவோம்
-             <span className="w-12 h-1 bg-gold rounded-full hidden sm:block" />
-          </div>
-        </div>
-      </section>
     </PageShell>
   )
 }

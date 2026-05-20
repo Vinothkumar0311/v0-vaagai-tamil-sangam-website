@@ -56,9 +56,16 @@ export const recognitions: Recognition[] = [
     nameEn: "ISBN",
     description: "ராஜா ராம்மோகன் ராய் தேசிய புத்தக வெளியீட்டு நிறுவனம் (RRRNA for ISBN) புத்தகம் வெளியிடுதல் திட்டத்தில் பதிவு செய்யப்பட்டுள்ளது.",
     logo: "/images/isbn.webp"
+  },
+  {
+    id: "ijvaagai",
+    name: "IJVAAGAI Journal",
+    nameEn: "IJVAAGAI Journal",
+    description: "வாகை தமிழ்ச்சங்கம், ISSN இல் பதிவுசெய்யப்பட்ட பன்னாட்டு காலாண்டு தமிழாய்விதழ் IJVAAGAI – International Journal of Visionary Advancements in Applied Global Academics and Innovation E-ISSN: 3107-9202 (கல்வி மற்றும் புத்தாக்கத்தில் தொலைநோக்குச் சார்ந்த முன்னேற்றங்களுக்கான பன்னாட்டு ஆய்விதழ்)",
+    logo: "/images/download.svg"
   }
 ]
 
 export const organizationInfo = {
-  registrationNote: "தமிழ்நாடு அரசின் சங்கங்கள் சட்டம் 1975 இன் கீழ் பதிவு செய்யப்பட்டது. உலகத் தமிழ்ச்சங்க உறுப்பினர் & இந்திய அரசின் MSME, AICTE Internship, NGO Darpan, NCS, RRRNA for ISBN ஆகியவற்றில் பதிவு செய்யப்பட்டது."
+  registrationNote: "தமிழ்நாடு அரசின் சங்கங்கள் சட்டம் 1975 இன் கீழ் பதிவு செய்யப்பட்டது. உலகத் தமிழ்ச்சங்க உறுப்பினர் & இந்திய அரசின் MSME, AICTE Internship, NGO Darpan, NCS, RRRNA for ISBN மற்றும் பன்னாட்டு காலாண்டு தமிழாய்விதழ் IJVAAGAI (E-ISSN: 3107-9202) ஆகியவற்றில் பதிவு செய்யப்பட்டது."
 }

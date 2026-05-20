@@ -50,7 +50,7 @@ export default function AdminLayout({
         <div className="p-6 border-b border-slate-800">
           <Link href="/" className="flex items-center gap-3">
             <div className="bg-white p-1 rounded-full shrink-0">
-               <Image src={getAssetPath("/icon.svg")} alt="Logo" width={40} height={40} />
+               <Image src={getAssetPath("/logo2.png")} alt="Logo" width={40} height={40} />
             </div>
             <div>
               <h2 className="font-bold text-sm tracking-wide text-gold">VAAGAI</h2>

@@ -74,7 +74,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-md relative z-10 shadow-2xl border-primary/10">
         <CardHeader className="space-y-4 pb-6 items-center text-center">
           <div className="w-20 h-20 relative bg-white rounded-full flex items-center justify-center shadow-sm border border-primary/5 p-3">
-             <Image src={getAssetPath("/icon.svg")} alt="Vaagai Logo" fill className="object-contain p-2" />
+             <Image src={getAssetPath("/logo2.png")} alt="Vaagai Logo" fill className="object-contain p-0" />
           </div>
           <div className="space-y-1">
             <CardTitle className="text-2xl font-bold text-primary">நிர்வாகம் நுழைவு</CardTitle>

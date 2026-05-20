@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { PageShell } from "@/components/layout/page-shell"
 import { PageHeader } from "@/components/shared/page-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { FileText, BookOpen, Users, ScrollText, Archive, Target, CheckCircle2 } from "lucide-react"
+import { FileText, BookOpen, Users, ScrollText, Archive, Target, CheckCircle2, Award } from "lucide-react"
 import { ArchivesSection } from "@/components/publications/archives-section"
 
 export const metadata: Metadata = {
@@ -45,6 +45,13 @@ const publicationCategories = [
     titleEn: "Editorial Board",
     description: "ஆசிரியர் குழு உறுப்பினர்கள்",
     icon: Users,
+  },
+  {
+    id: "peer-reviewed",
+    title: "Peer Reviewed Journal",
+    titleEn: "Peer Reviewed Journal",
+    description: "ஆய்வுக்கட்டுரைகளின் தரம் மற்றும் சக மதிப்பாய்வு முறை",
+    icon: Award,
   },
   {
     id: "archives",
@@ -396,14 +403,12 @@ export default function PublicationsPage() {
                     </div>
                     <div className="sm:hidden h-px flex-grow bg-primary/10"></div>
                    </div>
-                   <div className="space-y-4 flex-grow">
-                     <div className="space-y-2">
-                        <span className="text-[10px] uppercase tracking-wider font-bold text-primary/60">Tamil Content</span>
+                   <div className="space-y-3 flex-grow">
+                     <div>
                         <p className="text-base md:text-lg font-medium text-foreground leading-relaxed text-pretty">{guideline.tamil}</p>
                      </div>
-                     <div className="space-y-2 pt-2 border-t border-dashed border-primary/10">
-                        <span className="text-[10px] uppercase tracking-wider font-bold text-primary/40">English Translation</span>
-                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed italic text-pretty">{guideline.english}</p>
+                     <div className="pt-2 border-t border-dashed border-primary/10">
+                        <p className="text-sm md:text-base text-foreground/80 leading-relaxed text-pretty">{guideline.english}</p>
                      </div>
                    </div>
                  </div>
@@ -411,42 +416,59 @@ export default function PublicationsPage() {
              </div>
           </section>
 
-          <section id="editorial" className="scroll-mt-32 max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-sm" style={{ backgroundColor: '#1d3f4a' }}>
-            <div className="p-8 md:p-12 text-white">
+          <section id="editorial" className="scroll-mt-32 max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-md bg-slate-50/50 border border-slate-100">
+            <div className="p-8 md:p-12">
               <div className="flex items-center gap-4 mb-2">
-                <Users className="w-8 h-8 text-red-500" />
-                <h2 className="text-3xl font-bold text-red-500">ஆசிரியர் குழு ( Editorial Board )</h2>
+                <Users className="w-8 h-8 md:w-10 md:h-10 text-primary" />
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary flex flex-wrap items-center gap-2">
+                  <span>ஆசிரியர் குழு</span>
+                  <span className="text-muted-foreground text-lg md:text-xl font-normal font-sans">( Editorial Board )</span>
+                </h2>
               </div>
-              <div className="mb-12">
-                <p className="text-lg text-white/80">பொருண்மை: கல்வி</p>
-                <p className="text-lg text-white/80">Subject: Education</p>
+              
+              <div className="flex flex-wrap gap-3 mt-4 mb-12">
+                <div className="px-4 py-2 bg-white border border-slate-100 rounded-xl text-sm shadow-sm">
+                  <span className="text-primary font-semibold">பொருண்மை:</span> <span className="text-foreground/80">கல்வி</span>
+                </div>
+                <div className="px-4 py-2 bg-white border border-slate-100 rounded-xl text-sm shadow-sm">
+                  <span className="text-primary font-semibold">Subject:</span> <span className="text-foreground/80">Education</span>
+                </div>
               </div>
 
               {/* Advisory Board */}
               <div className="mb-16">
-                <h3 className="text-2xl font-bold mb-8">ஆலோசனைக் குழு (Advisory Board)</h3>
+                <h3 className="text-2xl font-bold mb-8 border-l-4 border-primary pl-4 text-primary">ஆலோசனைக் குழு (Advisory Board)</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {advisoryBoard.map((member, idx) => (
-                    <div key={idx} className="bg-white text-slate-800 rounded-lg overflow-hidden flex flex-col h-full">
-                      <div className="aspect-[4/3] bg-emerald-100/50 flex items-center justify-center p-6 border-b">
-                        <div className="w-24 h-24 rounded-full bg-slate-200 border-4 border-white shadow-sm flex items-center justify-center overflow-hidden">
-                          <Users className="w-12 h-12 text-slate-400" />
+                    <div key={idx} className="bg-white rounded-2xl overflow-hidden flex flex-col h-full border border-slate-100 hover:border-primary/20 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                      <div className="aspect-[4/3] bg-gradient-to-br from-teal-50 to-indigo-50/50 flex items-center justify-center p-6 border-b border-slate-100 relative">
+                        <div className="w-20 h-20 rounded-full bg-white border-2 border-white shadow-md flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                          <Users className="w-10 h-10 text-primary/70" />
                         </div>
                       </div>
+                      
                       <div className="p-6 flex-grow flex flex-col gap-4 text-sm">
                         <div>
-                          <p className="font-bold text-lg text-slate-900 leading-tight mb-1">{member.name}</p>
-                          <p className="text-slate-700 leading-relaxed">{member.role}</p>
-                          <p className="text-slate-500 italic mt-2">{member.nameEn}, {member.roleEn}</p>
+                          <p className="font-bold text-lg text-slate-900 leading-tight mb-1.5 group-hover:text-primary transition-colors">{member.name}</p>
+                          <p className="text-slate-600 leading-relaxed font-medium">{member.role}</p>
+                          <p className="text-primary/70 italic text-xs mt-2.5 font-normal leading-relaxed">{member.nameEn}, {member.roleEn}</p>
                         </div>
+                        
                         {member.link && (
-                          <a href={member.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline break-all text-xs">
-                            {member.link.length > 40 ? member.link.substring(0, 40) + '...' : member.link}
+                          <a 
+                            href={member.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="inline-flex items-center text-xs text-blue-600 hover:text-blue-500 font-semibold group/link hover:underline mt-1"
+                          >
+                            <span>Profile Link</span>
+                            <span className="group-hover/link:translate-x-0.5 transition-transform ml-1">→</span>
                           </a>
                         )}
+                        
                         <div className="mt-auto pt-4 border-t border-slate-100">
-                          <p className="text-slate-700">{member.institution}</p>
-                          <p className="text-slate-500 italic text-xs mt-1">{member.institutionEn}</p>
+                          <p className="text-slate-700 text-xs font-semibold leading-relaxed">{member.institution}</p>
+                          <p className="text-muted-foreground italic text-[11px] mt-1.5 leading-relaxed">{member.institutionEn}</p>
                         </div>
                       </div>
                     </div>
@@ -456,27 +478,36 @@ export default function PublicationsPage() {
 
               {/* Chief Editor */}
               <div className="mb-16">
-                <h3 className="text-2xl font-bold mb-8">முதன்மை ஆசிரியர் (Chief Editor)</h3>
+                <h3 className="text-2xl font-bold mb-8 border-l-4 border-primary pl-4 text-primary">முதன்மை ஆசிரியர் (Chief Editor)</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {chiefEditor.map((member, idx) => (
-                    <div key={idx} className="bg-white text-slate-800 rounded-lg overflow-hidden flex flex-col h-full">
-                      <div className="aspect-[4/3] bg-indigo-50 flex items-center justify-center p-6 border-b">
-                        <div className="w-24 h-24 rounded-full bg-slate-200 border-4 border-white shadow-sm flex items-center justify-center overflow-hidden">
-                          <Users className="w-12 h-12 text-slate-400" />
+                    <div key={idx} className="bg-white rounded-2xl overflow-hidden flex flex-col h-full border border-slate-100 hover:border-primary/20 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                      <div className="aspect-[4/3] bg-gradient-to-br from-indigo-50 to-teal-50/50 flex items-center justify-center p-6 border-b border-slate-100 relative">
+                        <div className="w-20 h-20 rounded-full bg-white border-2 border-white shadow-md flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300 relative">
+                          <Users className="w-10 h-10 text-primary/70" />
                         </div>
+                        <span className="absolute top-3 right-3 bg-primary text-white text-[9px] font-extrabold px-2.5 py-1 rounded-full shadow-sm uppercase tracking-wider">
+                          CHIEF
+                        </span>
                       </div>
+                      
                       <div className="p-6 flex-grow flex flex-col gap-4 text-sm">
                         <div>
-                          <p className="font-bold text-lg text-slate-900 leading-tight mb-1">{member.name}</p>
-                          <p className="text-slate-700 font-medium">{member.role}</p>
+                          <p className="font-bold text-lg text-slate-900 leading-tight mb-1.5 group-hover:text-primary transition-colors">{member.name}</p>
+                          <p className="text-slate-600 leading-relaxed font-medium">{member.role}</p>
+                          <p className="text-primary/70 italic text-xs mt-2.5 font-normal leading-relaxed">{member.nameEn}, {member.roleEn}</p>
                         </div>
+                        
                         <div className="space-y-2">
-                          <p className="text-slate-800 break-all">{member.email}</p>
-                          <p className="text-slate-800 font-medium whitespace-nowrap">Vidwan-ID : {member.vidwanId}</p>
+                          <p className="text-slate-700 break-all text-xs font-semibold">{member.email}</p>
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/5 text-primary text-xs font-semibold border border-primary/10 shadow-sm">
+                            Vidwan-ID : {member.vidwanId}
+                          </span>
                         </div>
+                        
                         <div className="mt-auto pt-4 border-t border-slate-100">
-                          <p className="text-slate-700">{member.institution}</p>
-                          <p className="text-slate-500 italic text-xs mt-1">{member.nameEn} {member.roleEn} {member.institutionEn}</p>
+                          <p className="text-slate-700 text-xs font-semibold leading-relaxed">{member.institution}</p>
+                          <p className="text-muted-foreground italic text-[11px] mt-1.5 leading-relaxed">{member.institutionEn}</p>
                         </div>
                       </div>
                     </div>
@@ -486,34 +517,48 @@ export default function PublicationsPage() {
 
               {/* Editorial Board Members */}
               <div>
-                <h3 className="text-2xl font-bold mb-8">ஆசிரியர் குழு ( Editorial Board )</h3>
+                <h3 className="text-2xl font-bold mb-8 border-l-4 border-primary pl-4 text-primary">ஆசிரியர் குழு ( Editorial Board )</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {editorialBoardMembers.map((member, idx) => (
-                    <div key={idx} className="bg-white text-slate-800 rounded-lg overflow-hidden flex flex-col h-full">
-                      <div className="aspect-[4/3] bg-blue-50/50 flex items-center justify-center p-6 border-b">
-                        <div className="w-24 h-24 rounded-full bg-slate-200 border-4 border-white shadow-sm flex items-center justify-center overflow-hidden">
-                          <Users className="w-12 h-12 text-slate-400" />
+                    <div key={idx} className="bg-white rounded-2xl overflow-hidden flex flex-col h-full border border-slate-100 hover:border-primary/20 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                      <div className="aspect-[4/3] bg-gradient-to-br from-teal-50 to-indigo-50/50 flex items-center justify-center p-6 border-b border-slate-100 relative">
+                        <div className="w-20 h-20 rounded-full bg-white border-2 border-white shadow-md flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                          <Users className="w-10 h-10 text-primary/70" />
                         </div>
                       </div>
+                      
                       <div className="p-6 flex-grow flex flex-col gap-4 text-sm">
                         <div>
-                          <p className="font-bold text-lg text-slate-900 leading-tight mb-1">{member.name}</p>
-                          <p className="text-slate-700">{member.role}</p>
+                          <p className="font-bold text-lg text-slate-900 leading-tight mb-1.5 group-hover:text-primary transition-colors">{member.name}</p>
+                          <p className="text-slate-600 leading-relaxed font-medium">{member.role}</p>
+                          <p className="text-primary/70 italic text-xs mt-2.5 font-normal leading-relaxed">{member.nameEn}, {member.roleEn}</p>
                         </div>
+                        
                         <div className="space-y-2">
                           {member.link && (
-                            <a href={member.link} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline block break-all text-xs mb-2">
-                              {member.link.length > 40 ? member.link.substring(0, 40) + '...' : member.link}
+                            <a 
+                              href={member.link} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="inline-flex items-center text-xs text-blue-600 hover:text-blue-500 font-semibold group/link hover:underline mb-1"
+                            >
+                              <span>Profile Link</span>
+                              <span className="group-hover/link:translate-x-0.5 transition-transform ml-1">→</span>
                             </a>
                           )}
-                          <p className="text-slate-800 break-all">{member.email}</p>
+                          {member.email && (
+                            <p className="text-slate-700 break-all text-xs font-semibold">{member.email}</p>
+                          )}
                           {member.vidwanId && (
-                            <p className="text-slate-800 font-medium">Vidwan-ID : {member.vidwanId}</p>
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/5 text-primary text-xs font-semibold border border-primary/10 shadow-sm mt-1">
+                              Vidwan-ID : {member.vidwanId}
+                            </span>
                           )}
                         </div>
+                        
                         <div className="mt-auto pt-4 border-t border-slate-100">
-                          <p className="text-slate-700">{member.institution}</p>
-                          <p className="text-slate-500 italic text-xs mt-2">{member.nameEn}, {member.roleEn}, {member.institutionEn}</p>
+                          <p className="text-slate-700 text-xs font-semibold leading-relaxed">{member.institution}</p>
+                          <p className="text-muted-foreground italic text-[11px] mt-1.5 leading-relaxed">{member.institutionEn}</p>
                         </div>
                       </div>
                     </div>
@@ -522,6 +567,53 @@ export default function PublicationsPage() {
               </div>
 
             </div>
+          </section>
+
+          {/* Peer Reviewed Journal Section */}
+          <section id="peer-reviewed" className="scroll-mt-32 max-w-5xl mx-auto px-1">
+             <div className="flex items-center gap-3 mb-6 border-b border-primary/10 pb-4">
+                <div className="p-2 rounded-lg bg-primary/10">
+                 <Award className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-primary">சக மதிப்பாய்வு இதழ் (Peer Reviewed Journal)</h2>
+             </div>
+             
+             <Card className="overflow-hidden border border-primary/10 shadow-lg bg-white rounded-2xl">
+               <div className="bg-gradient-to-r from-[#1d3f4a] to-[#2a5969] p-6 md:p-8 text-white">
+                 <p className="text-sm font-semibold tracking-wider text-white/70 uppercase mb-1">வாகை தமிழ்ச்சங்கம்</p>
+                 <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 leading-tight">
+                   IJVAAGAI – International Journal of Visionary Advancements in Applied Global Academics and Innovation
+                 </h3>
+                 <div className="flex flex-wrap gap-3 items-center mt-4">
+                   <span className="bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full text-sm font-bold border border-white/10 shadow-sm">
+                     E-ISSN: 3107-9202
+                   </span>
+                   <span className="bg-gold/90 text-primary-dark px-3 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider shadow-sm">
+                     PEER REVIEWED
+                   </span>
+                 </div>
+               </div>
+               
+               <CardContent className="p-6 md:p-8 space-y-6">
+                 <div className="p-5 bg-primary/5 rounded-xl border border-primary/10">
+                   <p className="text-lg font-bold text-primary leading-relaxed">
+                     கல்வி மற்றும் புத்தாக்கத்தில் தொலைநோக்குச் சார்ந்த முன்னேற்றங்களுக்கான பன்னாட்டு ஆய்விதழ் ( IJVAAGAI TAMILSANGAM ) மதிப்பாய்வு செய்யப்பட்ட பன்னாட்டு காலாண்டு தமிழாய்விதழாகும்.
+                   </p>
+                 </div>
+                 
+                 <div className="space-y-4 text-foreground/80 leading-relaxed text-base md:text-lg">
+                   <p className="indent-8 text-justify">
+                     வாகை தமிழ்ச்சங்கத்தின் பன்னாட்டு காலாண்டு தமிழாய்விதழான IJVAAGAI (E-ISSN: 3107-9202), கல்வி மற்றும் அறிவியல் உலகிற்குச் சமர்ப்பிக்கப்படும் ஆய்வுக் கட்டுரைகளின் தரம், உண்மைத்தன்மை மற்றும் அறிவியல் மற்றும் அனைத்துத் தரப்பினரும் ஏற்கும் தன்மை ஆகியவற்றை உறுதி செய்ய மிகக் கடுமையான ‘சக மதிப்பாய்வு’ (Peer-Review) முறையைப் பின்பற்றுகிறது.
+                   </p>
+                   <p className="indent-8 text-justify">
+                     இவ்விதழுக்கு வரும் ஒவ்வொரு பிரதியும், அந்தந்தக் குறிப்பிட்ட கல்வி அல்லது விஞ்ஞானத்துறை சார்ந்த மூத்த பேராசிரியர்கள், துறைசார் வல்லுனர்கள் மற்றும் உலகளாவிய ஆராய்ச்சி வல்லுநர்களின் தீவிரப் பார்வைக்கு அனுப்பப்படுகிறது. தனிச்சார்பற்ற நடுநிலையான மதிப்பீட்டை உறுதி செய்வதற்காக, கட்டுரை எழுதியவரின் விவரங்கள் மதிப்பீட்டாளருக்கும், மதிப்பீட்டாளரின் விவரங்கள் கட்டுரையாளருக்கும் தெரியாத வண்ணம் ‘இரட்டை மறைப்பு சக மதிப்பாய்வு’ (Double-Blind Peer Review) முறை இங்கு கையாளப்படுகிறது.
+                   </p>
+                   <p className="indent-8 text-justify">
+                     இந்த வல்லுநர் குழுவானது கட்டுரையின் தனித்தன்மை, தரவுத் துல்லியம் மற்றும் அது சமூகத்திற்கு வழங்கும் புத்தாக்கப் பங்களிப்பு ஆகியவற்றை ஆழமாக ஆராய்ந்து விமர்சிக்கிறது. அவர்களின் விரிவான ஆய்வு அறிக்கையின் அடிப்படையிலேயே, ஒரு கட்டுரை எவ்வித மாற்றமுமின்றி நேரடியாக வெளியீட்டிற்குப் பொருத்தமானதா, அல்லது வல்லுநர்களின் பரிந்துரைகளின்படி திருத்தங்கள் செய்யப்பட வேண்டுமா அல்லது போதிய ஆய்வுத் தரம் இல்லாத பட்சத்தில் வெளியீட்டிற்குத் தகுதியற்றதாக நிராகரிக்கப்பட வேண்டுமா என்பதை இதழாசிரியர் குழு இறுதி செய்கிறது. இதன் மூலம் ஆய்வுக்கட்டுரை வெளியீடுகளின் உலகளாவிய நம்பகத்தன்மையை வாகை தமிழ்ச்சங்கம் முழுமையாக நிலைநிறுத்துகிறது.
+                   </p>
+                 </div>
+               </CardContent>
+             </Card>
           </section>
 
           <ArchivesSection />

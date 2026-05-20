@@ -1,23 +1,32 @@
 import { ChairmanCard } from "@/components/shared/chairman-card"
 
 export function AboutPreview() {
+  const tamilParagraphStyle = {
+    textAlign: "justify" as const,
+    textJustify: "inter-word" as const,
+    lineHeight: "1.9",
+    letterSpacing: "0.2px",
+    wordBreak: "keep-all" as const,
+    overflowWrap: "break-word" as const,
+  };
+
   return (
     <section className="py-16 md:py-24 bg-cream overflow-hidden">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
           {/* About Text */}
           <div className="lg:col-span-2">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-8 pb-3 border-b border-primary/10">
               வாகை தமிழ்ச்சங்கம் - அறிமுகம்
             </h2>
-            <div className="prose prose-lg max-w-none text-foreground/80">
-              <p className="leading-relaxed text-pretty">
+            <div className="prose prose-lg max-w-3xl text-foreground/80 space-y-6">
+              <p style={tamilParagraphStyle}>
                 தமிழன்னையின் மணிமகுடத்தில் மற்றுமொரு மாணிக்கமாய் மிளிர்கிறது நமது வாகை தமிழ்ச்சங்கம். 
                 தமிழக அரசு அனுமதி பெற்று, தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் 
                 சிந்தனை & திறன்களுடன் அனைத்து தரப்பினரிடமும் ஊக்குவித்தலையும் வளர்த்தலையும் 
                 மேம்படுத்துதலையும் நோக்கமாகக்கொண்டு வாகை தமிழ்ச்சங்கம் இயங்கி வருகிறது.
               </p>
-              <p className="leading-relaxed text-pretty">
+              <p style={tamilParagraphStyle}>
                 நமது வாகை தமிழ்ச்சங்கம், தமிழ்நாடு அரசு மற்றும் இந்திய அரசின் மேலும் பல செயல்திட்டங்களின் 
                 கீழும் அனுமதி பெற்ற தன்னார்வலர், தமிழ்சார்ந்த சமூக சேவை நோக்கம் கொண்ட அமைப்பாகும். 
                 மதுரை உலக தமிழ்ச் சங்கத்தின் அதிகாரபூர்வ உறுப்பினராக இணைந்து மட்டுமின்றி, 

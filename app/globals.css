@@ -84,4 +84,24 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Global Typography Rules for high readability, especially for Tamil & English */
+  p, 
+  .prose p, 
+  .prose-lg p,
+  li p {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+    word-spacing: normal;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+  }
+
+  /* Optimize readability container width (golden line-length ratio) */
+  .prose, .prose-lg {
+    max-width: 72ch;
+  }
 }

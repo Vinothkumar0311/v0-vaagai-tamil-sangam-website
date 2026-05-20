@@ -11,7 +11,7 @@ export interface TeamMember {
 
 export const chairman: TeamMember = {
   id: "chairman",
-  name: "மா. மனோஜகுமார்",
+  name: "மா. மனோஜ்குமார்",
   nameEn: "Ma. Manojkumar",
   role: "தலைவர்",
   roleEn: "Chairman",

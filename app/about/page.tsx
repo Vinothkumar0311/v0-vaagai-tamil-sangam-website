@@ -66,75 +66,75 @@ export default function AboutPage() {
         </div>
       </section>
 
-        {/* Vision & Mission */}
-        <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Image */}
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src="/images/deity/tamil-thaai.jpg"
-                  alt="Tamil Thaai"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+      {/* Vision & Mission */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/deity/tamil-thaai.png"
+                alt="Tamil Thaai"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+
+            {/* Content */}
+            <div>
+              <div className="mb-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+                  நோக்கு
+                </h2>
+                <p className="text-lg text-foreground/80 leading-relaxed">
+                  தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் சிந்தனை & திறன்களுடன்
+                  அனைத்து தரப்பினரிடமும் ஊக்குவித்தலும், வளர்த்தலும், மேம்படுத்துதலும்.
+                </p>
               </div>
 
-              {/* Content */}
               <div>
-                <div className="mb-10">
-                  <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                    நோக்கு
-                  </h2>
-                  <p className="text-lg text-foreground/80 leading-relaxed">
-                    தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் சிந்தனை & திறன்களுடன் 
-                    அனைத்து தரப்பினரிடமும் ஊக்குவித்தலும், வளர்த்தலும், மேம்படுத்துதலும்.
-                  </p>
-                </div>
-
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                    போக்கு
-                  </h2>
-                  <ul className="space-y-4">
-                    {visionPoints.map((point, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <span className="flex-shrink-0 w-2 h-2 mt-2.5 rounded-full bg-gold" />
-                        <p className="text-foreground/80 leading-relaxed">{point}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+                  போக்கு
+                </h2>
+                <ul className="space-y-4">
+                  {visionPoints.map((point, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="flex-shrink-0 w-2 h-2 mt-2.5 rounded-full bg-gold" />
+                      <p className="text-foreground/80 leading-relaxed">{point}</p>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Team Section */}
-        <section className="py-16 md:py-24 bg-cream">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-                எங்கள் அணி
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                வாகை தமிழ்ச்சங்கத்தின் பொறுப்பாளர்கள்
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
-              {teamMembers.map((member) => (
-                <TeamMemberCard
-                  key={member.id}
-                  name={member.name}
-                  role={member.role}
-                  image={member.image}
-                />
-              ))}
-            </div>
+      {/* Team Section */}
+      <section className="py-16 md:py-24 bg-cream">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+              எங்கள் அணி
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              வாகை தமிழ்ச்சங்கத்தின் பொறுப்பாளர்கள்
+            </p>
           </div>
-        </section>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+            {teamMembers.map((member) => (
+              <TeamMemberCard
+                key={member.id}
+                name={member.name}
+                role={member.role}
+                image={member.image}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
     </PageShell>
   )
 }

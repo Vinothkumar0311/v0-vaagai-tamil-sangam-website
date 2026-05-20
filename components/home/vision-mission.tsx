@@ -13,11 +13,11 @@ export function VisionMission() {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Image */}
           <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src={getAssetPath("/images/deity/tamil-thaai.jpg")}
+              src={getAssetPath("/images/deity/tamil-thaai.png")}
               alt="Tamil Thaai"
               fill
               className="object-cover"
@@ -26,13 +26,13 @@ export function VisionMission() {
           </div>
 
           {/* Content */}
-          <div>
+          <div className="space-y-10">
             {/* Vision */}
-            <div className="mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 pb-2 border-b border-primary/10">
                 நோக்கு
               </h2>
-              <p className="text-lg text-foreground/80 leading-relaxed">
+              <p className="text-lg text-foreground/80">
                 தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் சிந்தனை & திறன்களுடன் 
                 அனைத்து தரப்பினரிடமும் ஊக்குவித்தலும், வளர்த்தலும், மேம்படுத்துதலும்.
               </p>
@@ -40,14 +40,14 @@ export function VisionMission() {
 
             {/* Mission */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 pb-2 border-b border-primary/10">
                 போக்கு
               </h2>
               <ul className="space-y-4">
                 {visionPoints.map((point, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-2 h-2 mt-2.5 rounded-full bg-gold" />
-                    <p className="text-foreground/80 leading-relaxed">{point}</p>
+                    <p className="text-foreground/80">{point}</p>
                   </li>
                 ))}
               </ul>

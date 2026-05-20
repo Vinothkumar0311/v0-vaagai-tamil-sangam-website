@@ -8,14 +8,16 @@ export function HeroSection() {
         {/* Background Video */}
         <div className="absolute inset-0 w-full h-full">
           <video
-            src={getAssetPath("/video/header.mp4")}
             poster={getAssetPath("/images/hero/temple-prayer.jpg")}
             autoPlay
             loop
             muted
             playsInline
             className="object-cover object-center w-full h-full"
-          />
+          >
+            <source src={getAssetPath("/video/IMG_8596.mp4")} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           {/* Gradient Overlay for high text legibility */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/40 md:bg-gradient-to-r md:from-black/85 md:via-black/50 md:to-black/40" />
         </div>

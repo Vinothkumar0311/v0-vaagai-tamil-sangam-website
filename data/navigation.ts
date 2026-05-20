@@ -36,11 +36,6 @@ export const navigation: NavElement[] = [
         labelEn: "Monthly Activities",
         href: "/activities#monthly",
       },
-      {
-        label: "வளர்ச்சி மற்றும் மேம்பாடு",
-        labelEn: "Development",
-        href: "/activities#development",
-      },
     ],
   },
   {

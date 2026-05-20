@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     description: 'தமிழ் மொழி, இலக்கியம், பண்பாடு வளர்ச்சிக்கான அமைப்பு'
   },
   icons: {
-    icon: '/icon.svg',
-    apple: '/icon.svg',
+    icon: '/logo2.png',
+    apple: '/logo2.png',
   },
 }
 

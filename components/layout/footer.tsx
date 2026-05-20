@@ -1,5 +1,7 @@
 import React from "react"
 import Link from "next/link"
+import Image from "next/image"
+import { getAssetPath } from "@/lib/paths"
 import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Linkedin } from "lucide-react"
 
 const quickLinks = [
@@ -26,14 +28,19 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border-2 border-white/20">
-                <span className="font-bold text-lg">வா</span>
+              <div className="relative w-12 h-12 rounded-full bg-white flex items-center justify-center border-2 border-white/20 overflow-hidden shadow-sm transition-transform hover:scale-105">
+                <Image
+                  src={getAssetPath("/logo2.png")}
+                  alt="Vaagai Tamilsangam Logo"
+                  fill
+                  className="object-contain scale-[1.4]"
+                />
               </div>
               <span className="font-semibold text-xl">வாகை தமிழ்ச்சங்கம்</span>
             </Link>
-            <p className="text-white/80 text-sm leading-relaxed mb-4">
+            {/* <p className="text-white/80 text-sm leading-relaxed mb-4">
               தமிழ் மொழி, இலக்கியம், பண்பாடு ஆகியவை சார்ந்த அறிவை இக்கால அறிவியல் சிந்தனை & திறன்களுடன் அனைத்து தரப்பினரிடமும் ஊக்குவித்தலும், வளர்த்தலும், மேம்படுத்துதலும்.
-            </p>
+            </p> */}
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -93,7 +100,7 @@ export function Footer() {
           </div>
 
           {/* Affiliations */}
-          <div>
+          {/* <div>
             <h3 className="font-semibold text-lg mb-4 text-gold-light">அங்கீகாரங்கள்</h3>
             <ul className="space-y-2 text-sm text-white/80">
               <li>TN Societies Act 1975</li>
@@ -102,17 +109,22 @@ export function Footer() {
               <li>NGO Darpan</li>
               <li>NCS Registered</li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white/60">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
-                <span className="text-xs">வா</span>
+              <div className="relative w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden border border-white/20 shadow-inner">
+                <Image
+                  src={getAssetPath("/logo2.png")}
+                  alt="Vaagai Tamilsangam Logo"
+                  fill
+                  className="object-contain scale-[1.4]"
+                />
               </div>
-              <p>&copy; 2025 Vaagai Tamil Sangam. All rights reserved.</p>
+              <p>&copy; 2026 Vaagai Tamil Sangam. All rights reserved.</p>
             </div>
 
             <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 uppercase text-[10px] tracking-wider font-medium">
@@ -121,6 +133,7 @@ export function Footer() {
                 { label: "செயல்பாடுகள்", href: "/activities" },
                 { label: "பாடத்திட்டம்", href: "/syllabus" },
                 { label: "Publication", href: "/publications" },
+                { label: "ஆதரவு நல்குக", href: "/sponsorship" },
                 { label: "தொடர்புக்கு", href: "/contact" },
                 { label: "Privacy Policy", href: "/privacy-policy" },
               ].map((link, i) => (
@@ -128,7 +141,7 @@ export function Footer() {
                   <Link href={link.href} className="hover:text-gold transition-colors">
                     {link.label}
                   </Link>
-                  {i < 5 && <span className="opacity-20 text-xs">|</span>}
+                  {i < 6 && <span className="opacity-20 text-xs">|</span>}
                 </React.Fragment>
               ))}
             </nav>

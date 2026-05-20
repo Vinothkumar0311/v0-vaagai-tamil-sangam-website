@@ -17,6 +17,13 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
+
+  // Explicitly set the Turbopack root to the project directory
+  // to avoid scanning parent directories containing other lockfiles.
+  turbopack: {
+    root: process.cwd(),
+  },
 }
 
 export default nextConfig
+

@@ -19,10 +19,10 @@ export function MandramHeader({ mandramTitle, mandramLogo }: MandramHeaderProps)
           <Link href="/" className="flex items-center gap-3 group order-1 md:order-none shrink-0">
             <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-primary/20 shadow-md transition-transform group-hover:scale-105">
               <Image
-                src={getAssetPath("/icon.svg")}
+                src={getAssetPath("/logo2.png")}
                 alt="Vaagai Tamilsangam Logo"
                 fill
-                className="object-contain p-2"
+                className="object-contain scale-[1.4]"
                 priority
               />
             </div>

@@ -12,9 +12,9 @@ export default function HomePage() {
         <HeroSection />
         <AboutPreview />
         <VisionMission />
-        <ActivitiesSection />
+        {/* <ActivitiesSection /> */}
         <RecognitionsSection />
-        <TeamPreview />
+        {/* <TeamPreview /> */}
     </PageShell>
   )
 }

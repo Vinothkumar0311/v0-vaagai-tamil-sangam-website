@@ -83,7 +83,7 @@ export default function ActivitiesPage() {
       </section>
 
       {/* Development Section */}
-      <section id="development" className="py-20 bg-muted/30">
+      {/* <section id="development" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-primary mb-12">வளர்ச்சி மற்றும் மேம்பாடு</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -107,10 +107,10 @@ export default function ActivitiesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Children's Forum */}
-      <section id="children" className="py-24 bg-white">
+      {/* <section id="children" className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center mb-16">
              <div className="w-20 h-20 rounded-full bg-gold flex items-center justify-center text-primary font-bold text-2xl mb-4">வா</div>
@@ -142,10 +142,10 @@ export default function ActivitiesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Women's Forum */}
-      <section id="women" className="py-24 bg-teal text-white">
+      {/* <section id="women" className="py-24 bg-teal text-white">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-6 mb-12">
             <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center border-2 border-white/20">வா</div>
@@ -171,10 +171,10 @@ export default function ActivitiesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Literary Forum */}
-      <section id="literary" className="py-24 bg-white">
+      {/* <section id="literary" className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-6 mb-12">
             <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/20 text-primary">வா</div>
@@ -208,7 +208,7 @@ export default function ActivitiesPage() {
              </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </PageShell>
   )
 }

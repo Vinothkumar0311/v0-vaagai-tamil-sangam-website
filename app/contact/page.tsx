@@ -26,18 +26,11 @@ const contactInfo = [
   },
   {
     icon: Phone,
-    title: "தொலைபேசி",
-    details: ["+91 82482 72880"],
-  },
-  {
-    icon: Mail,
-    title: "மின்னஞ்சல்",
-    details: ["vaagaitamilsangam@gmail.com"],
-  },
-  {
-    icon: Clock,
-    title: "அலுவலக நேரம்",
-    details: ["திங்கள் - சனி: காலை 9 - மாலை 6", "ஞாயிறு: விடுமுறை"],
+    title: "தொடர்பு விவரங்கள்",
+    details: [
+      "தொலைபேசி: +91 82482 72880",
+      "மின்னஞ்சல்: vaagaitamilsangam@gmail.com"
+    ],
   },
 ]
 
@@ -117,11 +110,11 @@ export default function ContactPage() {
                             <Icon className="w-5 h-5 text-primary" />
                           </div>
                           <div>
-                            <h3 className="font-semibold text-foreground mb-1">
+                            <h3 className="font-bold text-primary text-base mb-1.5">
                               {info.title}
                             </h3>
                             {info.details.map((detail, index) => (
-                              <p key={index} className="text-sm text-muted-foreground">
+                              <p key={index} className="text-sm text-slate-700 font-medium leading-relaxed">
                                 {detail}
                               </p>
                             ))}
