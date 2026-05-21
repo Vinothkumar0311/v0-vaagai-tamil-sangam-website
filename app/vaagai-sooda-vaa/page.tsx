@@ -22,8 +22,8 @@ export default function VaagaiSoodaVaaPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-6xl mx-auto">
             {/* Left Logo - Olympiad Logo */}
-            <div className="relative w-40 h-40 md:w-56 md:h-56 shrink-0 bg-white rounded-3xl shadow-xl border border-primary/10 rotate-[-2deg] hover:rotate-0 transition-transform duration-300 flex items-center justify-center overflow-hidden">
-              <div className="relative w-3/4 h-3/4">
+            <div className="relative w-40 h-40 md:w-56 md:h-56 shrink-0 transition-transform duration-300 flex items-center justify-center overflow-hidden">
+              <div className="relative w-full h-full">
                 <Image
                   src={getAssetPath("/images/logo23.png")}
                   alt="Olympiad Logo"
@@ -45,7 +45,7 @@ export default function VaagaiSoodaVaaPage() {
             </div>
 
             {/* Right Logo - Main Vaagai Logo */}
-            <div className="relative w-40 h-40 md:w-56 md:h-56 shrink-0 bg-white rounded-full shadow-xl border border-primary/10 rotate-[2deg] hover:rotate-0 transition-transform duration-300 flex items-center justify-center overflow-hidden">
+            <div className="relative w-40 h-40 md:w-56 md:h-56 shrink-0 transition-transform duration-300 flex items-center justify-center overflow-hidden">
               <div className="relative w-[85%] h-[85%]">
                 <Image
                   src={getAssetPath("/logo2.svg")}
