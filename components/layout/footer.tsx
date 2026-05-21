@@ -35,6 +35,7 @@ export function Footer() {
                   alt="Vaagai Tamilsangam Logo"
                   fill
                   className="object-contain scale-[1.4]"
+                  loading="lazy"
                 />
               </div>
               <span className="font-semibold text-xl">வாகை தமிழ்ச்சங்கம்</span>
@@ -123,6 +124,7 @@ export function Footer() {
                   alt="Vaagai Tamilsangam Logo"
                   fill
                   className="object-contain scale-[1.4]"
+                  loading="lazy"
                 />
               </div>
               <p>&copy; 2026 Vaagai Tamil Sangam. All rights reserved.</p>

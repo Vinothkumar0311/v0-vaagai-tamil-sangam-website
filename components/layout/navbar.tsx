@@ -47,7 +47,7 @@ export function Navbar() {
                 alt="Vaagai Tamilsangam Logo"
                 fill
                 className="object-contain scale-[1.4]"
-                priority
+                loading="lazy"
               />
             </div>
             <span

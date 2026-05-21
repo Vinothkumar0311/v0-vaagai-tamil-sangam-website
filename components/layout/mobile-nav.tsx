@@ -56,6 +56,7 @@ export function MobileNav({ scrolled, isHomePage, pathname }: MobileNavProps) {
                 alt="Vaagai Tamilsangam Logo"
                 fill
                 className="object-contain scale-[1.4]"
+                loading="lazy"
               />
             </div>
             <span className="text-primary font-semibold">வாகை தமிழ்ச்சங்கம்</span>
