@@ -7,6 +7,7 @@ import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin, Linkedin } 
 const quickLinks = [
   { label: "முகப்பு", href: "/" },
   { label: "செயல்பாடுகள்", href: "/activities" },
+  { label: "வாகை சூட வா", href: "/vaagai-sooda-vaa" },
   { label: "பாடத்திட்டம்", href: "/syllabus" },
   { label: "வெளியீடுகள்", href: "/publications" },
   { label: "தொடர்புக்கு", href: "/contact" },
@@ -131,6 +132,7 @@ export function Footer() {
               {[
                 { label: "முகப்பு", href: "/" },
                 { label: "செயல்பாடுகள்", href: "/activities" },
+                { label: "வாகை சூட வா", href: "/vaagai-sooda-vaa" },
                 { label: "பாடத்திட்டம்", href: "/syllabus" },
                 { label: "Publication", href: "/publications" },
                 { label: "ஆதரவு நல்குக", href: "/sponsorship" },

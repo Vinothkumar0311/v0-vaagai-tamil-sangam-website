@@ -20,7 +20,7 @@ export function VisionMission() {
               src={getAssetPath("/images/deity/tamil-thaai.png")}
               alt="Tamil Thaai"
               fill
-              className="object-cover"
+              className="object-cover w-full h-full object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>

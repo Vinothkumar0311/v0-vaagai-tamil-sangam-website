@@ -56,12 +56,12 @@ export default function ActivitiesPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-primary mb-8">போட்டிகளும் விருதுகளும்</h2>
           <Card className="max-w-3xl mx-auto bg-muted/30 border-primary/10 mb-16 p-8">
-            <div className="space-y-2">
-              {competitionPoem.lines.map((line, index) => (
-                <p key={index} className="text-xl text-primary font-medium italic">"{line}"</p>
-              ))}
-              <p className="text-gold text-sm pt-4 tracking-widest uppercase">--{competitionPoem.author}</p>
-            </div>
+              <div className="space-y-2">
+                {competitionPoem.lines.map((line, index) => (
+                  <p key={index} className="text-xl text-primary font-medium italic">"{line}"</p>
+                ))}
+                <p className="text-gold text-sm pt-4 tracking-widest uppercase">--{competitionPoem.author}</p>
+              </div>
           </Card>
 
           {/* Monthly Activities Grid */}

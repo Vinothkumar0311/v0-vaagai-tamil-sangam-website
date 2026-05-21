@@ -120,6 +120,7 @@ const NavItem = React.memo(function NavItem({
                   "w-full cursor-pointer",
                   pathname === subItem.href && "bg-primary/10 text-primary"
                 )}
+                {...(subItem.href.endsWith('.pdf') ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {subItem.label}
               </Link>

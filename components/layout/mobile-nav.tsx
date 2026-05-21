@@ -82,6 +82,7 @@ export function MobileNav({ scrolled, isHomePage, pathname }: MobileNavProps) {
                             ? "text-primary bg-primary/10"
                             : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                         )}
+                        {...(subItem.href.endsWith('.pdf') ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       >
                         {subItem.label}
                       </Link>

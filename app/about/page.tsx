@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/shared/page-header"
 import { ChairmanCard } from "@/components/shared/chairman-card"
 import { TeamMemberCard } from "@/components/shared/team-member-card"
 import { teamMembers } from "@/data/team"
+import { getAssetPath } from "@/lib/paths"
 
 export const metadata: Metadata = {
   title: "எங்களைப் பற்றி",
@@ -71,12 +72,12 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/deity/tamil-thaai.png"
+                src={getAssetPath("/images/deity/tamil-thaai.png")}
                 alt="Tamil Thaai"
                 fill
-                className="object-cover"
+                className="object-cover w-full h-full object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

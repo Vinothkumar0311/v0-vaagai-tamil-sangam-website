@@ -36,7 +36,17 @@ export const navigation: NavElement[] = [
         labelEn: "Monthly Activities",
         href: "/activities#monthly",
       },
+      {
+        label: "போட்டிகளும் விருதுகளும்",
+        labelEn: "Competitions & Awards",
+        href: "/competitions",
+      },
     ],
+  },
+  {
+    label: "வாகை சூட வா",
+    labelEn: "Vaagai Sooda Vaa",
+    href: "/vaagai-sooda-vaa",
   },
   {
     label: "பாடத்திட்டம்",
@@ -78,6 +88,11 @@ export const navigation: NavElement[] = [
         href: "/publications#archives",
       },
     ],
+  },
+  {
+    label: "Annual Report",
+    labelEn: "Annual Report",
+    href: "/annual-reports",
   },
   {
     label: "தொடர்புக்கு",
