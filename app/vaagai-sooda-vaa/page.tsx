@@ -48,7 +48,7 @@ export default function VaagaiSoodaVaaPage() {
             <div className="relative w-40 h-40 md:w-56 md:h-56 shrink-0 bg-white rounded-full shadow-xl border border-primary/10 rotate-[2deg] hover:rotate-0 transition-transform duration-300 flex items-center justify-center overflow-hidden">
               <div className="relative w-[85%] h-[85%]">
                 <Image
-                  src={getAssetPath("/logo2.png")}
+                  src={getAssetPath("/logo2.svg")}
                   alt="Vaagai Tamilsangam Logo"
                   fill
                   className="object-contain scale-[1.3]"

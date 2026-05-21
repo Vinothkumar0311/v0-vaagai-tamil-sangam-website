@@ -3,12 +3,12 @@ import { Geist, Geist_Mono, Noto_Sans_Tamil } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const geist = Geist({ 
+const geist = Geist({
   subsets: ["latin"],
   variable: "--font-geist"
 })
 
-const geistMono = Geist_Mono({ 
+const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono"
 })
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     description: 'தமிழ் மொழி, இலக்கியம், பண்பாடு வளர்ச்சிக்கான அமைப்பு'
   },
   icons: {
-    icon: '/logo2.png',
-    apple: '/logo2.png',
+    icon: '/logo2.svg',
+    apple: '/logo2.svg',
   },
 }
 

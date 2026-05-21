@@ -52,7 +52,7 @@ export function MobileNav({ scrolled, isHomePage, pathname }: MobileNavProps) {
           <SheetTitle className="flex items-center gap-3">
             <div className="relative w-10 h-10 rounded-full bg-white flex items-center justify-center border-2 border-primary/20 overflow-hidden">
               <Image
-                src={getAssetPath("/logo2.png")}
+                src={getAssetPath("/logo2.svg")}
                 alt="Vaagai Tamilsangam Logo"
                 fill
                 className="object-contain scale-[1.4]"

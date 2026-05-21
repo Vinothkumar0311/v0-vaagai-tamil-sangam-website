@@ -23,7 +23,7 @@ export default function AdminLayout({
       router.push("/login")
       return
     }
-    
+
     try {
       const data = JSON.parse(rawSession)
       if (data.expiresAt < Date.now()) {
@@ -50,7 +50,7 @@ export default function AdminLayout({
         <div className="p-6 border-b border-slate-800">
           <Link href="/" className="flex items-center gap-3">
             <div className="bg-white p-1 rounded-full shrink-0">
-               <Image src={getAssetPath("/logo2.png")} alt="Logo" width={40} height={40} />
+              <Image src={getAssetPath("/logo2.svg")} alt="Logo" width={40} height={40} />
             </div>
             <div>
               <h2 className="font-bold text-sm tracking-wide text-gold">VAAGAI</h2>
@@ -64,12 +64,12 @@ export default function AdminLayout({
             <p className="text-xs text-slate-400 mb-1">Logged in as</p>
             <p className="font-bold text-sm truncate">{session.name}</p>
             <div className="mt-2 flex items-center gap-2">
-               <span className="px-2 py-0.5 rounded-full bg-primary/20 text-primary-400 text-[10px] border border-primary/30 font-semibold uppercase">
-                 {session.role}
-               </span>
-               <span className="px-2 py-0.5 rounded-full bg-gold/10 text-gold text-[10px] border border-gold/20 font-semibold uppercase">
-                 {session.mandram}
-               </span>
+              <span className="px-2 py-0.5 rounded-full bg-primary/20 text-primary-400 text-[10px] border border-primary/30 font-semibold uppercase">
+                {session.role}
+              </span>
+              <span className="px-2 py-0.5 rounded-full bg-gold/10 text-gold text-[10px] border border-gold/20 font-semibold uppercase">
+                {session.mandram}
+              </span>
             </div>
           </div>
 
@@ -95,13 +95,13 @@ export default function AdminLayout({
       {/* Main Content */}
       <main className="flex-1 overflow-x-hidden min-h-screen">
         <header className="bg-white px-8 py-5 border-b shadow-sm sticky top-0 z-0 flex items-center justify-between">
-           <div>
-             <h1 className="text-xl font-bold text-slate-800">Administration Management</h1>
-             <div className="text-sm text-slate-500 font-medium">
-               Vaagai Tamilsangam
-             </div>
-           </div>
-           <LogoutButton variant="header" />
+          <div>
+            <h1 className="text-xl font-bold text-slate-800">Administration Management</h1>
+            <div className="text-sm text-slate-500 font-medium">
+              Vaagai Tamilsangam
+            </div>
+          </div>
+          <LogoutButton variant="header" />
         </header>
         <div className="p-8">
           {children}

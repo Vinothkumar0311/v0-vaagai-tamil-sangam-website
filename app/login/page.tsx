@@ -70,11 +70,11 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-muted/30 flex items-center justify-center p-4">
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-      
+
       <Card className="w-full max-w-md relative z-10 shadow-2xl border-primary/10">
         <CardHeader className="space-y-4 pb-6 items-center text-center">
           <div className="w-20 h-20 relative bg-white rounded-full flex items-center justify-center shadow-sm border border-primary/5 p-3">
-             <Image src={getAssetPath("/logo2.png")} alt="Vaagai Logo" fill className="object-contain p-0" />
+            <Image src={getAssetPath("/logo2.svg")} alt="Vaagai Logo" fill className="object-contain p-0" />
           </div>
           <div className="space-y-1">
             <CardTitle className="text-2xl font-bold text-primary">நிர்வாகம் நுழைவு</CardTitle>
@@ -90,7 +90,7 @@ export default function LoginPage() {
                 <span className="mr-2">⚠️</span> {error}
               </div>
             )}
-            
+
             <div className="space-y-2">
               <Label htmlFor="email">மின்னஞ்சல் (Email)</Label>
               <div className="relative">
@@ -106,7 +106,7 @@ export default function LoginPage() {
                 />
               </div>
             </div>
-            
+
             <div className="space-y-2">
               <Label htmlFor="password">கடவுச்சொல் (Password)</Label>
               <div className="relative">
@@ -123,9 +123,9 @@ export default function LoginPage() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button 
-              type="submit" 
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold" 
+            <Button
+              type="submit"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
               disabled={loading}
             >
               {loading ? "உள்நுழைகிறது..." : "உள்நுழைக (Login)"}

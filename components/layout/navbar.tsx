@@ -43,7 +43,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-2 md:gap-3 group shrink-0">
             <div className="relative w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-primary/20 shadow-sm transition-transform group-hover:scale-105">
               <Image
-                src={getAssetPath("/logo2.png")}
+                src={getAssetPath("/logo2.svg")}
                 alt="Vaagai Tamilsangam Logo"
                 fill
                 className="object-contain scale-[1.4]"

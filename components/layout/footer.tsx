@@ -31,7 +31,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-4">
               <div className="relative w-12 h-12 rounded-full bg-white flex items-center justify-center border-2 border-white/20 overflow-hidden shadow-sm transition-transform hover:scale-105">
                 <Image
-                  src={getAssetPath("/logo2.png")}
+                  src={getAssetPath("/logo2.svg")}
                   alt="Vaagai Tamilsangam Logo"
                   fill
                   className="object-contain scale-[1.4]"
@@ -120,7 +120,7 @@ export function Footer() {
             <div className="flex items-center gap-3">
               <div className="relative w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden border border-white/20 shadow-inner">
                 <Image
-                  src={getAssetPath("/logo2.png")}
+                  src={getAssetPath("/logo2.svg")}
                   alt="Vaagai Tamilsangam Logo"
                   fill
                   className="object-contain scale-[1.4]"
