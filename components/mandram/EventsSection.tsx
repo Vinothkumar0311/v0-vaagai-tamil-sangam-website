@@ -178,46 +178,46 @@ export function EventsSection({ mandramSlug, initialEvents }: EventsSectionProps
             transition={{ duration: 0.8 }}
             className="lg:col-span-7"
           >
-            <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] border border-white p-10">
+            <div className="bg-white/80 backdrop-blur-xl rounded-[1.5rem] sm:rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] border border-white p-4 sm:p-6 md:p-8 lg:p-10">
               {/* Calendar Controls */}
-              <div className="flex items-center justify-between mb-12">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-12">
                 <div className="space-y-1">
-                  <h3 className="text-3xl font-black text-slate-900 tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
                     {format(currentMonth, "MMMM")}
                     <span className="text-primary ml-2 font-light">{format(currentMonth, "yyyy")}</span>
                   </h3>
-                  <div className="flex items-center gap-2 text-slate-400 text-sm font-bold uppercase tracking-wider">
+                  <div className="flex items-center gap-2 text-slate-400 text-xs sm:text-sm font-bold uppercase tracking-wider">
                     <div className="w-2 h-2 rounded-full bg-gold" />
                     {format(selectedDate, "MMMM do, yyyy")}
                   </div>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex gap-3 shrink-0">
                   <button 
                     onClick={prevMonth}
-                    className="w-12 h-12 rounded-2xl bg-slate-50 text-slate-900 hover:bg-primary hover:text-white transition-all duration-500 flex items-center justify-center shadow-inner"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-slate-50 text-slate-900 hover:bg-primary hover:text-white transition-all duration-500 flex items-center justify-center shadow-inner"
                   >
-                    <ChevronLeft className="w-6 h-6" />
+                    <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                   </button>
                   <button 
                     onClick={nextMonth}
-                    className="w-12 h-12 rounded-2xl bg-slate-50 text-slate-900 hover:bg-primary hover:text-white transition-all duration-500 flex items-center justify-center shadow-inner"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-slate-50 text-slate-900 hover:bg-primary hover:text-white transition-all duration-500 flex items-center justify-center shadow-inner"
                   >
-                    <ChevronRight className="w-6 h-6" />
+                    <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
                   </button>
                 </div>
               </div>
 
               {/* Day Headers */}
-              <div className="grid grid-cols-7 gap-4 mb-6">
+              <div className="grid grid-cols-7 gap-1.5 sm:gap-3 md:gap-4 mb-4 sm:mb-6">
                 {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(day => (
-                  <div key={day} className="text-center text-[11px] font-black text-slate-300 uppercase tracking-[0.2em]">
+                  <div key={day} className="text-center text-[10px] sm:text-[11px] font-black text-slate-300 uppercase tracking-widest sm:tracking-[0.2em]">
                     {day}
                   </div>
                 ))}
               </div>
 
               {/* Days Grid */}
-              <div className="grid grid-cols-7 gap-4">
+              <div className="grid grid-cols-7 gap-1.5 sm:gap-3 md:gap-4">
                 {days.map((day, i) => {
                   const isCurrentMonth = isSameMonth(day, currentMonth)
                   const isSelected = isSameDay(day, selectedDate)
@@ -230,7 +230,7 @@ export function EventsSection({ mandramSlug, initialEvents }: EventsSectionProps
                       onClick={() => setSelectedDate(day)}
                       disabled={!isCurrentMonth}
                       className={cn(
-                        "group relative aspect-square flex flex-col items-center justify-center rounded-[1.25rem] transition-all duration-500 text-sm font-bold",
+                        "group relative aspect-square flex flex-col items-center justify-center rounded-lg sm:rounded-[1.25rem] transition-all duration-500 text-xs sm:text-sm font-bold",
                         !isCurrentMonth && "opacity-0 pointer-events-none",
                         isCurrentMonth && "text-slate-600 hover:bg-slate-50 hover:scale-110",
                         isSelected && "bg-primary text-white hover:bg-primary shadow-[0_20px_40px_-8px_rgba(var(--primary-rgb),0.4)] scale-110 z-10",
@@ -242,7 +242,7 @@ export function EventsSection({ mandramSlug, initialEvents }: EventsSectionProps
                       {hasEvents && (
                         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                            <div className={cn(
-                             "w-full h-full rounded-[1.25rem] border-2 transition-all duration-500",
+                             "w-full h-full rounded-lg sm:rounded-[1.25rem] border transition-all duration-500",
                              isSelected ? "border-white/30 scale-90" : "border-primary/5 group-hover:border-primary/20"
                            )} />
                         </div>
@@ -250,7 +250,7 @@ export function EventsSection({ mandramSlug, initialEvents }: EventsSectionProps
 
                       {hasEvents && (
                         <span className={cn(
-                          "absolute bottom-3 w-1.5 h-1.5 rounded-full transition-all duration-500",
+                          "absolute bottom-1.5 sm:bottom-3 w-1 sm:w-1.5 h-1 sm:h-1.5 rounded-full transition-all duration-500",
                           isSelected ? "bg-white scale-150" : "bg-primary animate-bounce shadow-[0_0_8px_rgba(var(--primary-rgb),0.8)]"
                         )} />
                       )}
@@ -391,7 +391,7 @@ export function EventsSection({ mandramSlug, initialEvents }: EventsSectionProps
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-2xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden"
+              className="relative w-full max-w-2xl bg-white rounded-[1.5rem] sm:rounded-[2.5rem] shadow-2xl max-h-[90vh] overflow-y-auto"
             >
               <div className="relative aspect-video w-full bg-slate-100">
                 {activeEvent.image ? (
@@ -415,7 +415,7 @@ export function EventsSection({ mandramSlug, initialEvents }: EventsSectionProps
                 </button>
               </div>
               
-              <div className="p-10 space-y-8">
+              <div className="p-5 sm:p-8 md:p-10 space-y-8">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                      <span className={cn(

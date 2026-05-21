@@ -103,22 +103,24 @@ export default function SyllabusPage() {
           </div>
           
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-teal/10">
-            <Table>
-              <TableHeader className="bg-teal/5">
-                <TableRow className="hover:bg-transparent">
-                  <TableHead className="text-primary font-bold text-lg h-16 w-1/2">நிகழ்வு</TableHead>
-                  <TableHead className="text-primary font-bold text-lg h-16 w-1/2">காலம்</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {academicCalendar.map((row, i) => (
-                  <TableRow key={i} className="h-14 hover:bg-muted/30 transition-colors">
-                    <TableCell className="font-medium text-foreground/80">{row.event}</TableCell>
-                    <TableCell className="text-primary font-semibold">{row.period}</TableCell>
+            <div className="overflow-x-auto w-full">
+              <Table>
+                <TableHeader className="bg-teal/5">
+                  <TableRow className="hover:bg-transparent">
+                    <TableHead className="text-primary font-bold text-lg h-16 w-1/2 whitespace-nowrap">நிகழ்வு</TableHead>
+                    <TableHead className="text-primary font-bold text-lg h-16 w-1/2 whitespace-nowrap">காலம்</TableHead>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+                </TableHeader>
+                <TableBody>
+                  {academicCalendar.map((row, i) => (
+                    <TableRow key={i} className="h-14 hover:bg-muted/30 transition-colors">
+                      <TableCell className="font-medium text-foreground/80 whitespace-nowrap">{row.event}</TableCell>
+                      <TableCell className="text-primary font-semibold whitespace-nowrap">{row.period}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
           </div>
         </div>
       </section>

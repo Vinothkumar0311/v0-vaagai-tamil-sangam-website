@@ -18,17 +18,17 @@ export default function VaagaiSoodaVaaPage() {
       {/* Custom Header with Logos */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden bg-slate-50 border-b border-border/50">
         <div className="absolute inset-0 bg-primary/5" />
-        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay"></div>
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-6xl mx-auto">
             {/* Left Logo - Olympiad Logo */}
-            <div className="relative w-40 h-40 md:w-56 md:h-56 shrink-0 bg-white rounded-full shadow-xl border border-primary/10 rotate-[2deg] hover:rotate-0 transition-transform duration-300 flex items-center justify-center overflow-hidden">
-              <div className="relative w-[85%] h-[85%]">
+            <div className="relative w-40 h-40 md:w-56 md:h-56 shrink-0 bg-white rounded-3xl shadow-xl border border-primary/10 rotate-[-2deg] hover:rotate-0 transition-transform duration-300 flex items-center justify-center overflow-hidden">
+              <div className="relative w-3/4 h-3/4">
                 <Image
-                  src={getAssetPath("/logo2.png")}
-                  alt="Vaagai Tamilsangam Logo"
+                  src={getAssetPath("/images/logo23.png")}
+                  alt="Olympiad Logo"
                   fill
-                  className="object-contain scale-[1.3]"
+                  className="object-contain"
                   priority
                 />
               </div>
@@ -45,13 +45,13 @@ export default function VaagaiSoodaVaaPage() {
             </div>
 
             {/* Right Logo - Main Vaagai Logo */}
-            <div className="relative w-40 h-40 md:w-56 md:h-56 flex items-center justify-center overflow-hidden">
-              <div className="relative w-full h-full">
+            <div className="relative w-40 h-40 md:w-56 md:h-56 shrink-0 bg-white rounded-full shadow-xl border border-primary/10 rotate-[2deg] hover:rotate-0 transition-transform duration-300 flex items-center justify-center overflow-hidden">
+              <div className="relative w-[85%] h-[85%]">
                 <Image
-                  src={getAssetPath("/images/logo23.png")}
-                  alt="Olympiad Logo"
+                  src={getAssetPath("/logo2.png")}
+                  alt="Vaagai Tamilsangam Logo"
                   fill
-                  className="object-contain"
+                  className="object-contain scale-[1.3]"
                   priority
                 />
               </div>
@@ -194,28 +194,30 @@ export default function VaagaiSoodaVaaPage() {
               </p>
 
               <div className="bg-white rounded-2xl shadow-sm border border-black/5 overflow-hidden">
-                <table className="w-full text-left">
-                  <thead className="bg-muted/50 text-foreground">
-                    <tr>
-                      <th className="p-4 font-semibold border-b">நிகழ்வு</th>
-                      <th className="p-4 font-semibold border-b">மாதம்</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y">
-                    <tr>
-                      <td className="p-4 font-medium">பதிவு செய்ய</td>
-                      <td className="p-4 text-foreground/70">சூன்</td>
-                    </tr>
-                    <tr>
-                      <td className="p-4 font-medium">முதல் நிலை</td>
-                      <td className="p-4 text-foreground/70">செப்டம்பர்</td>
-                    </tr>
-                    <tr>
-                      <td className="p-4 font-medium">இரண்டாம் நிலை</td>
-                      <td className="p-4 text-foreground/70">நவம்பர் / திசம்பர்</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="overflow-x-auto w-full">
+                  <table className="w-full text-left">
+                    <thead className="bg-muted/50 text-foreground">
+                      <tr>
+                        <th className="p-4 font-semibold border-b whitespace-nowrap">நிகழ்வு</th>
+                        <th className="p-4 font-semibold border-b whitespace-nowrap">மாதம்</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y">
+                      <tr>
+                        <td className="p-4 font-medium whitespace-nowrap">பதிவு செய்ய</td>
+                        <td className="p-4 text-foreground/70 whitespace-nowrap">சூன்</td>
+                      </tr>
+                      <tr>
+                        <td className="p-4 font-medium whitespace-nowrap">முதல் நிலை</td>
+                        <td className="p-4 text-foreground/70 whitespace-nowrap">செப்டம்பர்</td>
+                      </tr>
+                      <tr>
+                        <td className="p-4 font-medium whitespace-nowrap">இரண்டாம் நிலை</td>
+                        <td className="p-4 text-foreground/70 whitespace-nowrap">நவம்பர் / திசம்பர்</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
 
               <a href="https://drive.google.com/file/d/1gB3_7z2PWfz5oKOjnLwHJRWFY4PprHkg/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-orange-50 text-orange-700 rounded-xl hover:bg-orange-100 transition-colors font-medium border border-orange-200">

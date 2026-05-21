@@ -182,7 +182,7 @@ export function RecognitionsSection() {
             />
             
             {/* Modal Content Card */}
-            <div className="relative w-full max-w-2xl bg-white rounded-[2.5rem] p-8 md:p-10 border border-gray-100 shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200">
+            <div className="relative w-full max-w-2xl bg-white rounded-[1.5rem] sm:rounded-[2.5rem] p-5 sm:p-8 md:p-10 border border-gray-100 shadow-2xl max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-200">
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl pointer-events-none" />
 

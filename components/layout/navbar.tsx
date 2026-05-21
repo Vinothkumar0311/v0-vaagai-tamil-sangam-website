@@ -38,10 +38,10 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 md:px-8 lg:px-12">
-        <nav className="flex items-center justify-between h-24 sm:h-28">
+        <nav className="flex items-center justify-between h-16 md:h-20 lg:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 md:gap-3 group shrink-0">
-            <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-primary/20 shadow-sm transition-transform group-hover:scale-105">
+            <div className="relative w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-primary/20 shadow-sm transition-transform group-hover:scale-105">
               <Image
                 src={getAssetPath("/logo2.png")}
                 alt="Vaagai Tamilsangam Logo"
