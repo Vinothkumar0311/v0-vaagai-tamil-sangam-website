@@ -61,7 +61,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
+          <div className="hidden xl:flex items-center gap-1.5 xl:gap-2.5 2xl:gap-4">
             {navigation.map((item) => (
               <NavItem
                 key={isDropdown(item) ? item.label : item.href}
@@ -100,13 +100,13 @@ const NavItem = React.memo(function NavItem({
       <DropdownMenu>
         <DropdownMenuTrigger
           className={cn(
-            "flex items-center gap-1 px-2.5 py-2 text-sm xl:text-base font-semibold rounded-md transition-colors outline-none whitespace-nowrap",
+            "flex items-center gap-1 px-2 py-1.5 xl:px-3 xl:py-2 text-xs xl:text-sm 2xl:text-base font-semibold rounded-md transition-colors outline-none whitespace-nowrap",
             textColor,
             hoverColor
           )}
         >
           {item.label}
-          <ChevronDown className="w-4 h-4" />
+          <ChevronDown className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="start"
@@ -137,7 +137,7 @@ const NavItem = React.memo(function NavItem({
     <Link
       href={item.href}
       className={cn(
-        "px-2.5 py-2 text-sm xl:text-base font-semibold rounded-md transition-colors whitespace-nowrap",
+        "px-2 py-1.5 xl:px-3 xl:py-2 text-xs xl:text-sm 2xl:text-base font-semibold rounded-md transition-colors whitespace-nowrap",
         textColor,
         hoverColor,
         isActive && (scrolled || !isHomePage ? "text-primary" : "text-gold")
