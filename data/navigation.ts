@@ -44,7 +44,7 @@ export const navigation: NavElement[] = [
     ],
   },
   {
-    label: "வாகை சூட வா",
+    label: "ஒலிம்பியாட்",
     labelEn: "Vaagai Sooda Vaa",
     href: "/vaagai-sooda-vaa",
   },

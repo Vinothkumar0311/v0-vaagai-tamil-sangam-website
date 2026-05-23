@@ -168,10 +168,10 @@ export default function VaagaiSoodaVaaPage() {
 
               <div className="space-y-4">
                 {[
-                  { title: "கற்கண்டு ( 4 & 5 )", link: "https://drive.google.com/file/d/1R3NHmiR-LHhxnC1YGcZi8l_KF5GqWXqS/view?usp=drive_link" },
-                  { title: "கனியமுது ( 6 & 7 )", link: "https://drive.google.com/file/d/1C_p-vwL3ns03kw6I91VYTXgPfUoQKQFH/view?usp=drive_link" },
-                  { title: "தேன்தமிழ் ( 8 & 9 )", link: "https://drive.google.com/file/d/1JohHLOW3JLf4T9_TLDya70pWOeUVPraT/view?usp=drive_link" },
-                  { title: "தெள்ளமுது ( 10, 11 & 12 )", link: "https://drive.google.com/file/d/1QEteZBT6xmAnVhwX1GWLsGpiAGb3G9G5/view?usp=drive_link" }
+                  { title: "கற்கண்டு ( 4 & 5 )", link: getAssetPath("/PDF/4 & 5_merged.pdf") },
+                  { title: "கனியமுது ( 6 & 7 )", link: getAssetPath("/PDF/6 - 7_merged (1).pdf") },
+                  { title: "தேன்தமிழ் ( 8 & 9 )", link: getAssetPath("/PDF/8 - 9_merged.pdf") },
+                  { title: "தெள்ளமுது ( 10, 11 & 12 )", link: getAssetPath("/PDF/10 - 12_merged.pdf") }
                 ].map((item, i) => (
                   <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 bg-muted/50 rounded-xl hover:bg-teal-50 hover:text-teal-700 transition-colors group border border-transparent hover:border-teal-200">
                     <span className="font-semibold">{item.title}</span>

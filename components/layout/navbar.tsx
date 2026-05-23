@@ -37,11 +37,11 @@ export function Navbar() {
           : "bg-transparent"
       )}
     >
-      <div className="container mx-auto px-6 md:px-8 lg:px-12">
+      <div className="w-full max-w-[1600px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
         <nav className="flex items-center justify-between h-16 md:h-20 lg:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 md:gap-3 group shrink-0">
-            <div className="relative w-10 h-10 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-primary/20 shadow-sm transition-transform group-hover:scale-105">
+            <div className="relative w-10 h-10 md:w-16 md:h-16 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 3xl:w-20 3xl:h-20 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-primary/20 shadow-sm transition-transform group-hover:scale-105">
               <Image
                 src={getAssetPath("/logo2.svg")}
                 alt="Vaagai Tamilsangam Logo"
@@ -52,7 +52,7 @@ export function Navbar() {
             </div>
             <span
               className={cn(
-                "font-bold text-lg sm:text-2xl md:text-3xl lg:text-4xl transition-colors truncate max-w-[600px] sm:max-w-none leading-tight py-1",
+                "font-bold text-lg sm:text-2xl md:text-3xl lg:text-xl xl:text-2xl 2xl:text-3xl transition-colors truncate max-w-[600px] sm:max-w-none leading-tight py-1",
                 scrolled || !isHomePage ? "text-primary" : "text-white"
               )}
             >
@@ -61,7 +61,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden xl:flex items-center gap-1.5 xl:gap-2.5 2xl:gap-4">
+          <div className="hidden xl:flex items-center gap-0.5 xl:gap-1 2xl:gap-2">
             {navigation.map((item) => (
               <NavItem
                 key={isDropdown(item) ? item.label : item.href}
@@ -100,13 +100,13 @@ const NavItem = React.memo(function NavItem({
       <DropdownMenu>
         <DropdownMenuTrigger
           className={cn(
-            "flex items-center gap-1 px-2 py-1.5 xl:px-3 xl:py-2 text-xs xl:text-sm 2xl:text-base font-semibold rounded-md transition-colors outline-none whitespace-nowrap",
+            "flex items-center gap-1 px-1 py-1 xl:px-1.5 xl:py-1 xl:text-[11px] 2xl:px-2.5 2xl:py-1.5 2xl:text-xs font-semibold rounded-md transition-colors outline-none whitespace-nowrap",
             textColor,
             hoverColor
           )}
         >
           {item.label}
-          <ChevronDown className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
+          <ChevronDown className="w-3 h-3 xl:w-3.5 xl:h-3.5" />
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="start"
@@ -137,7 +137,7 @@ const NavItem = React.memo(function NavItem({
     <Link
       href={item.href}
       className={cn(
-        "px-2 py-1.5 xl:px-3 xl:py-2 text-xs xl:text-sm 2xl:text-base font-semibold rounded-md transition-colors whitespace-nowrap",
+        "px-1 py-1 xl:px-1.5 xl:py-1 xl:text-[11px] 2xl:px-2.5 2xl:py-1.5 2xl:text-xs font-semibold rounded-md transition-colors whitespace-nowrap",
         textColor,
         hoverColor,
         isActive && (scrolled || !isHomePage ? "text-primary" : "text-gold")

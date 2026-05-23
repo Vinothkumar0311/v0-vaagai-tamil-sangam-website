@@ -1,4 +1,6 @@
 import type { Metadata } from "next"
+import Image from "next/image"
+import { getAssetPath } from "@/lib/paths"
 import { PageShell } from "@/components/layout/page-shell"
 import { PageHeader } from "@/components/shared/page-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -187,6 +189,7 @@ const editorialBoardMembers = [
     institutionEn: "Vaagai Tamilsangam, Namakkal",
   },
   {
+    img: "/Staff_Photo/ChatGPT Image May 22, 2026, 10_29_42 AM.png",
     name: "திரு. நா.கனகராஜ்",
     nameEn: "Mr. N. Kanagaraj",
     role: "முதுநிலைப் பள்ளித் தமிழாசிரியர்",
@@ -278,373 +281,403 @@ export default function PublicationsPage() {
         description="வாகை தமிழ்ச்சங்கத்தின் ஆய்வு வெளியீடுகள், ஆவணங்கள் மற்றும் வழிகாட்டுதல்கள்"
       />
 
-        {/* Publication Categories Links */}
-        <section className="py-16 md:py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {publicationCategories.map((category) => {
-                const Icon = category.icon
-                return (
-                  <a href={`#${category.id}`} key={category.id} className="block group">
-                    <Card className="h-full border shadow-md hover:shadow-lg transition-all hover:border-primary/30 cursor-pointer">
-                      <CardHeader>
-                        <div className="flex items-start gap-4">
-                          <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                            <Icon className="w-6 h-6 text-primary" />
-                          </div>
-                          <div>
-                            <CardTitle className="text-lg text-primary mb-1">
-                              {category.title}
-                            </CardTitle>
-                          </div>
+      {/* Publication Categories Links */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {publicationCategories.map((category) => {
+              const Icon = category.icon
+              return (
+                <a href={`#${category.id}`} key={category.id} className="block group">
+                  <Card className="h-full border shadow-md hover:shadow-lg transition-all hover:border-primary/30 cursor-pointer">
+                    <CardHeader>
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                          <Icon className="w-6 h-6 text-primary" />
                         </div>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground">
-                          {category.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </a>
-                )
-              })}
+                        <div>
+                          <CardTitle className="text-lg text-primary mb-1">
+                            {category.title}
+                          </CardTitle>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground">
+                        {category.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </a>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Content Sections */}
+      <div className="container mx-auto px-4 pb-24 space-y-24">
+
+        {/* AIM Section */}
+        <section id="aim" className="scroll-mt-32 max-w-5xl mx-auto px-1">
+          <div className="flex items-center gap-3 mb-6 border-b border-primary/10 pb-4">
+            <div className="p-2 rounded-lg bg-primary/10">
+              <Target className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary">நோக்கம் (AIM)</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-primary/10 shadow-lg">
+            <div className="p-6 md:p-8 bg-primary/5 border-b lg:border-b-0 lg:border-r border-primary/10">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-1.5 h-6 bg-primary rounded-full"></div>
+                <h3 className="font-bold text-primary uppercase tracking-wider text-xs">Tamil Version</h3>
+              </div>
+              <p className="text-base md:text-lg text-foreground/80 leading-relaxed text-pretty">
+                'கல் தோன்றி மண் தோன்றாக் காலத்தே வாளொடு முன் தோன்றிய மூத்தகுடி' தமிழர்களின் வாழ்க்கையோடு இயைந்து வாழ்வியல் மேம்பாட்டிற்கு அடிப்படையாகத் திகழும் தமிழ்மொழி, கால மாற்றத்திற்கேற்ப நாகரிகமும் பண்பாடும் அடைந்து காணப்படுகிறது. உலக அறிஞர்கள் தமிழர்களின் தமிழ்மொழியை வியந்தது மட்டுமின்றி அதன் தொன்மையை ஆராய்ந்து கொண்டே இருக்கிறார்கள். அவர்கள் ஆய்வின்படி இலக்கியங்களே தமிழ்மொழியின் வெளிப்பாடுகளாக அமைகின்றன. பன்னாட்டு அளவில் இன்று புலம் பெயர்ந்த தமிழர்கள் தாம் வாழ்கின்ற சூழலில் தங்கள் பண்பாட்டையும் நாகரிகத்தையும் பாதுகாத்து வருகிறார்கள். செம்மொழியாக தமிழ் உயர்ந்து நிற்பதற்கு முக்கிய காரணம் அதன் தொன்மைத் தன்மையே ஆகும். தமிழினம், தமிழ்மொழி, தமிழ் இலக்கியங்கள் ஆகிய அனைத்தும் மிகத் தொன்மை வாய்ந்தவை. தமிழின் தொன்மையை தமிழ் இலக்கியங்களும் அதன் வழி நாம் அறிந்து கொண்ட மூவேந்தர் வரலாறும் உணர்த்தும். இத்தகைய தொல் சிறப்பு வாய்ந்த தமிழ் மொழியை தொன்மைக் காலம் முதல் இந்த தொழில்நுட்பக் காலம் வரை நாம் எத்தனை கொண்டாடினாலும் அதன் புகழுக்கு அத்தனை ஈடாகாது. எதிர்கால தலைமுறையினருக்கு தமிழ்மொழியின் சிறப்புகள் மற்றும் தமிழர்களின் பண்பாட்டு விழுமியங்களை ஆவணப்படுத்துதல் இச்செயல்பாட்டின் நோக்கமாகும்.
+              </p>
+            </div>
+            <div className="p-6 md:p-8 bg-white">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-1.5 h-6 bg-gold rounded-full"></div>
+                <h3 className="font-bold text-gold uppercase tracking-wider text-xs">English Version</h3>
+              </div>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed italic text-pretty">
+                'When the stone appeared and the soil did not appear, the sword appeared first' The Tamil language, which is the basis for the development of the lifestyle of the Tamils, has become civilized and cultured with the change of time. World scholars have not only admired the Tamil language of the Tamils but also continue to research its antiquity. According to their research, literature is the expression of the Tamil language. Today, Tamils who have migrated internationally are preserving their culture and civilization in the environment in which they live. The main reason for Tamil's rise as a classical language is its antiquity. The Tamil people, the Tamil language, and Tamil literature are all very ancient. The antiquity of Tamil is conveyed by Tamil literature and the history of the Three Kingdoms that we have learned through it. No matter how much we celebrate such a unique Tamil language from ancient times to this technological age, its glory cannot be compared to it. The aim of this activity is to document the specialties of the Tamil language and the cultural values of the Tamils for future generations.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* Content Sections */}
-        <div className="container mx-auto px-4 pb-24 space-y-24">
-          
-          {/* AIM Section */}
-          <section id="aim" className="scroll-mt-32 max-w-5xl mx-auto px-1">
-             <div className="flex items-center gap-3 mb-6 border-b border-primary/10 pb-4">
-               <div className="p-2 rounded-lg bg-primary/10">
-                <Target className="w-6 h-6 md:w-8 md:h-8 text-primary" />
-               </div>
-               <h2 className="text-2xl md:text-3xl font-bold text-primary">நோக்கம் (AIM)</h2>
-             </div>
-             
-             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-primary/10 shadow-lg">
-               <div className="p-6 md:p-8 bg-primary/5 border-b lg:border-b-0 lg:border-r border-primary/10">
-                 <div className="flex items-center gap-2 mb-4">
-                   <div className="w-1.5 h-6 bg-primary rounded-full"></div>
-                   <h3 className="font-bold text-primary uppercase tracking-wider text-xs">Tamil Version</h3>
-                 </div>
-                 <p className="text-base md:text-lg text-foreground/80 leading-relaxed text-pretty">
-                   'கல் தோன்றி மண் தோன்றாக் காலத்தே வாளொடு முன் தோன்றிய மூத்தகுடி' தமிழர்களின் வாழ்க்கையோடு இயைந்து வாழ்வியல் மேம்பாட்டிற்கு அடிப்படையாகத் திகழும் தமிழ்மொழி, கால மாற்றத்திற்கேற்ப நாகரிகமும் பண்பாடும் அடைந்து காணப்படுகிறது. உலக அறிஞர்கள் தமிழர்களின் தமிழ்மொழியை வியந்தது மட்டுமின்றி அதன் தொன்மையை ஆராய்ந்து கொண்டே இருக்கிறார்கள். அவர்கள் ஆய்வின்படி இலக்கியங்களே தமிழ்மொழியின் வெளிப்பாடுகளாக அமைகின்றன. பன்னாட்டு அளவில் இன்று புலம் பெயர்ந்த தமிழர்கள் தாம் வாழ்கின்ற சூழலில் தங்கள் பண்பாட்டையும் நாகரிகத்தையும் பாதுகாத்து வருகிறார்கள். செம்மொழியாக தமிழ் உயர்ந்து நிற்பதற்கு முக்கிய காரணம் அதன் தொன்மைத் தன்மையே ஆகும். தமிழினம், தமிழ்மொழி, தமிழ் இலக்கியங்கள் ஆகிய அனைத்தும் மிகத் தொன்மை வாய்ந்தவை. தமிழின் தொன்மையை தமிழ் இலக்கியங்களும் அதன் வழி நாம் அறிந்து கொண்ட மூவேந்தர் வரலாறும் உணர்த்தும். இத்தகைய தொல் சிறப்பு வாய்ந்த தமிழ் மொழியை தொன்மைக் காலம் முதல் இந்த தொழில்நுட்பக் காலம் வரை நாம் எத்தனை கொண்டாடினாலும் அதன் புகழுக்கு அத்தனை ஈடாகாது. எதிர்கால தலைமுறையினருக்கு தமிழ்மொழியின் சிறப்புகள் மற்றும் தமிழர்களின் பண்பாட்டு விழுமியங்களை ஆவணப்படுத்துதல் இச்செயல்பாட்டின் நோக்கமாகும்.
-                 </p>
-               </div>
-               <div className="p-6 md:p-8 bg-white">
-                 <div className="flex items-center gap-2 mb-4">
-                   <div className="w-1.5 h-6 bg-gold rounded-full"></div>
-                   <h3 className="font-bold text-gold uppercase tracking-wider text-xs">English Version</h3>
-                 </div>
-                 <p className="text-base md:text-lg text-muted-foreground leading-relaxed italic text-pretty">
-                   'When the stone appeared and the soil did not appear, the sword appeared first' The Tamil language, which is the basis for the development of the lifestyle of the Tamils, has become civilized and cultured with the change of time. World scholars have not only admired the Tamil language of the Tamils but also continue to research its antiquity. According to their research, literature is the expression of the Tamil language. Today, Tamils who have migrated internationally are preserving their culture and civilization in the environment in which they live. The main reason for Tamil's rise as a classical language is its antiquity. The Tamil people, the Tamil language, and Tamil literature are all very ancient. The antiquity of Tamil is conveyed by Tamil literature and the history of the Three Kingdoms that we have learned through it. No matter how much we celebrate such a unique Tamil language from ancient times to this technological age, its glory cannot be compared to it. The aim of this activity is to document the specialties of the Tamil language and the cultural values of the Tamils for future generations.
-                 </p>
-               </div>
-             </div>
-          </section>
+        {/* About Section */}
+        <section id="about" className="scroll-mt-32 max-w-5xl mx-auto">
+          <div className="flex items-center gap-4 mb-8 border-b pb-4">
+            <BookOpen className="w-8 h-8 text-primary" />
+            <h2 className="text-3xl font-bold text-primary">About - Vaagai Tamilsangam</h2>
+          </div>
+          <div className="mb-8 space-y-2 p-6 bg-primary/5 rounded-xl border border-primary/10">
+            <p className="text-xl font-semibold text-foreground">பன்னாட்டு அளவில் சிந்தனை மற்றும் ஆராய்ச்சிகளை மேற்கொள்ளும் வாகை தமிழ்ச்சங்கத்தின் ஒரு முயற்சி.</p>
+            <p className="text-lg text-muted-foreground">A platform for global intellectual and research pursuits - An Initiative of Vaagai Tamilsangam.</p>
+          </div>
 
-          {/* About Section */}
-          <section id="about" className="scroll-mt-32 max-w-5xl mx-auto">
-             <div className="flex items-center gap-4 mb-8 border-b pb-4">
-               <BookOpen className="w-8 h-8 text-primary" />
-               <h2 className="text-3xl font-bold text-primary">About - Vaagai Tamilsangam</h2>
-             </div>
-             <div className="mb-8 space-y-2 p-6 bg-primary/5 rounded-xl border border-primary/10">
-               <p className="text-xl font-semibold text-foreground">பன்னாட்டு அளவில் சிந்தனை மற்றும் ஆராய்ச்சிகளை மேற்கொள்ளும் வாகை தமிழ்ச்சங்கத்தின் ஒரு முயற்சி.</p>
-               <p className="text-lg text-muted-foreground">A platform for global intellectual and research pursuits - An Initiative of Vaagai Tamilsangam.</p>
-             </div>
-             
-             <div className="bg-white rounded-xl border shadow-sm overflow-hidden">
-               <div className="flex flex-col">
-                 {aboutDetails.map((detail, idx) => (
-                   <div key={idx} className="flex flex-col sm:flex-row border-b last:border-0 hover:bg-muted/30 transition-colors">
-                     <div className="sm:w-1/3 p-4 font-semibold text-foreground bg-muted/10 border-r border-border/50">
-                       {detail.label}
-                     </div>
-                     <div className="p-4 text-muted-foreground sm:w-2/3 break-words">
-                       {detail.value}
-                     </div>
-                   </div>
-                 ))}
-               </div>
-             </div>
-          </section>
-
-          {/* Research Section */}
-          <section id="research" className="scroll-mt-32 max-w-5xl mx-auto">
-             <div className="flex items-center gap-4 mb-8 border-b pb-4">
-               <FileText className="w-8 h-8 text-primary" />
-               <h2 className="text-3xl font-bold text-primary">ஆய்வுப் பொருண்மைகள் (Research Themes)</h2>
-             </div>
-             <div className="bg-gradient-to-br from-cream to-white rounded-2xl p-8 border shadow-sm">
-               <p className="text-lg text-foreground/80 leading-relaxed font-medium">
-                 இலக்கணங்கள் தொல்காப்பியம், இறையனார் அகப்பொருள், இலக்கண விளக்கம், நம்பியகப் பொருள், யாப்பருங்கலக் காரிகை, தமிழ்மொழியின் சிறப்புகள், தமிழ்மொழியின் உரைநடை, காப்பியங்கள், சிற்றிலக்கியங்கள், பன்னிரு திருமுறைகள், நாலாயிர திவ்வியப் பிரபந்தம், இதிகாச புராணங்கள், சித்தர் இலக்கியங்கள், சித்த மருத்துவம், இயற்கை மருத்துவம், உணவு முறைகள், திணை இலக்கியம், தற்கால இலக்கியம், உரையாசிரியர்கள், இலக்கண நூல் தொகுப்பு, நாட்டுப்புற இலக்கியங்கள், கல்வெட்டுகள், வழக்காறுகள், மறைந்துபோன, மறைந்துகொண்டும், மறைந்துகொண்டு இருக்கும் அனைத்து கலைகளும் மீட்டுருவாக்கம் செய்வது, இன்றைய தேவைகள், நாளைய தேவைகள் பற்றிய சிந்தனைகள் போன்ற பல பன்முகப் பார்வை கொண்ட தலைப்புகள் மற்றும் கருத்தரங்கத் தலைப்பையொட்டித் தாங்கள் விரும்பும் எந்தத் தலைப்பிலும் தமிழ் மற்றும் ஆங்கிலம் ஆகிய இருமொழிகளிலும் கட்டுரைகள் அமையலாம்.
-               </p>
-             </div>
-          </section>
-
-          {/* Guidelines Section */}
-          <section id="guidelines" className="scroll-mt-32 max-w-5xl mx-auto px-1">
-             <div className="flex items-center gap-3 mb-6 border-b border-primary/10 pb-4">
-               <div className="p-2 rounded-lg bg-primary/10">
-                <ScrollText className="w-6 h-6 md:w-8 md:h-8 text-primary" />
-               </div>
-               <h2 className="text-2xl md:text-3xl font-bold text-primary">வழிகாட்டுதல்கள் (Guidelines)</h2>
-             </div>
-             <div className="grid gap-4 md:gap-6">
-               {guidelinesList.map((guideline, index) => (
-                 <div key={index} className="group relative flex flex-col sm:flex-row gap-4 p-4 md:p-6 rounded-2xl border bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/20">
-                   <div className="flex items-center gap-4 sm:flex-col sm:gap-2 sm:shrink-0">
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm md:text-base shadow-sm">
-                      {index + 1}
-                    </div>
-                    <div className="sm:hidden h-px flex-grow bg-primary/10"></div>
-                   </div>
-                   <div className="space-y-3 flex-grow">
-                     <div>
-                        <p className="text-base md:text-lg font-medium text-foreground leading-relaxed text-pretty">{guideline.tamil}</p>
-                     </div>
-                     <div className="pt-2 border-t border-dashed border-primary/10">
-                        <p className="text-sm md:text-base text-foreground/80 leading-relaxed text-pretty">{guideline.english}</p>
-                     </div>
-                   </div>
-                 </div>
-               ))}
-             </div>
-          </section>
-
-          <section id="editorial" className="scroll-mt-32 max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-md bg-slate-50/50 border border-slate-100">
-            <div className="p-8 md:p-12">
-              <div className="flex items-center gap-4 mb-2">
-                <Users className="w-8 h-8 md:w-10 md:h-10 text-primary" />
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary flex flex-wrap items-center gap-2">
-                  <span>ஆசிரியர் குழு</span>
-                  <span className="text-muted-foreground text-lg md:text-xl font-normal font-sans">( Editorial Board )</span>
-                </h2>
-              </div>
-              
-              <div className="flex flex-wrap gap-3 mt-4 mb-12">
-                <div className="px-4 py-2 bg-white border border-slate-100 rounded-xl text-sm shadow-sm">
-                  <span className="text-primary font-semibold">பொருண்மை:</span> <span className="text-foreground/80">கல்வி</span>
+          <div className="bg-white rounded-xl border shadow-sm overflow-hidden">
+            <div className="flex flex-col">
+              {aboutDetails.map((detail, idx) => (
+                <div key={idx} className="flex flex-col sm:flex-row border-b last:border-0 hover:bg-muted/30 transition-colors">
+                  <div className="sm:w-1/3 p-4 font-semibold text-foreground bg-muted/10 border-r border-border/50">
+                    {detail.label}
+                  </div>
+                  <div className="p-4 text-muted-foreground sm:w-2/3 break-words">
+                    {detail.value}
+                  </div>
                 </div>
-                <div className="px-4 py-2 bg-white border border-slate-100 rounded-xl text-sm shadow-sm">
-                  <span className="text-primary font-semibold">Subject:</span> <span className="text-foreground/80">Education</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Research Section */}
+        <section id="research" className="scroll-mt-32 max-w-5xl mx-auto">
+          <div className="flex items-center gap-4 mb-8 border-b pb-4">
+            <FileText className="w-8 h-8 text-primary" />
+            <h2 className="text-3xl font-bold text-primary">ஆய்வுப் பொருண்மைகள் (Research Themes)</h2>
+          </div>
+          <div className="bg-gradient-to-br from-cream to-white rounded-2xl p-8 border shadow-sm">
+            <p className="text-lg text-foreground/80 leading-relaxed font-medium">
+              இலக்கணங்கள் தொல்காப்பியம், இறையனார் அகப்பொருள், இலக்கண விளக்கம், நம்பியகப் பொருள், யாப்பருங்கலக் காரிகை, தமிழ்மொழியின் சிறப்புகள், தமிழ்மொழியின் உரைநடை, காப்பியங்கள், சிற்றிலக்கியங்கள், பன்னிரு திருமுறைகள், நாலாயிர திவ்வியப் பிரபந்தம், இதிகாச புராணங்கள், சித்தர் இலக்கியங்கள், சித்த மருத்துவம், இயற்கை மருத்துவம், உணவு முறைகள், திணை இலக்கியம், தற்கால இலக்கியம், உரையாசிரியர்கள், இலக்கண நூல் தொகுப்பு, நாட்டுப்புற இலக்கியங்கள், கல்வெட்டுகள், வழக்காறுகள், மறைந்துபோன, மறைந்துகொண்டும், மறைந்துகொண்டு இருக்கும் அனைத்து கலைகளும் மீட்டுருவாக்கம் செய்வது, இன்றைய தேவைகள், நாளைய தேவைகள் பற்றிய சிந்தனைகள் போன்ற பல பன்முகப் பார்வை கொண்ட தலைப்புகள் மற்றும் கருத்தரங்கத் தலைப்பையொட்டித் தாங்கள் விரும்பும் எந்தத் தலைப்பிலும் தமிழ் மற்றும் ஆங்கிலம் ஆகிய இருமொழிகளிலும் கட்டுரைகள் அமையலாம்.
+            </p>
+          </div>
+        </section>
+
+        {/* Guidelines Section */}
+        <section id="guidelines" className="scroll-mt-32 max-w-5xl mx-auto px-1">
+          <div className="flex items-center gap-3 mb-6 border-b border-primary/10 pb-4">
+            <div className="p-2 rounded-lg bg-primary/10">
+              <ScrollText className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary">வழிகாட்டுதல்கள் (Guidelines)</h2>
+          </div>
+          <div className="grid gap-4 md:gap-6">
+            {guidelinesList.map((guideline, index) => (
+              <div key={index} className="group relative flex flex-col sm:flex-row gap-4 p-4 md:p-6 rounded-2xl border bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:border-primary/20">
+                <div className="flex items-center gap-4 sm:flex-col sm:gap-2 sm:shrink-0">
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm md:text-base shadow-sm">
+                    {index + 1}
+                  </div>
+                  <div className="sm:hidden h-px flex-grow bg-primary/10"></div>
+                </div>
+                <div className="space-y-3 flex-grow">
+                  <div>
+                    <p className="text-base md:text-lg font-medium text-foreground leading-relaxed text-pretty">{guideline.tamil}</p>
+                  </div>
+                  <div className="pt-2 border-t border-dashed border-primary/10">
+                    <p className="text-sm md:text-base text-foreground/80 leading-relaxed text-pretty">{guideline.english}</p>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
 
-              {/* Advisory Board */}
-              <div className="mb-16">
-                <h3 className="text-2xl font-bold mb-8 border-l-4 border-primary pl-4 text-primary">ஆலோசனைக் குழு (Advisory Board)</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {advisoryBoard.map((member, idx) => (
-                    <div key={idx} className="bg-white rounded-2xl overflow-hidden flex flex-col h-full border border-slate-100 hover:border-primary/20 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                      <div className="aspect-[4/3] bg-gradient-to-br from-teal-50 to-indigo-50/50 flex items-center justify-center p-6 border-b border-slate-100 relative">
-                        <div className="w-20 h-20 rounded-full bg-white border-2 border-white shadow-md flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                          <Users className="w-10 h-10 text-primary/70" />
-                        </div>
+        <section id="editorial" className="scroll-mt-32 max-w-7xl mx-auto rounded-3xl overflow-hidden shadow-md bg-slate-50/50 border border-slate-100">
+          <div className="p-8 md:p-12">
+            <div className="flex items-center gap-4 mb-2">
+              <Users className="w-8 h-8 md:w-10 md:h-10 text-primary" />
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary flex flex-wrap items-center gap-2">
+                <span>ஆசிரியர் குழு</span>
+                <span className="text-muted-foreground text-lg md:text-xl font-normal font-sans">( Editorial Board )</span>
+              </h2>
+            </div>
+
+            <div className="flex flex-wrap gap-3 mt-4 mb-12">
+              <div className="px-4 py-2 bg-white border border-slate-100 rounded-xl text-sm shadow-sm">
+                <span className="text-primary font-semibold">பொருண்மை:</span> <span className="text-foreground/80">கல்வி</span>
+              </div>
+              <div className="px-4 py-2 bg-white border border-slate-100 rounded-xl text-sm shadow-sm">
+                <span className="text-primary font-semibold">Subject:</span> <span className="text-foreground/80">Education</span>
+              </div>
+            </div>
+
+            {/* Advisory Board */}
+            <div className="mb-16">
+              <h3 className="text-2xl font-bold mb-8 border-l-4 border-primary pl-4 text-primary">ஆலோசனைக் குழு (Advisory Board)</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {advisoryBoard.map((member, idx) => (
+                  <div key={idx} className="bg-white rounded-2xl overflow-hidden flex flex-col h-full border border-slate-100 hover:border-primary/20 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div className="h-[220px] bg-gradient-to-br from-teal-50 to-indigo-50/50 flex items-center justify-center p-6 border-b border-slate-100 relative">
+                      <div className="w-[180px] h-[180px] bg-white border-2 border-white shadow-md flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300 relative">
+                        {('img' in member && member.img) ? (
+                          <Image
+                            src={getAssetPath(member.img as string)}
+                            alt={member.name}
+                            fill
+                            className="object-cover"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <Users className="w-12 h-12 text-primary/70" />
+                        )}
                       </div>
-                      
-                      <div className="p-6 flex-grow flex flex-col gap-4 text-sm">
-                        <div>
-                          <p className="font-bold text-lg text-slate-900 leading-tight mb-1.5 group-hover:text-primary transition-colors">{member.name}</p>
-                          <p className="text-slate-600 leading-relaxed font-medium">{member.role}</p>
-                          <p className="text-primary/70 italic text-xs mt-2.5 font-normal leading-relaxed">{member.nameEn}, {member.roleEn}</p>
-                        </div>
-                        
+                    </div>
+
+                    <div className="p-6 flex-grow flex flex-col gap-4 text-sm text-left">
+                      <div className="text-left">
+                        <p className="font-bold text-lg text-slate-900 leading-tight mb-1.5 group-hover:text-primary transition-colors text-left">{member.name}</p>
+                        <p className="text-slate-600 leading-relaxed font-medium text-left">{member.role}</p>
+                        <p className="text-primary/70 italic text-xs mt-2.5 font-normal leading-relaxed text-left">{member.nameEn}, {member.roleEn}</p>
+                      </div>
+
+                      {member.link && (
+                        <a
+                          href={member.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-xs text-blue-600 hover:text-blue-500 font-semibold group/link hover:underline mt-1 text-left"
+                        >
+                          <span>Profile Link</span>
+                          <span className="group-hover/link:translate-x-0.5 transition-transform ml-1">→</span>
+                        </a>
+                      )}
+
+                      <div className="mt-auto pt-4 border-t border-slate-100 text-left">
+                        <p className="text-slate-700 text-xs font-semibold leading-relaxed text-left">{member.institution}</p>
+                        <p className="text-muted-foreground italic text-[11px] mt-1.5 leading-relaxed text-left">{member.institutionEn}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Chief Editor */}
+            <div className="mb-16">
+              <h3 className="text-2xl font-bold mb-8 border-l-4 border-primary pl-4 text-primary">முதன்மை ஆசிரியர் (Chief Editor)</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {chiefEditor.map((member, idx) => (
+                  <div key={idx} className="bg-white rounded-2xl overflow-hidden flex flex-col h-full border border-slate-100 hover:border-primary/20 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div className="h-[220px] bg-gradient-to-br from-indigo-50 to-teal-50/50 flex items-center justify-center p-6 border-b border-slate-100 relative">
+                      <div className="w-[180px] h-[180px] bg-white border-2 border-white shadow-md flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300 relative">
+                        {('img' in member && member.img) ? (
+                          <Image
+                            src={getAssetPath(member.img as string)}
+                            alt={member.name}
+                            fill
+                            className="object-cover"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <Users className="w-12 h-12 text-primary/70" />
+                        )}
+                      </div>
+                      <span className="absolute top-3 right-3 bg-primary text-white text-[9px] font-extrabold px-2.5 py-1 rounded-full shadow-sm uppercase tracking-wider">
+                        CHIEF
+                      </span>
+                    </div>
+
+                    <div className="p-6 flex-grow flex flex-col gap-4 text-sm text-left">
+                      <div className="text-left">
+                        <p className="font-bold text-lg text-slate-900 leading-tight mb-1.5 group-hover:text-primary transition-colors text-left">{member.name}</p>
+                        <p className="text-slate-600 leading-relaxed font-medium text-left">{member.role}</p>
+                        <p className="text-primary/70 italic text-xs mt-2.5 font-normal leading-relaxed text-left">{member.nameEn}, {member.roleEn}</p>
+                      </div>
+
+                      <div className="space-y-2 text-left">
+                        <p className="text-slate-700 break-all text-xs font-semibold text-left">{member.email}</p>
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/5 text-primary text-xs font-semibold border border-primary/10 shadow-sm mt-1 text-left">
+                          Vidwan-ID : {member.vidwanId}
+                        </span>
+                      </div>
+
+                      <div className="mt-auto pt-4 border-t border-slate-100 text-left">
+                        <p className="text-slate-700 text-xs font-semibold leading-relaxed text-left">{member.institution}</p>
+                        <p className="text-muted-foreground italic text-[11px] mt-1.5 leading-relaxed text-left">{member.institutionEn}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Editorial Board Members */}
+            <div>
+              <h3 className="text-2xl font-bold mb-8 border-l-4 border-primary pl-4 text-primary">ஆசிரியர் குழு ( Editorial Board )</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {editorialBoardMembers.map((member, idx) => (
+                  <div key={idx} className="bg-white rounded-2xl overflow-hidden flex flex-col h-full border border-slate-100 hover:border-primary/20 shadow-sm hover:shadow-xl transition-all duration-300 group">
+                    <div className="h-[240px] bg-gradient-to-br from-teal-50 to-indigo-50/50 flex items-center justify-center p-6 border-b border-slate-100 relative">
+                      <div className="w-[200px] h-[200px] bg-white border-2 border-white shadow-md flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300 relative">
+                        {('img' in member && member.img) ? (
+                          <Image
+                            src={getAssetPath(member.img as string)}
+                            alt={member.name}
+                            fill
+                            className="object-cover"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <Users className="w-16 h-16 text-primary/70" />
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="p-6 flex-grow flex flex-col gap-4 text-sm text-left">
+                      <div className="text-left">
+                        <p className="font-bold text-lg text-slate-900 leading-tight mb-1.5 group-hover:text-primary transition-colors text-left">{member.name}</p>
+                        <p className="text-slate-600 leading-relaxed font-medium text-left">{member.role}</p>
+                        <p className="text-primary/70 italic text-xs mt-2.5 font-normal leading-relaxed text-left">{member.nameEn}, {member.roleEn}</p>
+                      </div>
+
+                      <div className="space-y-2 text-left">
                         {member.link && (
-                          <a 
-                            href={member.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="inline-flex items-center text-xs text-blue-600 hover:text-blue-500 font-semibold group/link hover:underline mt-1"
+                          <a
+                            href={member.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-xs text-blue-600 hover:text-blue-500 font-semibold group/link hover:underline mb-1 text-left"
                           >
                             <span>Profile Link</span>
                             <span className="group-hover/link:translate-x-0.5 transition-transform ml-1">→</span>
                           </a>
                         )}
-                        
-                        <div className="mt-auto pt-4 border-t border-slate-100">
-                          <p className="text-slate-700 text-xs font-semibold leading-relaxed">{member.institution}</p>
-                          <p className="text-muted-foreground italic text-[11px] mt-1.5 leading-relaxed">{member.institutionEn}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Chief Editor */}
-              <div className="mb-16">
-                <h3 className="text-2xl font-bold mb-8 border-l-4 border-primary pl-4 text-primary">முதன்மை ஆசிரியர் (Chief Editor)</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {chiefEditor.map((member, idx) => (
-                    <div key={idx} className="bg-white rounded-2xl overflow-hidden flex flex-col h-full border border-slate-100 hover:border-primary/20 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                      <div className="aspect-[4/3] bg-gradient-to-br from-indigo-50 to-teal-50/50 flex items-center justify-center p-6 border-b border-slate-100 relative">
-                        <div className="w-20 h-20 rounded-full bg-white border-2 border-white shadow-md flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300 relative">
-                          <Users className="w-10 h-10 text-primary/70" />
-                        </div>
-                        <span className="absolute top-3 right-3 bg-primary text-white text-[9px] font-extrabold px-2.5 py-1 rounded-full shadow-sm uppercase tracking-wider">
-                          CHIEF
-                        </span>
-                      </div>
-                      
-                      <div className="p-6 flex-grow flex flex-col gap-4 text-sm">
-                        <div>
-                          <p className="font-bold text-lg text-slate-900 leading-tight mb-1.5 group-hover:text-primary transition-colors">{member.name}</p>
-                          <p className="text-slate-600 leading-relaxed font-medium">{member.role}</p>
-                          <p className="text-primary/70 italic text-xs mt-2.5 font-normal leading-relaxed">{member.nameEn}, {member.roleEn}</p>
-                        </div>
-                        
-                        <div className="space-y-2">
-                          <p className="text-slate-700 break-all text-xs font-semibold">{member.email}</p>
-                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/5 text-primary text-xs font-semibold border border-primary/10 shadow-sm">
+                        {member.email && (
+                          <p className="text-slate-700 break-all text-xs font-semibold text-left">{member.email}</p>
+                        )}
+                        {member.vidwanId && (
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/5 text-primary text-xs font-semibold border border-primary/10 shadow-sm mt-1 text-left">
                             Vidwan-ID : {member.vidwanId}
                           </span>
-                        </div>
-                        
-                        <div className="mt-auto pt-4 border-t border-slate-100">
-                          <p className="text-slate-700 text-xs font-semibold leading-relaxed">{member.institution}</p>
-                          <p className="text-muted-foreground italic text-[11px] mt-1.5 leading-relaxed">{member.institutionEn}</p>
-                        </div>
+                        )}
+                      </div>
+
+                      <div className="mt-auto pt-4 border-t border-slate-100 text-left">
+                        <p className="text-slate-700 text-xs font-semibold leading-relaxed text-left">{member.institution}</p>
+                        <p className="text-muted-foreground italic text-[11px] mt-1.5 leading-relaxed text-left">{member.institutionEn}</p>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
-
-              {/* Editorial Board Members */}
-              <div>
-                <h3 className="text-2xl font-bold mb-8 border-l-4 border-primary pl-4 text-primary">ஆசிரியர் குழு ( Editorial Board )</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {editorialBoardMembers.map((member, idx) => (
-                    <div key={idx} className="bg-white rounded-2xl overflow-hidden flex flex-col h-full border border-slate-100 hover:border-primary/20 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                      <div className="aspect-[4/3] bg-gradient-to-br from-teal-50 to-indigo-50/50 flex items-center justify-center p-6 border-b border-slate-100 relative">
-                        <div className="w-20 h-20 rounded-full bg-white border-2 border-white shadow-md flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                          <Users className="w-10 h-10 text-primary/70" />
-                        </div>
-                      </div>
-                      
-                      <div className="p-6 flex-grow flex flex-col gap-4 text-sm">
-                        <div>
-                          <p className="font-bold text-lg text-slate-900 leading-tight mb-1.5 group-hover:text-primary transition-colors">{member.name}</p>
-                          <p className="text-slate-600 leading-relaxed font-medium">{member.role}</p>
-                          <p className="text-primary/70 italic text-xs mt-2.5 font-normal leading-relaxed">{member.nameEn}, {member.roleEn}</p>
-                        </div>
-                        
-                        <div className="space-y-2">
-                          {member.link && (
-                            <a 
-                              href={member.link} 
-                              target="_blank" 
-                              rel="noopener noreferrer" 
-                              className="inline-flex items-center text-xs text-blue-600 hover:text-blue-500 font-semibold group/link hover:underline mb-1"
-                            >
-                              <span>Profile Link</span>
-                              <span className="group-hover/link:translate-x-0.5 transition-transform ml-1">→</span>
-                            </a>
-                          )}
-                          {member.email && (
-                            <p className="text-slate-700 break-all text-xs font-semibold">{member.email}</p>
-                          )}
-                          {member.vidwanId && (
-                            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/5 text-primary text-xs font-semibold border border-primary/10 shadow-sm mt-1">
-                              Vidwan-ID : {member.vidwanId}
-                            </span>
-                          )}
-                        </div>
-                        
-                        <div className="mt-auto pt-4 border-t border-slate-100">
-                          <p className="text-slate-700 text-xs font-semibold leading-relaxed">{member.institution}</p>
-                          <p className="text-muted-foreground italic text-[11px] mt-1.5 leading-relaxed">{member.institutionEn}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
             </div>
-          </section>
 
-          {/* Peer Reviewed Journal Section */}
-          <section id="peer-reviewed" className="scroll-mt-32 max-w-5xl mx-auto px-1">
-             <div className="flex items-center gap-3 mb-6 border-b border-primary/10 pb-4">
-                <div className="p-2 rounded-lg bg-primary/10">
-                 <Award className="w-6 h-6 md:w-8 md:h-8 text-primary" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-primary">சக மதிப்பாய்வு இதழ் (Peer Reviewed Journal)</h2>
-             </div>
-             
-             <Card className="overflow-hidden border border-primary/10 shadow-lg bg-white rounded-2xl">
-               <div className="bg-gradient-to-r from-[#1d3f4a] to-[#2a5969] p-6 md:p-8 text-white">
-                 <p className="text-sm font-semibold tracking-wider text-white/70 uppercase mb-1">வாகை தமிழ்ச்சங்கம்</p>
-                 <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 leading-tight">
-                   IJVAAGAI – International Journal of Visionary Advancements in Applied Global Academics and Innovation
-                 </h3>
-                 <div className="flex flex-wrap gap-3 items-center mt-4">
-                   <span className="bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full text-sm font-bold border border-white/10 shadow-sm">
-                     E-ISSN: 3107-9202
-                   </span>
-                   <span className="bg-gold/90 text-primary-dark px-3 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider shadow-sm">
-                     PEER REVIEWED
-                   </span>
-                 </div>
-               </div>
-               
-               <CardContent className="p-6 md:p-8 space-y-6">
-                 <div className="p-5 bg-primary/5 rounded-xl border border-primary/10">
-                   <p className="text-lg font-bold text-primary leading-relaxed">
-                     கல்வி மற்றும் புத்தாக்கத்தில் தொலைநோக்குச் சார்ந்த முன்னேற்றங்களுக்கான பன்னாட்டு ஆய்விதழ் ( IJVAAGAI TAMILSANGAM ) மதிப்பாய்வு செய்யப்பட்ட பன்னாட்டு காலாண்டு தமிழாய்விதழாகும்.
-                   </p>
-                 </div>
-                 
-                 <div className="space-y-4 text-foreground/80 leading-relaxed text-base md:text-lg">
-                   <p className="indent-8 text-justify">
-                     வாகை தமிழ்ச்சங்கத்தின் பன்னாட்டு காலாண்டு தமிழாய்விதழான IJVAAGAI (E-ISSN: 3107-9202), கல்வி மற்றும் அறிவியல் உலகிற்குச் சமர்ப்பிக்கப்படும் ஆய்வுக் கட்டுரைகளின் தரம், உண்மைத்தன்மை மற்றும் அறிவியல் மற்றும் அனைத்துத் தரப்பினரும் ஏற்கும் தன்மை ஆகியவற்றை உறுதி செய்ய மிகக் கடுமையான ‘சக மதிப்பாய்வு’ (Peer-Review) முறையைப் பின்பற்றுகிறது.
-                   </p>
-                   <p className="indent-8 text-justify">
-                     இவ்விதழுக்கு வரும் ஒவ்வொரு பிரதியும், அந்தந்தக் குறிப்பிட்ட கல்வி அல்லது விஞ்ஞானத்துறை சார்ந்த மூத்த பேராசிரியர்கள், துறைசார் வல்லுனர்கள் மற்றும் உலகளாவிய ஆராய்ச்சி வல்லுநர்களின் தீவிரப் பார்வைக்கு அனுப்பப்படுகிறது. தனிச்சார்பற்ற நடுநிலையான மதிப்பீட்டை உறுதி செய்வதற்காக, கட்டுரை எழுதியவரின் விவரங்கள் மதிப்பீட்டாளருக்கும், மதிப்பீட்டாளரின் விவரங்கள் கட்டுரையாளருக்கும் தெரியாத வண்ணம் ‘இரட்டை மறைப்பு சக மதிப்பாய்வு’ (Double-Blind Peer Review) முறை இங்கு கையாளப்படுகிறது.
-                   </p>
-                   <p className="indent-8 text-justify">
-                     இந்த வல்லுநர் குழுவானது கட்டுரையின் தனித்தன்மை, தரவுத் துல்லியம் மற்றும் அது சமூகத்திற்கு வழங்கும் புத்தாக்கப் பங்களிப்பு ஆகியவற்றை ஆழமாக ஆராய்ந்து விமர்சிக்கிறது. அவர்களின் விரிவான ஆய்வு அறிக்கையின் அடிப்படையிலேயே, ஒரு கட்டுரை எவ்வித மாற்றமுமின்றி நேரடியாக வெளியீட்டிற்குப் பொருத்தமானதா, அல்லது வல்லுநர்களின் பரிந்துரைகளின்படி திருத்தங்கள் செய்யப்பட வேண்டுமா அல்லது போதிய ஆய்வுத் தரம் இல்லாத பட்சத்தில் வெளியீட்டிற்குத் தகுதியற்றதாக நிராகரிக்கப்பட வேண்டுமா என்பதை இதழாசிரியர் குழு இறுதி செய்கிறது. இதன் மூலம் ஆய்வுக்கட்டுரை வெளியீடுகளின் உலகளாவிய நம்பகத்தன்மையை வாகை தமிழ்ச்சங்கம் முழுமையாக நிலைநிறுத்துகிறது.
-                   </p>
-                 </div>
-               </CardContent>
-             </Card>
-          </section>
-
-          <ArchivesSection />
-        </div>
-
-        {/* Call to Action */}
-        <section className="py-16 md:py-24 bg-cream">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-              ஆய்வுக் கட்டுரைகளை சமர்ப்பிக்க
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              தமிழ் மொழி, இலக்கியம், பண்பாடு சார்ந்த உங்கள் ஆய்வுக் கட்டுரைகளை 
-              வாகை தமிழ்ச்சங்கத்தின் வெளியீடுகளில் பிரசுரிக்க விரும்பினால் எங்களை தொடர்புகொள்ளுங்கள்.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="mailto:publications@vaagaitamilsangam.com"
-                className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors"
-              >
-                கட்டுரை சமர்ப்பிக்க
-              </a>
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-lg border border-primary px-6 py-3 text-sm font-medium text-primary hover:bg-primary/10 transition-colors"
-              >
-                தொடர்புக்கு
-              </a>
-            </div>
           </div>
         </section>
+
+        {/* Peer Reviewed Journal Section */}
+        <section id="peer-reviewed" className="scroll-mt-32 max-w-5xl mx-auto px-1">
+          <div className="flex items-center gap-3 mb-6 border-b border-primary/10 pb-4">
+            <div className="p-2 rounded-lg bg-primary/10">
+              <Award className="w-6 h-6 md:w-8 md:h-8 text-primary" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary">சக மதிப்பாய்வு இதழ் (Peer Reviewed Journal)</h2>
+          </div>
+
+          <Card className="overflow-hidden border border-primary/10 shadow-lg bg-white rounded-2xl">
+            <div className="bg-gradient-to-r from-[#1d3f4a] to-[#2a5969] p-6 md:p-8 text-white">
+              <p className="text-sm font-semibold tracking-wider text-white/70 uppercase mb-1">வாகை தமிழ்ச்சங்கம்</p>
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 leading-tight">
+                IJVAAGAI – International Journal of Visionary Advancements in Applied Global Academics and Innovation
+              </h3>
+              <div className="flex flex-wrap gap-3 items-center mt-4">
+                <span className="bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full text-sm font-bold border border-white/10 shadow-sm">
+                  E-ISSN: 3107-9202
+                </span>
+                <span className="bg-gold/90 text-primary-dark px-3 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-wider shadow-sm">
+                  PEER REVIEWED
+                </span>
+              </div>
+            </div>
+
+            <CardContent className="p-6 md:p-8 space-y-6">
+              <div className="p-5 bg-primary/5 rounded-xl border border-primary/10">
+                <p className="text-lg font-bold text-primary leading-relaxed">
+                  கல்வி மற்றும் புத்தாக்கத்தில் தொலைநோக்குச் சார்ந்த முன்னேற்றங்களுக்கான பன்னாட்டு ஆய்விதழ் ( IJVAAGAI TAMILSANGAM ) மதிப்பாய்வு செய்யப்பட்ட பன்னாட்டு காலாண்டு தமிழாய்விதழாகும்.
+                </p>
+              </div>
+
+              <div className="space-y-4 text-foreground/80 leading-relaxed text-base md:text-lg">
+                <p className="indent-8 text-justify">
+                  வாகை தமிழ்ச்சங்கத்தின் பன்னாட்டு காலாண்டு தமிழாய்விதழான IJVAAGAI (E-ISSN: 3107-9202), கல்வி மற்றும் அறிவியல் உலகிற்குச் சமர்ப்பிக்கப்படும் ஆய்வுக் கட்டுரைகளின் தரம், உண்மைத்தன்மை மற்றும் அறிவியல் மற்றும் அனைத்துத் தரப்பினரும் ஏற்கும் தன்மை ஆகியவற்றை உறுதி செய்ய மிகக் கடுமையான ‘சக மதிப்பாய்வு’ (Peer-Review) முறையைப் பின்பற்றுகிறது.
+                </p>
+                <p className="indent-8 text-justify">
+                  இவ்விதழுக்கு வரும் ஒவ்வொரு பிரதியும், அந்தந்தக் குறிப்பிட்ட கல்வி அல்லது விஞ்ஞானத்துறை சார்ந்த மூத்த பேராசிரியர்கள், துறைசார் வல்லுனர்கள் மற்றும் உலகளாவிய ஆராய்ச்சி வல்லுநர்களின் தீவிரப் பார்வைக்கு அனுப்பப்படுகிறது. தனிச்சார்பற்ற நடுநிலையான மதிப்பீட்டை உறுதி செய்வதற்காக, கட்டுரை எழுதியவரின் விவரங்கள் மதிப்பீட்டாளருக்கும், மதிப்பீட்டாளரின் விவரங்கள் கட்டுரையாளருக்கும் தெரியாத வண்ணம் ‘இரட்டை மறைப்பு சக மதிப்பாய்வு’ (Double-Blind Peer Review) முறை இங்கு கையாளப்படுகிறது.
+                </p>
+                <p className="indent-8 text-justify">
+                  இந்த வல்லுநர் குழுவானது கட்டுரையின் தனித்தன்மை, தரவுத் துல்லியம் மற்றும் அது சமூகத்திற்கு வழங்கும் புத்தாக்கப் பங்களிப்பு ஆகியவற்றை ஆழமாக ஆராய்ந்து விமர்சிக்கிறது. அவர்களின் விரிவான ஆய்வு அறிக்கையின் அடிப்படையிலேயே, ஒரு கட்டுரை எவ்வித மாற்றமுமின்றி நேரடியாக வெளியீட்டிற்குப் பொருத்தமானதா, அல்லது வல்லுநர்களின் பரிந்துரைகளின்படி திருத்தங்கள் செய்யப்பட வேண்டுமா அல்லது போதிய ஆய்வுத் தரம் இல்லாத பட்சத்தில் வெளியீட்டிற்குத் தகுதியற்றதாக நிராகரிக்கப்பட வேண்டுமா என்பதை இதழாசிரியர் குழு இறுதி செய்கிறது. இதன் மூலம் ஆய்வுக்கட்டுரை வெளியீடுகளின் உலகளாவிய நம்பகத்தன்மையை வாகை தமிழ்ச்சங்கம் முழுமையாக நிலைநிறுத்துகிறது.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        <ArchivesSection />
+      </div>
+
+      {/* Call to Action */}
+      <section className="py-16 md:py-24 bg-cream">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+            ஆய்வுக் கட்டுரைகளை சமர்ப்பிக்க
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+            தமிழ் மொழி, இலக்கியம், பண்பாடு சார்ந்த உங்கள் ஆய்வுக் கட்டுரைகளை
+            வாகை தமிழ்ச்சங்கத்தின் வெளியீடுகளில் பிரசுரிக்க விரும்பினால் எங்களை தொடர்புகொள்ளுங்கள்.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="mailto:publications@vaagaitamilsangam.com"
+              className="inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-sm hover:bg-primary/90 transition-colors"
+            >
+              கட்டுரை சமர்ப்பிக்க
+            </a>
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-lg border border-primary px-6 py-3 text-sm font-medium text-primary hover:bg-primary/10 transition-colors"
+            >
+              தொடர்புக்கு
+            </a>
+          </div>
+        </div>
+      </section>
     </PageShell>
   )
 }
