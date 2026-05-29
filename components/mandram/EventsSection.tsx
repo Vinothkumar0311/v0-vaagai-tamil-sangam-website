@@ -145,7 +145,7 @@ export function EventsSection({ mandramSlug, initialEvents }: EventsSectionProps
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-4xl md:text-6xl font-black text-slate-900 mb-8 tracking-tight"
+            className="text-4xl md:text-6xl font-black text-slate-900 mb-8 tracking-tight leading-normal md:leading-normal"
           >
             மன்றத்தின் <span className="text-primary italic">நிகழ்வுகளைத்</span> திட்டமிடுங்கள்
           </motion.h2>
@@ -182,7 +182,7 @@ export function EventsSection({ mandramSlug, initialEvents }: EventsSectionProps
               {/* Calendar Controls */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-12">
                 <div className="space-y-1">
-                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-normal">
                     {format(currentMonth, "MMMM")}
                     <span className="text-primary ml-2 font-light">{format(currentMonth, "yyyy")}</span>
                   </h3>
@@ -275,7 +275,7 @@ export function EventsSection({ mandramSlug, initialEvents }: EventsSectionProps
                     <CalendarIcon className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <h4 className="text-2xl font-black text-slate-900 tracking-tight">
+                    <h4 className="text-2xl font-black text-slate-900 tracking-tight leading-normal">
                        {isToday(selectedDate) ? "Today's Agenda" : format(selectedDate, "MMM do, EEEE")}
                     </h4>
                     <p className="text-slate-400 text-sm font-bold uppercase tracking-widest">
@@ -325,7 +325,7 @@ export function EventsSection({ mandramSlug, initialEvents }: EventsSectionProps
                         </div>
 
                         <div className="space-y-4">
-                          <h5 className="text-2xl font-black text-slate-900 leading-none group-hover:text-primary transition-colors">
+                          <h5 className="text-2xl font-black text-slate-900 leading-normal group-hover:text-primary transition-colors">
                              {event.title}
                           </h5>
                           
@@ -429,7 +429,7 @@ export function EventsSection({ mandramSlug, initialEvents }: EventsSectionProps
                        {format(parseISO(activeEvent.date), "MMMM do, yyyy")}
                      </div>
                   </div>
-                  <h3 className="text-4xl font-black text-slate-900 tracking-tight leading-tight">
+                  <h3 className="text-4xl font-black text-slate-900 tracking-tight leading-normal">
                     {activeEvent.title}
                   </h3>
                 </div>

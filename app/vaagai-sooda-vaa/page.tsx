@@ -84,16 +84,16 @@ export default function VaagaiSoodaVaaPage() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-16 space-y-6">
-            <p className="text-xl md:text-2xl text-primary font-medium italic leading-relaxed">
+            <p className="text-xl md:text-2xl text-primary font-medium italic leading-relaxed text-center">
               "தொண்டு செய்வாய் தமிழுக்கே துறைதோறும் துடித்தெழுந்தே"
             </p>
-            <p className="text-foreground/80 leading-relaxed text-justify md:text-center max-w-4xl mx-auto">
+            <p className="text-foreground/80 leading-relaxed text-left md:text-center max-w-4xl mx-auto">
               என்ற பாவேந்தரின் பெரும் கனவை நனவாக்கும் உன்னதப் பயணத்தைத் தொடங்குகிறது வாகை தமிழ்ச்சங்கம். வெறும் தேர்வாக மட்டுமின்றி, தமிழின் ஆணிவேரான 'எண்ணும் எழுத்தும்' எனும் விழுமியத்தை மாணவர் மனதில் விதைக்கும் ஒரு வாழ்வியல் மாற்றமாக 'வாகை சூட வா' தமிழ் ஒலிம்பியாட் மலர்கிறது.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="space-y-6 text-foreground/80 leading-relaxed text-justify">
+            <div className="space-y-6 text-foreground/80 leading-relaxed text-left">
               <p>
                 மொழிப்புலமை என்பது பாட அறிவைத் தாண்டியது; அது நம் பண்பாட்டின் அடையாளம். அதனை உலகத்தரம் வாய்ந்த ஒரு தளத்தில் நிலைநிறுத்தி, நம் மாணாக்கர்களின் அறிவாற்றலை அகிலம் போற்றச் செய்வதே இம்மாபெரும் திட்டத்தின் அடிப்படை நோக்கம்.
               </p>
@@ -104,7 +104,7 @@ export default function VaagaiSoodaVaaPage() {
                 "கேடில் விழுச்செல்வம் கல்வி" எனும் வள்ளுவர் வாக்கிற்கேற்ப, அழிவில்லாத செல்வமான தமிழை ஆழமாகக் கற்க இது ஒரு அரிய வாய்ப்பு. மேலும் இத்தேர்வில் பங்கேற்பதன் மூலம் வழக்கமான பாடப்புத்தகத் தமிழைத் தாண்டி, சவாலான வினாக்கள் மூலம் மாணவர்களின் சிந்திக்கும் திறனை மேம்படுத்துதும்.
               </p>
             </div>
-            <div className="space-y-6 text-foreground/80 leading-relaxed text-justify">
+            <div className="space-y-6 text-foreground/80 leading-relaxed text-left">
               <p>
                 சர்வதேசத் தரத்திலான இப்போட்டியில் பங்கேற்பதன் மூலம், மாணவர்கள் தங்களின் தர்க்க ரீதியான சிந்தனை மற்றும் மொழிப் பயன்பாட்டுத் திறனை உலக அரங்கில் ஒப்பிட்டுப் பார்க்க முடியும். இது அவர்களுக்கு ஒரு புதிய தன்னம்பிக்கையையும், தனித்துவமான அடையாளத்தையும் அள்ளித் தரும்.
               </p>
@@ -168,10 +168,10 @@ export default function VaagaiSoodaVaaPage() {
 
               <div className="space-y-4">
                 {[
-                  { title: "கற்கண்டு ( 4 & 5 )", link: getAssetPath("/PDF/4 & 5_merged.pdf") },
-                  { title: "கனியமுது ( 6 & 7 )", link: getAssetPath("/PDF/6 - 7_merged (1).pdf") },
-                  { title: "தேன்தமிழ் ( 8 & 9 )", link: getAssetPath("/PDF/8 - 9_merged.pdf") },
-                  { title: "தெள்ளமுது ( 10, 11 & 12 )", link: getAssetPath("/PDF/10 - 12_merged.pdf") }
+                  { title: "கற்கண்டு ( 4 & 5 )", link: getAssetPath("/PDF/கற்கண்டு.pdf") },
+                  { title: "கனியமுது ( 6 & 7 )", link: getAssetPath("/PDF/கனியமுது.pdf") },
+                  { title: "தேன்தமிழ் ( 8 & 9 )", link: getAssetPath("/PDF/தேன்தமிழ்.pdf") },
+                  { title: "தெள்ளமுது ( 10, 11 & 12 )", link: getAssetPath("/PDF/தெள்ளமுது.pdf") }
                 ].map((item, i) => (
                   <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 bg-muted/50 rounded-xl hover:bg-teal-50 hover:text-teal-700 transition-colors group border border-transparent hover:border-teal-200">
                     <span className="font-semibold">{item.title}</span>

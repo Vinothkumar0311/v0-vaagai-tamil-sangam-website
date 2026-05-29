@@ -65,8 +65,8 @@ export function MandramSection({
                       <CheckCircle2 className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h5 className="font-bold text-primary text-base leading-tight mb-1">{feature.title}</h5>
-                      <p className="text-xs text-foreground/70">{feature.desc}</p>
+                      <h5 className="font-bold text-primary text-lg leading-snug mb-1.5">{feature.title}</h5>
+                      <p className="text-sm text-foreground/75 leading-relaxed">{feature.desc}</p>
                     </div>
                   </div>
                 ))}

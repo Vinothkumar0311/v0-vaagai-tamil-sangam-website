@@ -105,23 +105,21 @@ const guidelinesList = [
   {
     tamil: "ஆய்வாளர்கள் எழுதி அனுப்பும் ஆய்வுக்கட்டுரைகள் தம் சொந்தப் படைப்பாக இருக்க வேண்டும். இணையத்தில் உள்ள செய்திகளை அப்படியே வெட்டி ஒட்டுதல் கூடாது. கருத்துத் திருட்டு இருக்கும் கட்டுரைகள் நிராகரிக்கப்படும். ஆய்வுக்கட்டுரை செயலாக்கக் கட்டணம் மற்றும் சான்றிதழ் கட்டணம் ( அஞ்சல் செலவினம் உட்பட ) ரூபாய் 1050 செலுத்த வேண்டும்.",
     english: "Research papers written and submitted by researchers must be their own work. They should not be cut and pasted from the internet. Articles containing plagiarism will be rejected. A research paper processing fee and certificate fee (including postage) of Rs. 1050 must be paid."
-  },
-  {
-    tamil: "கட்டுரையில் முக்கியமாக ஆய்வுச்சுருக்கம், ஆறு முதன்மைச் சொற்கள், முடிவுரை இருத்தல் அவசியம். கட்டுரைகள் தட்டச்சுப் பிழை, இலக்கணப் பிழை இன்றி அமைதல் வேண்டும். கட்டுரையாளர்கள் தங்கள் கட்டுரைகளை info@vaagaitamilsangam.com அல்லது vaagaitamilsangam@gmail.com என்ற மின்னஞ்சல் மூலம் அனுப்பலாம்.",
-    english: "The article must mainly contain a research abstract, six main words, and a conclusion. Articles must be free of typos and grammatical errors. Authors can send their articles by email to info@vaagaitamilsangam.com or vaagaitamilsangam@gmail.com"
   }
-]
+];
 
 const advisoryBoard = [
   {
+    img: "/Staff_Photo/dr_c_vasanthi_1.png",
     name: "முனைவர். சீ.வசந்தி",
     nameEn: "Dr. C. Vasanthi",
     role: "கண்காணிப்பாளர் மற்றும் / ஆணையாளர் (பொ) & (ப.நி.), தொல்லியல் துறை",
     roleEn: "Commissioner & Superintendent (i/c.) & (P.O.), Department of Archaeology",
     institution: "தமிழ்நாடு அரசு, சென்னை.",
-    institutionEn: "Government of Tamil Nadu, Chennai.",
+    institutionEn: "Government of Tamil Nadu, Chennai",
   },
   {
+    img: "/Staff_Photo/dr_c_thiyagarajan_professor_2.png",
     name: "முனைவர். சி.தியாகராஜன்",
     nameEn: "Dr. C. Thiyagarajan",
     role: "பதிவாளர் (பொ)",
@@ -129,11 +127,21 @@ const advisoryBoard = [
     link: "https://www.tamiluniversity.ac.in/english/wp-content/uploads/2018/07/Resume-format-HOD.pdf",
     institution: "தமிழ்ப் பல்கலைக்கழகம், தஞ்சாவூர்.",
     institutionEn: "Tamil University, Thanjavur",
+  },
+  {
+    img: "/Staff_Photo/முனைவர்_சு_3.jpeg",
+    name: "முனைவர். சு. கனிமொழி சுகுணா",
+    nameEn: "Dr. S. Kanimozhi Suguna",
+    role: "உதவிப் பேராசிரியர், கணினி அறிவியல் துறை",
+    roleEn: "Assistant Professor, Department of Computer Science",
+    institution: "எஸ்.ஆர்.எம். அறிவியல் மற்றும் தொழில்நுட்ப நிறுவனம், ராமாபுரம்",
+    institutionEn: "SRM Institute of Science and Technology, Ramapuram",
   }
 ];
 
 const chiefEditor = [
   {
+    img: "/Staff_Photo/mr_m_manojkumar_founder__5.png",
     name: "திரு. மா.மனோஜ்குமார்",
     nameEn: "Mr. M. Manojkumar",
     role: "நிறுவனர் & தலைவர்",
@@ -147,6 +155,7 @@ const chiefEditor = [
 
 const editorialBoardMembers = [
   {
+    img: "/Staff_Photo/dr_s_sathiya_head_of_the_department__7.png",
     name: "முனைவர். ச.சத்தியா",
     nameEn: "Dr. S. Sathiya",
     role: "தமிழ்த்துறை தலைவர்",
@@ -158,6 +167,7 @@ const editorialBoardMembers = [
     institutionEn: "Bon Secours Women's College, Thanjavur",
   },
   {
+    img: "/Staff_Photo/dr_m_kavitha_8.jpeg",
     name: "முனைவர். ம.கவிதா",
     nameEn: "Dr. M. Kavitha",
     role: "தமிழ்த்துறைதலைவர்",
@@ -166,10 +176,20 @@ const editorialBoardMembers = [
     email: "headtamil@vicas.org",
     vidwanId: "206170",
     institution: "விவேகானந்தா கலை & அறிவியல் மகளிர் கல்லூரி, திருச்செங்கோடு.",
-    institutionEn: "Vivekanandha College of Arts and Science for Women, Elayampalayam.",
+    institutionEn: "Vivekanandha College of Arts and Science for Women, Elayampalayam",
   },
   {
-    name: "தமிழ்மிகு. மு.இராமலட்சுமி",
+    img: "/Staff_Photo/dr_v_balasarasuvathi_honorary_lecturer__9.jpeg",
+    name: "முனைவர். வெ. பாலசரசுவதி",
+    nameEn: "Dr. V. Balasarasuvathi",
+    role: "கௌரவ விரிவுரையாளர் / தமிழ்த்துறை",
+    roleEn: "Honorary Lecturer / Tamil Department",
+    institution: "அரசு கலைக்கல்லூரி, கோவை",
+    institutionEn: "Government Arts College, Coimbatore",
+  },
+  {
+    img: "/Staff_Photo/mrs_m_ramalakshmi_10.png",
+    name: "தமிழ்மிகு. மூ.இராமலெட்சுமி",
     nameEn: "Mrs. M. Ramalakshmi",
     role: "இடைநிலை ஆசிரியர்",
     roleEn: "Intermediate Teacher",
@@ -179,6 +199,7 @@ const editorialBoardMembers = [
     institutionEn: "Panchayat Union Primary School, Konnapatti, Madurai",
   },
   {
+    img: "/Staff_Photo/mr_a_karthikeyan_11.png",
     name: "திரு. அ.கார்த்திகேயன்",
     nameEn: "Mr. A. Karthikeyan",
     role: "பொறுப்பாளர், ஆராய்ச்சி மற்றும் மேம்பாட்டுத்துறை",
@@ -189,16 +210,17 @@ const editorialBoardMembers = [
     institutionEn: "Vaagai Tamilsangam, Namakkal",
   },
   {
-    img: "/Staff_Photo/ChatGPT Image May 22, 2026, 10_29_42 AM.png",
+    img: "/Staff_Photo/mr_n_kanagaraj_high_school_tamil_teacher_12.jpeg",
     name: "திரு. நா.கனகராஜ்",
     nameEn: "Mr. N. Kanagaraj",
     role: "முதுநிலைப் பள்ளித் தமிழாசிரியர்",
     roleEn: "High School Tamil Teacher",
     email: "kanagarajn1999@gmail.com",
     institution: "பசும்பொன் தேவர் மேல்நிலைப் பள்ளி, மம்சபுரம், விருதுநகர் மாவட்டம்.",
-    institutionEn: "Pasumpon Thevar Higher Secondary School Mamsapuram, Virudhunagar.",
+    institutionEn: "Pasumpon Thevar Higher Secondary School Mamsapuram, Virudhunagar",
   },
   {
+    img: "/Staff_Photo/mr_k_vijayanarasimhan_assistant_professor_in_department_of_physics_13.png",
     name: "தமிழ்மிகு. கா.விசயநரசிம்மன்",
     nameEn: "Mr. K. Vijayanarasimhan",
     role: "துணைப்பேராசிரியர் / இயற்பியல், மாந்தவியல் & அறிவியல் துறை",
@@ -206,31 +228,34 @@ const editorialBoardMembers = [
     email: "vijayanarasimhan.k@rajalakshmi.edu.in",
     vidwanId: "652605",
     institution: "ராஜலட்சுமி பொறியியல் கல்லூரி (தன்னாட்சி), தண்டலம், சென்னை.",
-    institutionEn: "Rajalakshmi College of Engineering (Autonomous), Thandalam, Chennai.",
+    institutionEn: "Rajalakshmi College of Engineering (Autonomous), Thandalam, Chennai",
   },
   {
+    img: "/Staff_Photo/dr_j_bhuvaneswari_14.png",
     name: "முனைவர். ஜெ.புவனேஸ்வரி",
     nameEn: "Dr. J. Bhuvaneswari",
-    role: "உதவிப்பேராசிரியர், தமிழாய்வுத்துறை",
+    role: "உதவிப் பேராசிரியர், தமிழாய்வுத்துறை",
     roleEn: "Assistant Professor, Department of Tamil Studies",
     link: "https://vidwan.inflibnet.ac.in/profile/166740",
     email: "buvi1727@nct.ac.in",
     vidwanId: "166740",
     institution: "தேசியக்கல்லூரி (தன்னாட்சி), திருச்சி.",
-    institutionEn: "National College (Autonomous), Trichy.",
+    institutionEn: "National College (Autonomous), Trichy",
   },
   {
+    img: "/Staff_Photo/dr_n_hema_malini_15.jpeg",
     name: "முனைவர். ந. ஹேம மாலினி",
     nameEn: "Dr. N. Hema Malini",
-    role: "உதவிப்பேராசிரியர் & ஆராய்ச்சி ஒருங்கிணைப்பாளர் / ஆங்கிலத்துறை",
+    role: "உதவிப் பேராசிரியர் & ஆராய்ச்சி ஒருங்கிணைப்பாளர் / ஆங்கிலத்துறை",
     roleEn: "Assistant Professor & Research Coordinator / Department of English",
     link: "https://vidwan.inflibnet.ac.in/profile/183251",
     email: "hemamalini@mkjc.in",
     vidwanId: "183251",
     institution: "மருதர் கேசரி ஜெயின் மகளிர் கல்லூரி, வாணியம்பாடி",
-    institutionEn: "Marudhar Kesari Jain College for Women, Vaniyambadi.",
+    institutionEn: "Marudhar Kesari Jain College for Women, Vaniyambadi",
   },
   {
+    img: "/Staff_Photo/dr_s_balaraman_assistant_professor_of_tamil__16.jpeg",
     name: "முனைவர் சு.பலராமன்",
     nameEn: "Dr. S. Balaraman",
     role: "தமிழ் உதவிப் பேராசிரியர்",
@@ -239,9 +264,10 @@ const editorialBoardMembers = [
     email: "balarams@srmist.edu.in",
     vidwanId: "491010",
     institution: "எஸ்.ஆர்.எம் அறிவியல் மற்றும் மானுடவியல் புலம், இராமாபுரம், சென்னை",
-    institutionEn: "SRM Faculty of Science and Humanities, Ramapuram, Chennai - 089.",
+    institutionEn: "SRM Faculty of Science and Humanities, Ramapuram, Chennai - 089",
   },
   {
+    img: "/Staff_Photo/mrs_s_senbhagavadivu_assistant_professor_17.jpeg",
     name: "திருமதி. செ. செண்பகவடிவு",
     nameEn: "Mrs. S. Senbhagavadivu",
     role: "உதவிப் பேராசிரியர், தகவல் தொழில்நுட்பத்துறை",
@@ -250,18 +276,20 @@ const editorialBoardMembers = [
     email: "shenbagavadivus.it@srmvalliammai.ac.in",
     vidwanId: "328067",
     institution: "உறுப்பினர், பாரிவேந்தர் மாணவர் தமிழ்மன்றம் எஸ். ஆர். எம். வள்ளியம்மை பொறியியல் கல்லூரி, காட்டாங்குளத்தூர்.",
-    institutionEn: "Member, Parivendar Student Tamil Mandram S. R. M. Valliammai College of Engineering, Kattankulathur.",
+    institutionEn: "Member, Parivendar Student Tamil Mandram S. R. M. Valliammai College of Engineering, Kattankulathur",
   },
   {
+    img: "/Staff_Photo/dr_d_tamilselvam_18.jpeg",
     name: "முனைவர். த. தமிழ்ச்செல்வம்",
     nameEn: "Dr. D. Tamilselvam",
-    role: "உதவிப்பேராசிரியர் (கணினி அறிவியல்)",
+    role: "உதவிப் பேராசிரியர் (கணினி அறிவியல்)",
     roleEn: "Assistant Professor (Computer Science)",
     link: "https://rgasc.edu.in/admin/images/pdf/98051_Faculty_Profile_Thamiz%20selvam.pdf",
     institution: "இராஜீவ் காந்தி கலை மற்றும் அறிவியல் கல்லூரி, புதுவை",
     institutionEn: "Rajiv Gandhi College of Arts and Sciences, Puducherry",
   },
   {
+    img: "/Staff_Photo/dr_p_vigneshwari_19.jpeg",
     name: "முனைவர் ப. விக்னேஸ்வரி",
     nameEn: "Dr. P. Vigneshwari",
     role: "இணைப் பேராசிரியர் / தமிழ்த்துறை",
@@ -269,9 +297,42 @@ const editorialBoardMembers = [
     link: "https://vidwan.inflibnet.ac.in/profile/334879",
     vidwanId: "334879",
     institution: "நேரு கலை மற்றும் அறிவியல் கல்லூரி கோயம்புத்தூர்.",
-    institutionEn: "Nehru College of Arts and Science Coimbatore, Nehru Gardens, Thirumalayampalayam, Coimbatore 641105.",
+    institutionEn: "Nehru College of Arts and Science Coimbatore, Nehru Gardens, Thirumalayampalayam, Coimbatore 641105",
+  },
+  {
+    img: "/Staff_Photo/dr_m_samisundaram_head_of_department_and_associate_professor_20.jpeg",
+    name: "முனைவர் மு. சாமிசுந்தரம்",
+    nameEn: "Dr. M. Samisundaram",
+    role: "துறைத்தலைவர் மற்றும் இணைப்பேராசிரியர், தமிழ்த்துறை",
+    roleEn: "Head of Department and Associate Professor / Tamil",
+    link: "https://parkscollege.ac.in/teaching-staff/",
+    email: "sundaram1971@gmail.com",
+    institution: "பார்க்ஸ் கல்லூரி, திருப்பூர் - 641605",
+    institutionEn: "Parks College, Tirupur - 641605",
+  },
+  {
+    img: "/Staff_Photo/post_dr_m_ayyappan_arulmiku_subramania_swamy_college_of_arts_and_science_21.jpeg",
+    name: "முதுமுனைவர் மு. ஐயப்பன்",
+    nameEn: "Post Dr. M. Ayyappan",
+    role: "உதவிப் பேராசிரியர் / தமிழ்த்துறை",
+    roleEn: "Assistant Professor / Tamil",
+    link: "https://www.assascollege.org/#/teaching",
+    email: "driyyappanphd@gmail.com",
+    institution: "அருள்மிகு சுப்பிரமணிய சுவாமி கலை மற்றும் அறிவியல் கல்லூரி, விளாத்திகுளம், தூத்துக்குடி – 628907 (இந்துசமய அறநிலையத் துறை)",
+    institutionEn: "Arulmiku Subramania Swamy College of Arts and Science, Vlathikulam, Thoothukudi – 628907",
+  },
+  {
+    img: "/Staff_Photo/dr_a_chithra_22.jpeg",
+    name: "முனைவர் ஏ. சித்ரா",
+    nameEn: "Dr. A. Chithra",
+    role: "உதவிப் பேராசிரியர் / தமிழ்த்துறை",
+    roleEn: "Assistant Professor / Department of Tamil",
+    link: "https://sacas.ac.in/departments/dept-of-tamil/",
+    email: "chitra.damu1985@gmail.com",
+    institution: "S A கலை மற்றும் அறிவியல் கல்லூரி, திருவேற்காடு, சென்னை 600077",
+    institutionEn: "S. A. College of Arts & Science, Chennai - 600077",
   }
-]
+];
 
 export default function PublicationsPage() {
   return (

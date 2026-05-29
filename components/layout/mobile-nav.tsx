@@ -37,7 +37,7 @@ export function MobileNav({ scrolled, isHomePage, pathname }: MobileNavProps) {
           variant="ghost"
           size="icon"
           className={cn(
-            "xl:hidden -mr-2",
+            "lg:hidden -mr-2",
             scrolled || !isHomePage
               ? "text-foreground hover:bg-muted"
               : "text-white hover:bg-white/10"

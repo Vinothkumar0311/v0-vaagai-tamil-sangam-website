@@ -3,7 +3,16 @@ import Image from "next/image"
 import { PageShell } from "@/components/layout/page-shell"
 import { Card, CardContent } from "@/components/ui/card"
 import { getAssetPath } from "@/lib/paths"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { 
+  UserPlus, 
+  BookOpen, 
+  GraduationCap, 
+  ClipboardList, 
+  Award,
+  CalendarDays,
+  Calendar,
+  Sparkles
+} from "lucide-react"
 
 export const metadata: Metadata = {
   title: "பாடத்திட்டம்",
@@ -27,12 +36,48 @@ const advisoryBoard = [
 ]
 
 const academicCalendar = [
-  { event: "சேர்க்கை தொடங்கும் நாள்", period: "அக்டோபர் மூன்றாம் வாரம்" },
-  { event: "சேர்க்கை நிறைவடையும் நாள்", period: "சனவரி இரண்டாம் வாரம்" },
-  { event: "வகுப்புகள் தொடங்கும் நாள்", period: "பிப்ரவரி மூன்றாம் வாரம்" },
-  { event: "வகுப்புகள் நிறைவுறும் நாள்", period: "செப்டம்பர் முதல் வாரம்" },
-  { event: "களப்பணி/செய்முறை", period: "அக்டோபர் முதல் வாரம்" },
-  { event: "இறுதித்தேர்வு", period: "நவம்பர் முதல் வாரம்" },
+  { 
+    event: "சேர்க்கை தொடங்கும் நாள்", 
+    period: "அக்டோபர் மூன்றாம் வாரம்", 
+    icon: UserPlus,
+    bg: "bg-emerald-500/10",
+    text: "text-emerald-700 dark:text-emerald-400"
+  },
+  { 
+    event: "சேர்க்கை நிறைவடையும் நாள்", 
+    period: "சனவரி இரண்டாம் வாரம்", 
+    icon: CalendarDays,
+    bg: "bg-amber-500/10",
+    text: "text-amber-700 dark:text-amber-400"
+  },
+  { 
+    event: "வகுப்புகள் தொடங்கும் நாள்", 
+    period: "பிப்ரவரி மூன்றாம் வாரம்", 
+    icon: BookOpen,
+    bg: "bg-blue-500/10",
+    text: "text-blue-700 dark:text-blue-400"
+  },
+  { 
+    event: "வகுப்புகள் நிறைவுறும் நாள்", 
+    period: "செப்டம்பர் முதல் வாரம்", 
+    icon: GraduationCap,
+    bg: "bg-indigo-500/10",
+    text: "text-indigo-700 dark:text-indigo-400"
+  },
+  { 
+    event: "களப்பணி/செய்முறை", 
+    period: "அக்டோபர் முதல் வாரம்", 
+    icon: ClipboardList,
+    bg: "bg-cyan-500/10",
+    text: "text-cyan-700 dark:text-cyan-400"
+  },
+  { 
+    event: "இறுதித்தேர்வு", 
+    period: "நவம்பர் முதல் வாரம்", 
+    icon: Award,
+    bg: "bg-amber-500/10",
+    text: "text-amber-700 dark:text-amber-400"
+  },
 ]
 
 export default function SyllabusPage() {
@@ -96,31 +141,52 @@ export default function SyllabusPage() {
       </section>
 
       {/* Academic Calendar Section */}
-      <section className="py-24 bg-muted/30">
+      <section className="py-24 bg-gradient-to-b from-white to-muted/20 dark:from-slate-950 dark:to-slate-900 border-t border-border/40">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-primary mb-4">உத்தேச கல்வி கால அட்டவணை</h2>
+          <div className="text-center mb-20 flex flex-col items-center">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4 border border-primary/20 shadow-sm">
+              <Sparkles className="w-4 h-4 text-gold fill-gold" />
+              <span>கல்வித் திட்டம்</span>
+            </div>
+            <h2 className="text-4xl font-extrabold text-primary mb-4 leading-normal tracking-tight">உத்தேச கல்வி கால அட்டவணை</h2>
+            <div className="w-24 h-1 bg-gold rounded-full" />
+            <p className="text-foreground/70 mt-4 max-w-lg leading-relaxed text-sm">
+              மாணவர்களின் சீரான கல்விப் பயணத்திற்காக வகுக்கப்பட்ட தற்காலிகக் கல்வி அட்டவணை.
+            </p>
           </div>
           
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-teal/10">
-            <div className="overflow-x-auto w-full">
-              <Table>
-                <TableHeader className="bg-teal/5">
-                  <TableRow className="hover:bg-transparent">
-                    <TableHead className="text-primary font-bold text-lg h-16 w-1/2 whitespace-nowrap">நிகழ்வு</TableHead>
-                    <TableHead className="text-primary font-bold text-lg h-16 w-1/2 whitespace-nowrap">காலம்</TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {academicCalendar.map((row, i) => (
-                    <TableRow key={i} className="h-14 hover:bg-muted/30 transition-colors">
-                      <TableCell className="font-medium text-foreground/80 whitespace-nowrap">{row.event}</TableCell>
-                      <TableCell className="text-primary font-semibold whitespace-nowrap">{row.period}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
+          <div className="relative border-l-2 border-primary/10 ml-4 md:ml-32 pl-8 md:pl-16 space-y-8 py-4">
+            {academicCalendar.map((row, i) => {
+              const IconComponent = row.icon
+              return (
+                <div key={i} className="relative group">
+                  {/* Timeline Node Icon */}
+                  <div className="absolute -left-[57px] md:-left-[89px] top-1/2 -translate-y-1/2 w-12 h-12 rounded-2xl bg-white dark:bg-slate-900 border-2 border-primary/20 shadow-md group-hover:border-primary group-hover:shadow-lg transition-all duration-300 flex items-center justify-center z-10">
+                    <div className={`w-8 h-8 rounded-xl ${row.bg} flex items-center justify-center`}>
+                      <IconComponent className="w-5 h-5 text-primary" />
+                    </div>
+                  </div>
+
+                  {/* Row Card */}
+                  <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 border border-primary/5 shadow-md hover:shadow-xl group-hover:border-primary/20 transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden">
+                    {/* Left vertical brand line */}
+                    <div className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-primary to-gold opacity-80" />
+
+                    <div className="space-y-1 pl-4">
+                      <span className="text-xs font-bold uppercase tracking-widest text-primary/50">நிகழ்வு {i + 1}</span>
+                      <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 leading-normal">{row.event}</h3>
+                    </div>
+
+                    <div className="shrink-0 flex items-center">
+                      <span className={`inline-flex items-center gap-2 px-6 py-3 rounded-2xl ${row.bg} ${row.text} font-bold border border-primary/5 text-base shadow-sm`}>
+                        <Calendar className="w-5 h-5" />
+                        {row.period}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>

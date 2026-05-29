@@ -95,8 +95,7 @@
   .prose p, 
   .prose-lg p,
   li p {
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: left;
     line-height: 1.8;
     letter-spacing: 0.2px;
     word-spacing: normal;
