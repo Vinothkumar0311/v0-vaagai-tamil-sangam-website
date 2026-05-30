@@ -12,12 +12,28 @@ export const metadata: Metadata = {
 export default function SponsorshipPage() {
   return (
     <PageShell>
-      <PageHeader
-        title="ஆதரவு நல்குக"
-        description="தமிழ்ப் பணிகளுக்கு நிதி வழங்கி ஆதரவு நல்குக | Support the eternity of Tamil"
-      />
+      {/* Premium Header Banner Section */}
+      <section className="pt-28 md:pt-36 pb-6 md:pb-10 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-900">
+        <div className="container mx-auto px-4 max-w-5xl">
+          {/* SEO and Accessibility Page Title */}
+          <h1 className="sr-only">ஆதரவு நல்குக | Sponsorship & Support</h1>
+          
+          {/* Banner Container - Ultra Clean & Borderless to blend with the white page background */}
+          <div className="flex justify-center w-full">
+            <Image
+              src={getAssetPath("/images/sponsorship_banner.png")}
+              alt="Vaagai Tamilsangam Sponsorship Banner"
+              width={1024}
+              height={621}
+              priority
+              unoptimized
+              className="w-full max-w-4xl h-auto select-none pointer-events-none"
+            />
+          </div>
+        </div>
+      </section>
 
-      <section className="py-16 md:py-24 bg-cream">
+      <section className="py-16 md:py-24 bg-heritage-bg">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="bg-white rounded-3xl border border-primary/10 p-6 md:p-10 lg:p-12 shadow-xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">

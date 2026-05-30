@@ -28,20 +28,23 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const isSolid = scrolled || !isHomePage
+
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled || !isHomePage
-          ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-sm border-b border-slate-200/50 dark:border-slate-800/50"
+        isSolid
+          ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-md border-b border-slate-200/50 dark:border-slate-800/50"
           : "bg-transparent"
       )}
     >
+      {/* ── Row 1: Logo + Brand + Mobile trigger ── */}
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-        <nav className="flex items-center justify-between h-16 md:h-20 lg:h-24">
+        <div className="flex items-center justify-between h-12 md:h-14 lg:h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 md:gap-3 group shrink-0">
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-16 lg:h-16 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-primary/20 shadow-sm transition-transform group-hover:scale-105">
+            <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-primary/20 shadow-sm transition-transform group-hover:scale-105">
               <Image
                 src={getAssetPath("/logo2.svg")}
                 alt="Vaagai Tamilsangam Logo"
@@ -52,16 +55,30 @@ export function Navbar() {
             </div>
             <span
               className={cn(
-                "font-bold text-lg sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl 2xl:text-4xl transition-colors truncate max-w-[600px] sm:max-w-none leading-tight py-1",
-                scrolled || !isHomePage ? "text-primary" : "text-white"
+                "font-bold text-base sm:text-xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl transition-colors truncate max-w-[600px] sm:max-w-none leading-tight py-1",
+                isSolid ? "text-primary" : "text-white"
               )}
             >
               வாகை தமிழ்ச்சங்கம்
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-0.5 lg:gap-1 xl:gap-2">
+          {/* Mobile Menu trigger (only visible on small screens) */}
+          <MobileNav scrolled={scrolled} isHomePage={isHomePage} pathname={pathname} />
+        </div>
+      </div>
+
+      {/* ── Row 2: Desktop Navigation Bar ── */}
+      <div
+        className={cn(
+          "hidden lg:block w-full transition-all duration-300",
+          isSolid
+            ? "bg-primary/5 dark:bg-slate-800/60 border-t border-primary/10 dark:border-slate-700/50"
+            : "bg-black/20 backdrop-blur-sm"
+        )}
+      >
+        <div className="w-full max-w-[1600px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
+          <nav className="flex items-center justify-center gap-0.5 lg:gap-1 xl:gap-1.5 h-9 lg:h-10">
             {navigation.map((item) => (
               <NavItem
                 key={isDropdown(item) ? item.label : item.href}
@@ -71,11 +88,8 @@ export function Navbar() {
                 pathname={pathname}
               />
             ))}
-          </div>
-
-          {/* Mobile Menu */}
-          <MobileNav scrolled={scrolled} isHomePage={isHomePage} pathname={pathname} />
-        </nav>
+          </nav>
+        </div>
       </div>
     </header>
   )

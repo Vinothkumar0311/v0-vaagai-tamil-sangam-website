@@ -15,7 +15,21 @@ const nextConfig = {
   },
   
   images: {
-    unoptimized: true, // Required for static export
+    // Must be true for static export (GitHub Pages), but false in dev
+    // so Next.js optimizer can cache & serve Google Drive images efficiently
+    unoptimized: isExport,
+
+    // Allow Next.js image optimizer to proxy Google Drive & CDN images
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "drive.google.com",
+      },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+    ],
   },
 
   // Explicitly set the Turbopack root to the project directory

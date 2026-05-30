@@ -43,6 +43,7 @@ export const navigation: NavElement[] = [
       },
     ],
   },
+
   {
     label: "ஒலிம்பியாட்",
     labelEn: "Vaagai Sooda Vaa",
@@ -90,9 +91,19 @@ export const navigation: NavElement[] = [
     ],
   },
   {
+    label: "ஆதரவு நல்குக",
+    labelEn: "Sponsorship",
+    href: "/sponsorship",
+  },
+  {
     label: "Annual Report",
     labelEn: "Annual Report",
     href: "/annual-reports",
+  },
+  {
+    label: "நிகழ்வுகளும் நினைவுகளும்",
+    labelEn: "Memories",
+    href: "/events-and-memories",
   },
   {
     label: "தொடர்புக்கு",
