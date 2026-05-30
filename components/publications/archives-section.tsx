@@ -35,9 +35,25 @@ export function ArchivesSection() {
     setError(null)
     try {
       const gasUrl = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL
-      if (!gasUrl) throw new Error("Configuration missing")
+      if (!gasUrl) throw new Error("Configuration missing: NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL is not set.")
 
-      const res = await fetch(gasUrl)
+      let res: Response
+      try {
+        res = await fetch(gasUrl, { redirect: "follow" })
+      } catch (networkErr: any) {
+        // CORS or network error — fetch itself throws for CORS failures
+        throw new Error("Unable to load archives. This may be a network or CORS configuration issue.")
+      }
+
+      const contentType = res.headers.get("content-type") || ""
+      if (!res.ok) {
+        throw new Error(`Server error: ${res.status} ${res.statusText}`)
+      }
+      if (!contentType.includes("application/json")) {
+        // Likely an HTML redirect/error page — CORS is preventing the real response
+        throw new Error("Unable to load archives. Please ensure the Google Apps Script is deployed with CORS headers (Content-Type: application/json, Access-Control-Allow-Origin: *).")
+      }
+
       const rawData = await res.json()
       
       if (!Array.isArray(rawData)) {
@@ -92,7 +108,7 @@ export function ArchivesSection() {
 
   return (
     <section id="archives" className="scroll-mt-32 max-w-5xl mx-auto py-12 px-4">
-      <h2 className="text-3xl font-bold text-teal-700 mb-12">Archives</h2>
+      <h2 className="text-3xl font-bold text-[#346023] mb-12">ஆவணகாலயம் (Archives)</h2>
 
       {/* Loading & Error states */}
       {loading && (
