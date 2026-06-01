@@ -41,10 +41,10 @@ export function Navbar() {
     >
       {/* ── Row 1: Logo + Brand + Mobile trigger ── */}
       <div className="w-full max-w-[1600px] mx-auto px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
-        <div className="flex items-center justify-between h-12 md:h-14 lg:h-16">
+        <div className="relative flex items-center justify-center h-14 md:h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 md:gap-3 group shrink-0">
-            <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-primary/20 shadow-sm transition-transform group-hover:scale-105">
+          <Link href="/" className="flex items-center gap-3 md:gap-4 group shrink-0">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-14 lg:h-14 xl:w-16 xl:h-16 2xl:w-18 2xl:h-18 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-primary/20 shadow-sm transition-transform group-hover:scale-105">
               <Image
                 src={getAssetPath("/logo2.svg")}
                 alt="Vaagai Tamilsangam Logo"
@@ -55,7 +55,7 @@ export function Navbar() {
             </div>
             <span
               className={cn(
-                "font-bold text-base sm:text-xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl transition-colors truncate max-w-[600px] sm:max-w-none leading-tight py-1",
+                "font-bold text-lg sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl 2xl:text-5xl transition-colors truncate max-w-[600px] sm:max-w-none leading-tight py-1",
                 isSolid ? "text-primary" : "text-white"
               )}
             >
@@ -64,7 +64,9 @@ export function Navbar() {
           </Link>
 
           {/* Mobile Menu trigger (only visible on small screens) */}
-          <MobileNav scrolled={scrolled} isHomePage={isHomePage} pathname={pathname} />
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 lg:hidden">
+            <MobileNav scrolled={scrolled} isHomePage={isHomePage} pathname={pathname} />
+          </div>
         </div>
       </div>
 

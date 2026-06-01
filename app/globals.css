@@ -95,7 +95,7 @@
   .prose p, 
   .prose-lg p,
   li p {
-    text-align: left;
+    text-align: inherit;
     line-height: 1.8;
     letter-spacing: 0.2px;
     word-spacing: normal;

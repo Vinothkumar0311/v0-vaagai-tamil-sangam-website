@@ -32,14 +32,14 @@ export const navigation: NavElement[] = [
         href: "/mandram",
       },
       {
-        label: "மாதாந்திர செயல்பாடுகள்",
-        labelEn: "Monthly Activities",
-        href: "/activities#monthly",
-      },
-      {
         label: "போட்டிகளும் விருதுகளும்",
         labelEn: "Competitions & Awards",
         href: "/competitions",
+      },
+      {
+        label: "நிகழ்வுகளும் நினைவுகளும்",
+        labelEn: "Memories",
+        href: "/events-and-memories",
       },
     ],
   },
@@ -84,16 +84,16 @@ export const navigation: NavElement[] = [
         href: "/publications#editorial",
       },
       {
+        label: "Annual Report",
+        labelEn: "Annual Report",
+        href: "/annual-reports",
+      },
+      {
         label: "Archives",
         labelEn: "Archives",
         href: "/publications#archives",
       },
     ],
-  },
-  {
-    label: "ஆதரவு நல்குக",
-    labelEn: "Sponsorship",
-    href: "/sponsorship",
   },
   {
     label: "Annual Report",
@@ -109,5 +109,10 @@ export const navigation: NavElement[] = [
     label: "தொடர்புக்கு",
     labelEn: "Contact",
     href: "/contact",
+  },
+  {
+    label: "ஆதரவு நல்குக",
+    labelEn: "Sponsorship",
+    href: "/sponsorship",
   },
 ];

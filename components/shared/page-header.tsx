@@ -15,7 +15,7 @@ export function PageHeader({ title, description, className }: PageHeaderProps) {
           {title}
         </h1>
         {description ? (
-          <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed break-words">{description}</p>
+          <p className="text-center text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed break-words">{description}</p>
         ) : null}
       </div>
     </section>

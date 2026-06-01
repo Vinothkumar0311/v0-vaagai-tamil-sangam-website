@@ -39,7 +39,7 @@ export default function VaagaiSoodaVaaPage() {
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-primary tracking-tight">
                 வாகை சூட வா
               </h1>
-              <p className="text-xl md:text-3xl text-foreground/80 font-semibold text-gold-dark">
+              <p className="text-center text-xl md:text-3xl text-foreground/80 font-semibold text-gold-dark">
                 மாபெரும் தமிழ் ஒலிம்பியாட்
               </p>
             </div>

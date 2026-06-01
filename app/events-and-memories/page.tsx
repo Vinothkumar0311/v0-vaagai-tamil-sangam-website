@@ -44,34 +44,9 @@ export default function EventsAndMemoriesPage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-300 font-semibold max-w-2xl mx-auto leading-relaxed">
+            <p className="text-center text-lg sm:text-xl md:text-2xl text-slate-300 font-semibold max-w-2xl mx-auto leading-relaxed">
               வாகை தமிழ்ச்சங்கத்தின் வரலாற்றுப் பயணங்கள், அழகிய தருணங்கள் மற்றும் மறக்க முடியாத விழா நினைவுகளின் தொகுப்பு.
             </p>
-
-            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto rounded-full" />
-
-            {/* Highlights description */}
-            <p className="text-slate-400 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed opacity-90">
-              "தமிழுக்கும் அமுதென்று பேர்! அந்தத் தமிழ் எங்கள் உயிருக்கு நேர்!" என்ற தாரக மந்திரத்திற்கேற்ப, 
-              நமது தமிழ்ச்சங்கம் முன்னெடுத்த பல்வேறு தமிழ் விழாக்கள், மாதாந்திர மன்றக் கூடல்கள், 
-              மற்றும் ஆண்டுதோறும் நடைபெறும் பட்டமளிப்பு விழாக்கள் ஆகியவற்றின் உயர்தரப் புகைப்படத் தொகுப்புகள் இங்கே உங்களுக்காகப் பகிரப்பட்டுள்ளன.
-            </p>
-
-            {/* Feature Statistics or Badges */}
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 pt-6">
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-2xl">
-                <ImageIcon className="w-4 h-4 text-gold" />
-                <span className="text-white text-xs sm:text-sm font-semibold">3+ பிரதான விழாக்கள்</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-2xl">
-                <Camera className="w-4 h-4 text-gold" />
-                <span className="text-white text-xs sm:text-sm font-semibold">1000+ புகைப்படங்கள்</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-2xl">
-                <Heart className="w-4 h-4 text-gold fill-gold/20" />
-                <span className="text-white text-xs sm:text-sm font-semibold">மகிழ்ச்சியான நினைவுகள்</span>
-              </div>
-            </div>
 
           </div>
         </div>

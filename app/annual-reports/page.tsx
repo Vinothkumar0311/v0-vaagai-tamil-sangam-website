@@ -45,37 +45,11 @@ export default function AnnualReportsPage() {
     <PageShell>
       <PageHeader
         title="வருடாந்திர அறிக்கை"
-        description="வாகை தமிழ்ச்சங்கத்தின் கடந்த கால வருடாந்திர அறிக்கைகளை இங்கே காணலாம்."
+        description="வாகை தமிழ்ச்சங்கத்தின் கடந்த கால மற்றும் தற்போதைய செயல்பாடுகள், சாதனைகள், மற்றும் எதிர்கால திட்டங்களை உள்ளடக்கிய வருடாந்திர அறிக்கைகளை இங்கு காணலாம். இந்த அறிக்கைகள் நமது சங்கத்தின் தொடர்ச்சியான முன்னேற்றத்தையும், தமிழ் மொழி மற்றும் பண்பாட்டின் வளர்ச்சிக்காக நாம் மேற்கொண்ட முயற்சிகளையும் ஆவணப்படுத்துகின்றன."
       />
 
-      {/* About Reports Section */}
-      <section className="pt-16 pb-12 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden rounded-2xl border border-primary/10 shadow-lg">
-            <div className="p-6 md:p-8 bg-primary/5 border-b lg:border-b-0 lg:border-r border-primary/10">
-              <div className="flex items-center gap-2 mb-4">
-                {/* <div className="w-1.5 h-6 bg-primary rounded-full"></div> */}
-                {/* <h3 className="font-bold text-primary uppercase tracking-wider text-xs">Tamil Version</h3> */}
-              </div>
-              <p className="text-base md:text-lg text-foreground/80 leading-relaxed text-pretty">
-                வாகை தமிழ்ச்சங்கத்தின் கடந்த கால மற்றும் தற்போதைய செயல்பாடுகள், சாதனைகள், மற்றும் எதிர்கால திட்டங்களை உள்ளடக்கிய வருடாந்திர அறிக்கைகளை இங்கு காணலாம். இந்த அறிக்கைகள் நமது சங்கத்தின் தொடர்ச்சியான முன்னேற்றத்தையும், தமிழ் மொழி மற்றும் பண்பாட்டின் வளர்ச்சிக்காக நாம் மேற்கொண்ட முயற்சிகளையும் ஆவணப்படுத்துகின்றன.
-              </p>
-            </div>
-            <div className="p-6 md:p-8 bg-white">
-              <div className="flex items-center gap-2 mb-4">
-                {/* <div className="w-1.5 h-6 bg-gold rounded-full"></div>
-                <h3 className="font-bold text-gold uppercase tracking-wider text-xs">English Version</h3> */}
-              </div>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed italic text-pretty">
-                Here you can find the annual reports covering the past and present activities, achievements, and future plans of Vaagai Tamilsangam. These reports document the continuous progress of our organization and our efforts towards the development of the Tamil language and culture.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Highlights Section */}
-      <section className="py-12 bg-slate-50/50">
+      {/* <section className="py-12 bg-slate-50/50">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3">அறிக்கையின் சிறப்பம்சங்கள்</h2>
@@ -96,7 +70,7 @@ export default function AnnualReportsPage() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Reports Section */}
       <section className="py-20 bg-background">

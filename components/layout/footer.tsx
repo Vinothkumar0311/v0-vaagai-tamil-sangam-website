@@ -61,7 +61,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-gold-light">விரைவு இணைப்புகள்</h3>
+            <h3 className="font-semibold text-lg mb-4 text-white">விரைவு இணைப்புகள்</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -78,22 +78,22 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-gold-light">தொடர்பு</h3>
+            <h3 className="font-semibold text-lg mb-4 text-white">தொடர்பு</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-gold-light flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-teal-200 flex-shrink-0 mt-0.5" />
                 <span className="text-white/80 text-sm">
                   தலைவர், 12 / 53 A 1, அத்தனூர் வடக்கு, அத்தனூர், நாமக்கல், தமிழ்நாடு, இந்தியா - 636301
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-gold-light flex-shrink-0" />
+                <Phone className="w-5 h-5 text-teal-200 flex-shrink-0" />
                 <a href="tel:+919876543210" className="text-white/80 hover:text-white text-sm transition-colors">
                   +91 82482 72880
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-gold-light flex-shrink-0" />
+                <Mail className="w-5 h-5 text-teal-200 flex-shrink-0" />
                 <a href="mailto:vaagaitamilsangam@gmail.com" className="text-white/80 hover:text-white text-sm transition-colors">
                   vaagaitamilsangam@gmail.com
                 </a>
@@ -142,7 +142,7 @@ export function Footer() {
                 { label: "Privacy Policy", href: "/privacy-policy" },
               ].map((link, i) => (
                 <React.Fragment key={link.href}>
-                  <Link href={link.href} className="hover:text-gold transition-colors">
+                  <Link href={link.href} className="hover:text-teal-200 transition-colors">
                     {link.label}
                   </Link>
                   {i < 6 && <span className="opacity-20 text-xs">|</span>}

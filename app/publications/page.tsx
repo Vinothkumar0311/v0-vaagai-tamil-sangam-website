@@ -394,7 +394,31 @@ export default function PublicationsPage() {
       </section>
 
       {/* Content Sections */}
-      <div className="container mx-auto px-4 pb-24 space-y-24">
+      <div className="container mx-auto px-4 pt-16 md:pt-24 pb-24 space-y-24">
+
+        {/* Publication Process Section */}
+        <section id="process" className="scroll-mt-32 max-w-5xl mx-auto px-1">
+          <div className="flex items-center gap-3 mb-6 border-b border-[#346023]/10 pb-4">
+            <div className="p-2 rounded-lg bg-[#346023]/10">
+              <FileText className="w-6 h-6 md:w-8 md:h-8 text-[#346023]" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#346023]">வெளியீட்டு செயல்முறை (Publication Process)</h2>
+          </div>
+
+          <div className="bg-[#F4F8F5] rounded-3xl p-6 md:p-8 border border-[#346023]/10 shadow-md relative overflow-hidden flex flex-col items-center">
+            <div className="absolute inset-0 bg-[url(/images/tamil_heritage_bg.png)] bg-repeat opacity-[0.01] pointer-events-none"></div>
+            <div className="w-full max-w-4xl relative overflow-hidden rounded-2xl border border-[#346023]/15 shadow-lg bg-white p-2">
+              <Image
+                src={getAssetPath("/images/publication_process.jpg")}
+                alt="Vaagai Tamilsangam Publication Process"
+                width={1200}
+                height={800}
+                unoptimized
+                className="w-full h-auto select-none rounded-xl"
+              />
+            </div>
+          </div>
+        </section>
 
         {/* AIM Section */}
         <section id="aim" className="scroll-mt-32 max-w-5xl mx-auto px-1 bg-[#E8EFE9] rounded-3xl p-6 md:p-8 border border-[#346023]/10 shadow-sm relative">
@@ -739,30 +763,6 @@ export default function PublicationsPage() {
         </section>
 
         <ArchivesSection />
-
-        {/* Publication Process Section */}
-        <section id="process" className="scroll-mt-32 max-w-5xl mx-auto px-1">
-          <div className="flex items-center gap-3 mb-6 border-b border-[#346023]/10 pb-4">
-            <div className="p-2 rounded-lg bg-[#346023]/10">
-              <FileText className="w-6 h-6 md:w-8 md:h-8 text-[#346023]" />
-            </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#346023]">வெளியீட்டு செயல்முறை (Publication Process)</h2>
-          </div>
-
-          <div className="bg-[#F4F8F5] rounded-3xl p-6 md:p-8 border border-[#346023]/10 shadow-md relative overflow-hidden flex flex-col items-center">
-            <div className="absolute inset-0 bg-[url(/images/tamil_heritage_bg.png)] bg-repeat opacity-[0.01] pointer-events-none"></div>
-            <div className="w-full max-w-4xl relative overflow-hidden rounded-2xl border border-[#346023]/15 shadow-lg bg-white p-2">
-              <Image
-                src={getAssetPath("/images/publication_process.jpg")}
-                alt="Vaagai Tamilsangam Publication Process"
-                width={1200}
-                height={800}
-                unoptimized
-                className="w-full h-auto select-none rounded-xl"
-              />
-            </div>
-          </div>
-        </section>
       </div>
 
       {/* Call to Action */}

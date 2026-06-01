@@ -86,7 +86,7 @@ export default function CompetitionsPage() {
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed text-justify mb-10 first-letter:text-5xl first-letter:font-bold first-letter:text-primary first-letter:mr-3 first-letter:float-left">
                 ஒவ்வொருவருக்குள்ளும் பல திறமைகள் ஒளிந்திருக்கும், அவற்றை வெளிக்கொணருவதில் போட்டிகளுக்கு இன்றியமையாத பங்குள்ளது. தமிழார்வலர்களின் தமிழ்க் கல்வியின் ஆழ அகலத்தையும், மொழித்திறன்களையும், கவின்கலை, நுண்கலைத் திறன்களையும் வெளிப்படுத்தவும் அவற்றிற்குரிய அங்கீகாரம் பெறுவதற்கும் களமாக வாகை தமிழ்ச்சங்கம் ஆண்டுமுழுவதும் அவ்வத்திங்களுக்குகந்த தலைப்புகளில் பல்வேறு வகைமைகளில் போட்டிகளை நடத்திப் பரிசுகளையும் விருதுகளையும் வழங்கி வருகிறது.
               </p>
-              
+
               <div className="relative p-8 md:p-10 bg-primary/5 rounded-2xl border border-primary/10 mb-10">
                 <div className="absolute -top-4 -left-2 text-6xl text-primary/20 font-serif">"</div>
                 <div className="text-center font-medium text-lg md:text-xl text-primary leading-loose italic">
@@ -103,10 +103,10 @@ export default function CompetitionsPage() {
               <Dialog>
                 <DialogTrigger asChild>
                   <div className="relative w-full aspect-[6/6] md:aspect-video rounded-2xl overflow-hidden border border-primary/10 shadow-sm bg-slate-50/50 cursor-pointer hover:shadow-md transition-all group">
-                    <Image 
-                      src={getAssetPath("/images/activities/d_page-0001.jpg")} 
-                      alt="வருடாந்திர நிகழ்வுகள் மற்றும் விருதுகள்" 
-                      fill 
+                    <Image
+                      src={getAssetPath("/images/activities/d_page-0001.jpg")}
+                      alt="வருடாந்திர நிகழ்வுகள் மற்றும் விருதுகள்"
+                      fill
                       className="object-contain transition-transform group-hover:scale-[1.01] duration-300"
                       priority
                     />
@@ -115,10 +115,10 @@ export default function CompetitionsPage() {
                 <DialogContent className="max-w-[95vw] md:max-w-7xl h-[90vh] p-2 md:p-6 bg-white/95 backdrop-blur-sm border-0">
                   <DialogTitle className="sr-only">வருடாந்திர நிகழ்வுகள் மற்றும் விருதுகள்</DialogTitle>
                   <div className="relative w-full h-full">
-                    <Image 
-                      src={getAssetPath("/images/activities/d_page-0001.jpg")} 
-                      alt="வருடாந்திர நிகழ்வுகள் மற்றும் விருதுகள்" 
-                      fill 
+                    <Image
+                      src={getAssetPath("/images/activities/d_page-0001.jpg")}
+                      alt="வருடாந்திர நிகழ்வுகள் மற்றும் விருதுகள்"
+                      fill
                       className="object-contain"
                     />
                   </div>
@@ -130,7 +130,7 @@ export default function CompetitionsPage() {
       </section>
 
       <section className="py-16 md:py-32 bg-slate-50/80">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-4 max-w-[1800px]">
           <div className="relative">
             {/* The vertical timeline line */}
             <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-1.5 bg-primary/10 -translate-x-1/2 rounded-full"></div>
@@ -140,22 +140,22 @@ export default function CompetitionsPage() {
                 const isEven = index % 2 === 0
                 return (
                   <div key={index} className={`relative flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center w-full md:mb-32 last:mb-0`}>
-                    
+
                     {/* Center Node / Dot for Desktop */}
                     <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-white rounded-full border-4 border-primary/20 z-20 items-center justify-center shadow-lg transition-transform hover:scale-110">
                       <div className="w-5 h-5 bg-primary rounded-full shadow-inner"></div>
                     </div>
 
                     {/* Content Section (Text) */}
-                    <div className={`w-full md:w-1/2 flex flex-col ${isEven ? 'md:pr-20 md:items-end text-left md:text-right' : 'md:pl-20 md:items-start text-left'}`}>
-                      <div className="max-w-xl space-y-6 bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-primary/5 hover:border-primary/20 hover:shadow-2xl transition-all z-10 relative w-full">
+                    <div className={`w-full md:w-1/2 flex flex-col ${isEven ? 'md:pr-10 md:items-end text-left md:text-right' : 'md:pl-10 md:items-start text-left'}`}>
+                      <div className="max-w-3xl space-y-4 bg-white p-6 md:px-10 md:py-8 rounded-3xl shadow-xl border border-primary/5 hover:border-primary/20 hover:shadow-2xl transition-all z-10 relative w-full">
                         <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-sm border border-primary/20 shadow-sm">
                           போட்டி & விருது
                         </div>
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-800 leading-tight">
                           {comp.title}
                         </h2>
-                        <div className={`p-4 md:p-6 bg-gold/5 border-gold italic text-foreground/80 font-medium ${isEven ? 'md:border-r-4 border-l-4 md:border-l-0 rounded-l-xl md:rounded-l-none md:rounded-r-xl text-left md:text-right' : 'border-l-4 rounded-r-xl text-left'}`}>
+                        <div className={`p-3 md:p-4 bg-gold/5 border-gold italic text-foreground/80 font-medium ${isEven ? 'md:border-r-4 border-l-4 md:border-l-0 rounded-l-xl md:rounded-l-none md:rounded-r-xl text-left md:text-right' : 'border-l-4 rounded-r-xl text-left'}`}>
                           {comp.quote}
                         </div>
                         <p className={`text-slate-600 leading-relaxed text-base md:text-lg ${isEven ? 'text-justify md:text-right' : 'text-justify md:text-left'}`}>
@@ -165,7 +165,7 @@ export default function CompetitionsPage() {
                     </div>
 
                     {/* Image Section */}
-                    <div className={`w-full md:w-1/2 mt-8 md:mt-0 flex ${isEven ? 'md:pl-20 md:justify-start' : 'md:pr-20 md:justify-end'}`}>
+                    <div className={`w-full md:w-1/2 mt-8 md:mt-0 flex ${isEven ? 'md:pl-10 md:justify-start' : 'md:pr-10 md:justify-end'}`}>
                       <div className="relative w-full max-w-lg aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-8 border-white group z-10 bg-slate-100">
                         <Image
                           src={getAssetPath(comp.image)}

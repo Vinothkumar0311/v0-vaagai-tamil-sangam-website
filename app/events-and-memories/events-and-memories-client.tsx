@@ -196,7 +196,7 @@ export function EventsAndMemoriesClient() {
   const imageUrlCache = React.useMemo(() => {
     return activePhotos.map(photo => ({
       ...photo,
-      thumb: `https://drive.google.com/thumbnail?id=${photo.fileId}&sz=w1000`,
+      thumb: `https://lh3.googleusercontent.com/d/${photo.fileId}=w600`,
     }))
   }, [activePhotos])
 
@@ -233,7 +233,7 @@ export function EventsAndMemoriesClient() {
                 { id: "3rd-annual", label: "3-ஆம் ஆண்டு விழா (2025/2026)", count: googleDrivePhotos["3rd-annual"].length },
                 { id: "2025-annual", label: "2025 பட்டமளிப்பு & ஆண்டு விழா", count: googleDrivePhotos["2025-annual"].length },
                 { id: "2024-annual", label: "2024 ஆண்டு விழா", count: googleDrivePhotos["2024-annual"].length },
-                { id: "all", label: "அனைத்து நினைவுகளும்", count: googleDrivePhotos["3rd-annual"].length + googleDrivePhotos["2025-annual"].length + googleDrivePhotos["2024-annual"].length }
+                // { id: "all", label: "அனைத்து நினைவுகளும்", count: googleDrivePhotos["3rd-annual"].length + googleDrivePhotos["2025-annual"].length + googleDrivePhotos["2024-annual"].length }
               ].map(tab => (
                 <button
                   key={tab.id}
@@ -257,7 +257,7 @@ export function EventsAndMemoriesClient() {
             </div>
 
             {/* Selected Category Metadata Card */}
-            {selectedCategory !== "all" && (
+            {/* {selectedCategory !== "all" && (
               <div className="w-full mt-4 p-5 bg-slate-50 dark:bg-slate-800/40 rounded-2xl border border-slate-100 dark:border-slate-800 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6 animate-in fade-in slide-in-from-top-2 duration-300">
                 <div className="space-y-1.5 flex-1">
                   <div className="flex flex-col md:flex-row items-center gap-3">
@@ -281,12 +281,12 @@ export function EventsAndMemoriesClient() {
                   rel="noopener noreferrer"
                   className="shrink-0 inline-flex items-center gap-2 px-5 py-3 bg-primary/5 text-primary hover:bg-primary hover:text-white dark:bg-gold/5 dark:text-gold-light dark:hover:bg-gold dark:hover:text-primary transition-all duration-300 font-bold rounded-xl text-xs border border-primary/10 dark:border-gold/10"
                 >
-                  {/* <FolderOpen className="w-4 h-4" />
+                  <FolderOpen className="w-4 h-4" />
                   கூகுள் டிரைவில் காண்க
-                  <ExternalLink className="w-3.5 h-3.5" /> */}
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </div>
-            )}
+            )} */}
 
           </div>
         </div>
@@ -308,7 +308,7 @@ export function EventsAndMemoriesClient() {
           {visiblePhotos.map((photo, index) => {
             const isLoaded = imageLoadedStates[photo.fileId]
             const cachedPhoto = imageUrlCache.find(p => p.fileId === photo.fileId)
-            const thumbUrl = cachedPhoto?.thumb ?? `https://drive.google.com/thumbnail?id=${photo.fileId}&sz=w1000`
+            const thumbUrl = cachedPhoto?.thumb ?? `https://lh3.googleusercontent.com/d/${photo.fileId}=w600`
             const isAboveFold = index < 4
             
             return (
@@ -325,20 +325,21 @@ export function EventsAndMemoriesClient() {
                     </div>
                   )}
 
-                  {/* Google Drive Image — unoptimized because drive.google.com redirects */}
-                  <Image
+                  {/* Google Drive Image — standard native img with no-referrer policy to bypass Google CDN referer block */}
+                  <img
                     src={thumbUrl}
                     alt={`Photo ${photo.index + 1} of ${foldersMetadata[photo.category as keyof typeof foldersMetadata]?.title || ''}`}
-                    fill
-                    priority={isAboveFold}
                     loading={isAboveFold ? "eager" : "lazy"}
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    placeholder="empty"
-                    unoptimized
-                    className={`object-cover transition-all duration-500 group-hover:scale-105 ${
+                    referrerPolicy="no-referrer"
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-105 ${
                       isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
                     }`}
                     onLoad={() => handleImageLoad(photo.fileId)}
+                    ref={(el) => {
+                      if (el && el.complete) {
+                        handleImageLoad(photo.fileId);
+                      }
+                    }}
                   />
 
                   {/* Hover Overlay */}
