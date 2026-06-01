@@ -14,7 +14,7 @@ export default function HomePage() {
         <VisionMission />
         {/* <ActivitiesSection /> */}
         <RecognitionsSection />
-        {/* <TeamPreview /> */}
+        <TeamPreview />
     </PageShell>
   )
 }
