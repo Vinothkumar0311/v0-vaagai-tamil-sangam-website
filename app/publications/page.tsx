@@ -110,7 +110,7 @@ const guidelinesList = [
 
 const advisoryBoard = [
   {
-    // img: "/Staff_Photo/dr_c_vasanthi_1.png",
+    img: "/images/ISSN/vasanthi.png",
     name: "முனைவர். சீ.வசந்தி",
     nameEn: "Dr. C. Vasanthi",
     role: "கண்காணிப்பாளர் மற்றும் / ஆணையாளர் (பொ) & (ப.நி.), தொல்லியல் துறை",
@@ -119,7 +119,7 @@ const advisoryBoard = [
     institutionEn: "Government of Tamil Nadu, Chennai",
   },
   {
-    // img: "/Staff_Photo/dr_c_thiyagarajan_professor_2.png",
+    img: "/images/ISSN/Thiyagarajan.png",
     name: "முனைவர். சி.தியாகராஜன்",
     nameEn: "Dr. C. Thiyagarajan",
     role: "பதிவாளர் (பொ)",
@@ -129,7 +129,7 @@ const advisoryBoard = [
     institutionEn: "Tamil University, Thanjavur",
   },
   {
-    // img: "/Staff_Photo/முனைவர்_சு_3.jpeg",
+    img: "/images/ISSN/Kanimozhli suguna.png",
     name: "முனைவர். சு. கனிமொழி சுகுணா",
     nameEn: "Dr. S. Kanimozhi Suguna",
     role: "உதவிப் பேராசிரியர், கணினி அறிவியல் துறை",
@@ -141,7 +141,7 @@ const advisoryBoard = [
 
 const chiefEditor = [
   {
-    // img: "/Staff_Photo/mr_m_manojkumar_founder__5.png",
+    img: "/images/ISSN/Manoj.png",
     name: "திரு. மா.மனோஜ்குமார்",
     nameEn: "Mr. M. Manojkumar",
     role: "நிறுவனர் & தலைவர்",
@@ -155,7 +155,7 @@ const chiefEditor = [
 
 const editorialBoardMembers = [
   {
-    // img: "/Staff_Photo/dr_s_sathiya_head_of_the_department__7.png",
+    img: "/images/ISSN/sathiya.png",
     name: "முனைவர். ச.சத்தியா",
     nameEn: "Dr. S. Sathiya",
     role: "தமிழ்த்துறை தலைவர்",
@@ -167,7 +167,7 @@ const editorialBoardMembers = [
     institutionEn: "Bon Secours Women's College, Thanjavur",
   },
   {
-    // img: "/Staff_Photo/dr_m_kavitha_8.jpeg",
+    img: "/images/ISSN/kavitha.png",
     name: "முனைவர். ம.கவிதா",
     nameEn: "Dr. M. Kavitha",
     role: "தமிழ்த்துறைதலைவர்",
@@ -179,7 +179,7 @@ const editorialBoardMembers = [
     institutionEn: "Vivekanandha College of Arts and Science for Women, Elayampalayam",
   },
   {
-    // img: "/Staff_Photo/dr_v_balasarasuvathi_honorary_lecturer__9.jpeg",
+    img: "/images/ISSN/bala saraswathi.png",
     name: "முனைவர். வெ. பாலசரசுவதி",
     nameEn: "Dr. V. Balasarasuvathi",
     role: "கௌரவ விரிவுரையாளர் / தமிழ்த்துறை",
@@ -188,7 +188,7 @@ const editorialBoardMembers = [
     institutionEn: "Government Arts College, Coimbatore",
   },
   {
-    // img: "/Staff_Photo/mrs_m_ramalakshmi_10.png",
+    img: "/images/Members/Ramalakshmi mam.png",
     name: "தமிழ்மிகு. மூ.இராமலெட்சுமி",
     nameEn: "Mrs. M. Ramalakshmi",
     role: "இடைநிலை ஆசிரியர்",
@@ -199,7 +199,7 @@ const editorialBoardMembers = [
     institutionEn: "Panchayat Union Primary School, Konnapatti, Madurai",
   },
   {
-    // img: "/Staff_Photo/mr_a_karthikeyan_11.png",
+    img: "/images/ISSN/Karthikeyan.png",
     name: "திரு. அ.கார்த்திகேயன்",
     nameEn: "Mr. A. Karthikeyan",
     role: "பொறுப்பாளர், ஆராய்ச்சி மற்றும் மேம்பாட்டுத்துறை",
@@ -210,7 +210,7 @@ const editorialBoardMembers = [
     institutionEn: "Vaagai Tamilsangam, Namakkal",
   },
   {
-    // img: "/Staff_Photo/mr_n_kanagaraj_high_school_tamil_teacher_12.jpeg",
+    img: "/images/ISSN/kanagaraj.png",
     name: "திரு. நா.கனகராஜ்",
     nameEn: "Mr. N. Kanagaraj",
     role: "முதுநிலைப் பள்ளித் தமிழாசிரியர்",
@@ -220,7 +220,7 @@ const editorialBoardMembers = [
     institutionEn: "Pasumpon Thevar Higher Secondary School Mamsapuram, Virudhunagar",
   },
   {
-    // img: "/Staff_Photo/mr_k_vijayanarasimhan_assistant_professor_in_department_of_physics_13.png",
+    img: "/images/ISSN/vijayanarasiman.png",
     name: "தமிழ்மிகு. கா.விசயநரசிம்மன்",
     nameEn: "Mr. K. Vijayanarasimhan",
     role: "துணைப்பேராசிரியர் / இயற்பியல், மாந்தவியல் & அறிவியல் துறை",
@@ -231,7 +231,7 @@ const editorialBoardMembers = [
     institutionEn: "Rajalakshmi College of Engineering (Autonomous), Thandalam, Chennai",
   },
   {
-    // img: "/Staff_Photo/dr_j_bhuvaneswari_14.png",
+    img: "/images/ISSN/bhuvaneswari.png",
     name: "முனைவர். ஜெ.புவனேஸ்வரி",
     nameEn: "Dr. J. Bhuvaneswari",
     role: "உதவிப் பேராசிரியர், தமிழாய்வுத்துறை",
@@ -243,7 +243,7 @@ const editorialBoardMembers = [
     institutionEn: "National College (Autonomous), Trichy",
   },
   {
-    // img: "/Staff_Photo/dr_n_hema_malini_15.jpeg",
+    img: "/images/ISSN/hema malini.png",
     name: "முனைவர். ந. ஹேம மாலினி",
     nameEn: "Dr. N. Hema Malini",
     role: "உதவிப் பேராசிரியர் & ஆராய்ச்சி ஒருங்கிணைப்பாளர் / ஆங்கிலத்துறை",
@@ -255,7 +255,7 @@ const editorialBoardMembers = [
     institutionEn: "Marudhar Kesari Jain College for Women, Vaniyambadi",
   },
   {
-    // img: "/Staff_Photo/dr_s_balaraman_assistant_professor_of_tamil__16.jpeg",
+    img: "/images/ISSN/balaraaman.png",
     name: "முனைவர் சு.பலராமன்",
     nameEn: "Dr. S. Balaraman",
     role: "தமிழ் உதவிப் பேராசிரியர்",
@@ -267,7 +267,7 @@ const editorialBoardMembers = [
     institutionEn: "SRM Faculty of Science and Humanities, Ramapuram, Chennai - 089",
   },
   {
-    // img: "/Staff_Photo/mrs_s_senbhagavadivu_assistant_professor_17.jpeg",
+    img: "/images/ISSN/senbhakavadivu.png",
     name: "திருமதி. செ. செண்பகவடிவு",
     nameEn: "Mrs. S. Senbhagavadivu",
     role: "உதவிப் பேராசிரியர், தகவல் தொழில்நுட்பத்துறை",
@@ -279,7 +279,7 @@ const editorialBoardMembers = [
     institutionEn: "Member, Parivendar Student Tamil Mandram S. R. M. Valliammai College of Engineering, Kattankulathur",
   },
   {
-    // img: "/Staff_Photo/dr_d_tamilselvam_18.jpeg",
+    img: "/images/ISSN/tamil sevam.png",
     name: "முனைவர். த. தமிழ்ச்செல்வம்",
     nameEn: "Dr. D. Tamilselvam",
     role: "உதவிப் பேராசிரியர் (கணினி அறிவியல்)",
@@ -289,7 +289,7 @@ const editorialBoardMembers = [
     institutionEn: "Rajiv Gandhi College of Arts and Sciences, Puducherry",
   },
   {
-    // img: "/Staff_Photo/dr_p_vigneshwari_19.jpeg",
+    img: "/images/ISSN/vigneswari.png",
     name: "முனைவர் ப. விக்னேஸ்வரி",
     nameEn: "Dr. P. Vigneshwari",
     role: "இணைப் பேராசிரியர் / தமிழ்த்துறை",
@@ -300,7 +300,7 @@ const editorialBoardMembers = [
     institutionEn: "Nehru College of Arts and Science Coimbatore, Nehru Gardens, Thirumalayampalayam, Coimbatore 641105",
   },
   {
-    // img: "/Staff_Photo/dr_m_samisundaram_head_of_department_and_associate_professor_20.jpeg",
+    img: "/images/ISSN/samy sutharam.png",
     name: "முனைவர் மு. சாமிசுந்தரம்",
     nameEn: "Dr. M. Samisundaram",
     role: "துறைத்தலைவர் மற்றும் இணைப்பேராசிரியர், தமிழ்த்துறை",
@@ -311,7 +311,7 @@ const editorialBoardMembers = [
     institutionEn: "Parks College, Tirupur - 641605",
   },
   {
-    // img: "/Staff_Photo/post_dr_m_ayyappan_arulmiku_subramania_swamy_college_of_arts_and_science_21.jpeg",
+    img: "/images/ISSN/iyappan.png",
     name: "முதுமுனைவர் மு. ஐயப்பன்",
     nameEn: "Post Dr. M. Ayyappan",
     role: "உதவிப் பேராசிரியர் / தமிழ்த்துறை",
@@ -322,7 +322,7 @@ const editorialBoardMembers = [
     institutionEn: "Arulmiku Subramania Swamy College of Arts and Science, Vlathikulam, Thoothukudi – 628907",
   },
   {
-    // img: "/Staff_Photo/dr_a_chithra_22.jpeg",
+    img: "/images/ISSN/chitra.png",
     name: "முனைவர் ஏ. சித்ரா",
     nameEn: "Dr. A. Chithra",
     role: "உதவிப் பேராசிரியர் / தமிழ்த்துறை",
@@ -559,6 +559,7 @@ export default function PublicationsPage() {
                           src={getAssetPath(member.img as string)}
                           alt={member.name}
                           fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           className="object-cover object-top z-10 transition-transform duration-500 group-hover:scale-105"
                           loading="lazy"
                         />
@@ -614,6 +615,7 @@ export default function PublicationsPage() {
                           src={getAssetPath(member.img as string)}
                           alt={member.name}
                           fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           className="object-cover object-top z-10 transition-transform duration-500 group-hover:scale-105"
                           loading="lazy"
                         />
@@ -664,6 +666,7 @@ export default function PublicationsPage() {
                             src={getAssetPath(member.img as string)}
                             alt={member.name}
                             fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                             className="object-cover"
                             loading="lazy"
                           />

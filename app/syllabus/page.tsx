@@ -974,10 +974,17 @@ export default function SyllabusPage() {
             {advisoryBoard.map((member, i) => (
               <Card key={i} className="overflow-hidden border border-slate-100 shadow-lg hover:shadow-xl transition-all group rounded-2xl">
                 <CardContent className="p-0">
-                  <div className="aspect-[4/5] relative bg-[#E8EFE9] flex items-center justify-center text-[#346023]/20 transition-all duration-500">
-                    <Users className="w-16 h-16 opacity-30 group-hover:scale-105 transition-transform" />
+                  <div className="aspect-[4/5] relative bg-[#E8EFE9] flex items-center justify-center overflow-hidden transition-all duration-500">
+                    <Image
+                      src={getAssetPath(`/images/Course/${i + 1}.png`)}
+                      alt={member.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    />
                   </div>
-                  <div className="p-6 text-center bg-white min-h-[220px] flex flex-col justify-center border-t border-slate-50">
+                  <div className="p-6 text-center bg-white min-h-[220px] flex flex-col justify-center border-t border-slate-50 relative z-10">
+
                     <h3 className="text-lg font-bold text-[#346023] mb-2 leading-snug">{member.name}</h3>
                     <p className="text-xs font-bold text-amber-600 mb-3">{member.role}</p>
                     <p className="text-xs text-foreground/75 leading-relaxed italic">{member.org}</p>

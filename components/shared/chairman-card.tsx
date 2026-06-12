@@ -17,7 +17,7 @@ export function ChairmanCard() {
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary/30 overflow-hidden bg-primary/10 flex items-center justify-center">
               {!imageError ? (
                 <Image
-                  src={getAssetPath("/images/team/chairman.jpg")}
+                  src={getAssetPath(chairman.image || "/images/ISSN/Manoj.png")}
                   alt={chairman.name}
                   width={160}
                   height={160}
