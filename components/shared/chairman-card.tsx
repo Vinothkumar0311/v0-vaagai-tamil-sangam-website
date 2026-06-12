@@ -12,20 +12,21 @@ export function ChairmanCard() {
   return (
     <Card className="overflow-hidden border-0 shadow-lg">
       <CardContent className="p-0">
-        <div className="relative aspect-square bg-muted">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-gold/20 flex items-center justify-center">
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary/30 overflow-hidden bg-primary/10 flex items-center justify-center">
+        <div className="relative aspect-[3/2] bg-muted">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-gold/20 flex items-center justify-center p-4">
+            <div className="w-full h-full rounded-2xl border-4 border-primary/30 overflow-hidden bg-primary/10 flex items-center justify-center">
               {!imageError ? (
                 <Image
-                  src={getAssetPath(chairman.image || "/images/ISSN/Manoj.png")}
+                  src={getAssetPath("head.png")}
                   alt={chairman.name}
-                  width={160}
-                  height={160}
-                  className="object-cover w-full h-full"
+                  width={400}
+                  height={266}
+                  className="object-cover w-full h-full transition-transform hover:scale-105 duration-300"
                   onError={() => setImageError(true)}
+                  priority
                 />
               ) : (
-                <span className="text-primary font-bold text-4xl">
+                <span className="text-primary font-bold text-6xl">
                   {chairman.name.charAt(0)}
                 </span>
               )}

@@ -88,15 +88,6 @@ export const allMembers: TeamMember[] = [
     category: "editorial"
   },
   {
-    id: "saramala_rajavala_9",
-    name: "சர்மிளா ராஜவேல்",
-    nameEn: "சர்மிளா ராஜவேல்",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/sharmila mam.png",
-    category: "editorial"
-  },
-  {
     id: "arathatha_mathasavarana_10",
     name: "ஆர்த்தி மாதேஸ்வரன்",
     nameEn: "ஆர்த்தி மாதேஸ்வரன்",
@@ -178,15 +169,6 @@ export const allMembers: TeamMember[] = [
     category: "editorial"
   },
   {
-    id: "thanaya_sa_sa_19",
-    name: "தன்யா சு ச",
-    nameEn: "தன்யா சு ச",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/thanya akka.png",
-    category: "editorial"
-  },
-  {
     id: "vashana_tha_20",
     name: "விஷ்ணு தி",
     nameEn: "விஷ்ணு தி",
@@ -202,15 +184,6 @@ export const allMembers: TeamMember[] = [
     role: "உறுப்பினர்",
     roleEn: "Member",
     image: "/images/Members/selva mani anna.png",
-    category: "editorial"
-  },
-  {
-    id: "saravanana_sa_22",
-    name: "சரவணன் சு",
-    nameEn: "சரவணன் சு",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/saravanan sir.png",
     category: "editorial"
   },
   {
@@ -241,48 +214,12 @@ export const allMembers: TeamMember[] = [
     category: "editorial"
   },
   {
-    id: "apanaya_ka_26",
-    name: "அபிநயா கோ",
-    nameEn: "அபிநயா கோ",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/abinaya mam.png",
-    category: "editorial"
-  },
-  {
-    id: "karathathanaஶra_tha_27",
-    name: "கீர்த்தனாஶ்ரீ த",
-    nameEn: "கீர்த்தனாஶ்ரீ த",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/keerthana mam.png",
-    category: "editorial"
-  },
-  {
-    id: "jayapaparaya_na_28",
-    name: "ஜெயப்பிரியா நா",
-    nameEn: "ஜெயப்பிரியா நா",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/jaya priya mam.png",
-    category: "editorial"
-  },
-  {
     id: "manayasama_sa_29",
     name: "முனியசாமி சே",
     nameEn: "முனியசாமி சே",
     role: "உறுப்பினர்",
     roleEn: "Member",
     image: "/images/Members/muniya samy sir.png",
-    category: "editorial"
-  },
-  {
-    id: "iramamarathama_sa_30",
-    name: "இராமாமிர்தம் சி",
-    nameEn: "இராமாமிர்தம் சி",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/Ramairtham mam.png",
     category: "editorial"
   },
   {
@@ -295,39 +232,12 @@ export const allMembers: TeamMember[] = [
     category: "editorial"
   },
   {
-    id: "salalakakana_sa_32",
-    name: "செல்லக்கனி செ",
-    nameEn: "செல்லக்கனி செ",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/selakani mam.png",
-    category: "editorial"
-  },
-  {
-    id: "palasangakara_ka_33",
-    name: "பாலசங்கர் க",
-    nameEn: "பாலசங்கர் க",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/balashankar sir.png",
-    category: "editorial"
-  },
-  {
     id: "kamalakananana_e_34",
     name: "கமலகண்ணன் ஏ",
     nameEn: "கமலகண்ணன் ஏ",
     role: "உறுப்பினர்",
     roleEn: "Member",
     image: "/images/Members/kamala kannan anna.png",
-    category: "editorial"
-  },
-  {
-    id: "vana_aravanatha_35",
-    name: "வேணு அரவிந்த்",
-    nameEn: "வேணு அரவிந்த்",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/venu aravindh anna.png",
     category: "editorial"
   },
   {
@@ -349,15 +259,6 @@ export const allMembers: TeamMember[] = [
     category: "editorial"
   },
   {
-    id: "parakasha_thangakarasa_38",
-    name: "பிரகாஷ் தங்கராசு",
-    nameEn: "பிரகாஷ் தங்கராசு",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/prakash sir.png",
-    category: "editorial"
-  },
-  {
     id: "karasangakara_ka_39",
     name: "கௌரிசங்கர் க",
     nameEn: "கௌரிசங்கர் க",
@@ -376,15 +277,6 @@ export const allMembers: TeamMember[] = [
     category: "editorial"
   },
   {
-    id: "satharashana_ra_41",
-    name: "சுதர்ஷன் ரா",
-    nameEn: "சுதர்ஷன் ரா",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/sutharsan sir.png",
-    category: "editorial"
-  },
-  {
     id: "sarathara_ja_ta_42",
     name: "ஸ்ரீதர் ஜே டி",
     nameEn: "ஸ்ரீதர் ஜே டி",
@@ -400,15 +292,6 @@ export const allMembers: TeamMember[] = [
     role: "உறுப்பினர்",
     roleEn: "Member",
     image: "/images/Members/murali anna.png",
-    category: "editorial"
-  },
-  {
-    id: "karanatha_sa_pa_44",
-    name: "கௌரிநாத் செ ப",
-    nameEn: "கௌரிநாத் செ ப",
-    role: "உறுப்பினர்",
-    roleEn: "Member",
-    image: "/images/Members/gowrinath anna.png",
     category: "editorial"
   },
   {

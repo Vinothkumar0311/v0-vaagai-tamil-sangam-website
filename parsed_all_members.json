@@ -72,15 +72,6 @@
     "category": "editorial"
   },
   {
-    "id": "saramala_rajavala_9",
-    "name": "சர்மிளா ராஜவேல்",
-    "nameEn": "சர்மிளா ராஜவேல்",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_9.jpg",
-    "category": "editorial"
-  },
-  {
     "id": "arathatha_mathasavarana_10",
     "name": "ஆர்த்தி மாதேஸ்வரன்",
     "nameEn": "ஆர்த்தி மாதேஸ்வரன்",
@@ -162,15 +153,6 @@
     "category": "editorial"
   },
   {
-    "id": "thanaya_sa_sa_19",
-    "name": "தன்யா சு ச",
-    "nameEn": "தன்யா சு ச",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_19.jpg",
-    "category": "editorial"
-  },
-  {
     "id": "vashana_tha_20",
     "name": "விஷ்ணு தி",
     "nameEn": "விஷ்ணு தி",
@@ -186,15 +168,6 @@
     "role": "உறுப்பினர்",
     "roleEn": "Member",
     "image": "/images/team/member_21.jpg",
-    "category": "editorial"
-  },
-  {
-    "id": "saravanana_sa_22",
-    "name": "சரவணன் சு",
-    "nameEn": "சரவணன் சு",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_22.jpg",
     "category": "editorial"
   },
   {
@@ -225,48 +198,12 @@
     "category": "editorial"
   },
   {
-    "id": "apanaya_ka_26",
-    "name": "அபிநயா கோ",
-    "nameEn": "அபிநயா கோ",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_26.jpg",
-    "category": "editorial"
-  },
-  {
-    "id": "karathathanaஶra_tha_27",
-    "name": "கீர்த்தனாஶ்ரீ த",
-    "nameEn": "கீர்த்தனாஶ்ரீ த",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_27.jpg",
-    "category": "editorial"
-  },
-  {
-    "id": "jayapaparaya_na_28",
-    "name": "ஜெயப்பிரியா நா",
-    "nameEn": "ஜெயப்பிரியா நா",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_28.jpg",
-    "category": "editorial"
-  },
-  {
     "id": "manayasama_sa_29",
     "name": "முனியசாமி சே",
     "nameEn": "முனியசாமி சே",
     "role": "உறுப்பினர்",
     "roleEn": "Member",
     "image": "/images/team/member_29.jpg",
-    "category": "editorial"
-  },
-  {
-    "id": "iramamarathama_sa_30",
-    "name": "இராமாமிர்தம் சி",
-    "nameEn": "இராமாமிர்தம் சி",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_30.jpg",
     "category": "editorial"
   },
   {
@@ -279,39 +216,12 @@
     "category": "editorial"
   },
   {
-    "id": "salalakakana_sa_32",
-    "name": "செல்லக்கனி செ",
-    "nameEn": "செல்லக்கனி செ",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_32.jpg",
-    "category": "editorial"
-  },
-  {
-    "id": "palasangakara_ka_33",
-    "name": "பாலசங்கர் க",
-    "nameEn": "பாலசங்கர் க",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_33.jpg",
-    "category": "editorial"
-  },
-  {
     "id": "kamalakananana_e_34",
     "name": "கமலகண்ணன் ஏ",
     "nameEn": "கமலகண்ணன் ஏ",
     "role": "உறுப்பினர்",
     "roleEn": "Member",
     "image": "/images/team/member_34.jpg",
-    "category": "editorial"
-  },
-  {
-    "id": "vana_aravanatha_35",
-    "name": "வேணு அரவிந்த்",
-    "nameEn": "வேணு அரவிந்த்",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_35.jpg",
     "category": "editorial"
   },
   {
@@ -333,15 +243,6 @@
     "category": "editorial"
   },
   {
-    "id": "parakasha_thangakarasa_38",
-    "name": "பிரகாஷ் தங்கராசு",
-    "nameEn": "பிரகாஷ் தங்கராசு",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_38.jpg",
-    "category": "editorial"
-  },
-  {
     "id": "karasangakara_ka_39",
     "name": "கௌரிசங்கர் க",
     "nameEn": "கௌரிசங்கர் க",
@@ -360,15 +261,6 @@
     "category": "editorial"
   },
   {
-    "id": "satharashana_ra_41",
-    "name": "சுதர்ஷன் ரா",
-    "nameEn": "சுதர்ஷன் ரா",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_41.jpg",
-    "category": "editorial"
-  },
-  {
     "id": "sarathara_ja_ta_42",
     "name": "ஸ்ரீதர் ஜே டி",
     "nameEn": "ஸ்ரீதர் ஜே டி",
@@ -384,15 +276,6 @@
     "role": "உறுப்பினர்",
     "roleEn": "Member",
     "image": "/images/team/member_43.jpg",
-    "category": "editorial"
-  },
-  {
-    "id": "karanatha_sa_pa_44",
-    "name": "கௌரிநாத் செ ப",
-    "nameEn": "கௌரிநாத் செ ப",
-    "role": "உறுப்பினர்",
-    "roleEn": "Member",
-    "image": "/images/team/member_44.jpg",
     "category": "editorial"
   },
   {
