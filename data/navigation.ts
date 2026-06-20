@@ -36,11 +36,11 @@ export const navigation: NavElement[] = [
         labelEn: "Competitions & Awards",
         href: "/competitions",
       },
-      {
-        label: "நிகழ்வுகளும் நினைவுகளும்",
-        labelEn: "Memories",
-        href: "/events-and-memories",
-      },
+      // {
+      //   label: "நிகழ்வுகளும் நினைவுகளும்",
+      //   labelEn: "Memories",
+      //   href: "/events-and-memories",
+      // },
     ],
   },
 
@@ -83,11 +83,11 @@ export const navigation: NavElement[] = [
         labelEn: "Editorial Board",
         href: "/publications#editorial",
       },
-      {
-        label: "Annual Report",
-        labelEn: "Annual Report",
-        href: "/annual-reports",
-      },
+      // {
+      //   label: "Annual Report",
+      //   labelEn: "Annual Report",
+      //   href: "/annual-reports",
+      // },
       {
         label: "Archives",
         labelEn: "Archives",

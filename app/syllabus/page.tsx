@@ -277,6 +277,20 @@ export default function SyllabusPage() {
                   முறையான பட்டயப் படிப்பிற்கு இணையான அங்கீகாரத்தைப் பெறச் செய்கிறது.
                 </p>
               </CardContent>
+
+              <div className="flex justify-center w-full my-6 px-4">
+                <Image
+                  src={getAssetPath("/syllabus/image1.png")}
+                  alt="தர மதிப்பீட்டு நிலை விளக்க வரைபடம்"
+                  width={600}
+                  height={849}
+                  className="w-full max-w-md h-auto rounded-2xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow bg-white p-2"
+                />
+              </div>
+
+              <p className="text-base md:text-lg text-slate-800 leading-relaxed text-justify border-l-4 border-[#346023] pl-4 bg-[#346023]/5 py-3 rounded-r-xl"> தர மதிப்பீட்டு நிலை விளக்க வரைபடம்  
+தமிழின் மிகப்பழமையான நூல்களுள் ஒன்றான நன்னூலில் கூறப்பட்டுள்ள பாடங்கேட்டலின் முறைகள், இன்றைய பல்கலைக்கழக மானியக் குழுவின் நான்கு முனை ( 4-Quadrant ) இணையவழிக் கற்றல் முறையோடு நேரடியாகத் தொடர்புடையது. 
+</p>
             </Card>
 
             {/* படம் 02. Interactive Diagram Comparison */}
@@ -288,66 +302,14 @@ export default function SyllabusPage() {
                 <p className="text-sm text-slate-600">பாரம்பரியக் கற்றல் நுட்பங்களும் நவீன மின்-கற்றல் தொழில்நுட்பத்தின் இணைப்பும்</p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                {/* Quadrant 1 */}
-                <div className="bg-[#D6E4D9] border border-[#346023]/25 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-                  <div className="space-y-2">
-                    <span className="bg-[#346023] text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                      Quadrant I
-                    </span>
-                    <h4 className="text-lg font-bold text-[#346023]">ஆசான் உரைத்தல்</h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">ஆசிரியர் வகுப்பில் நேடியாகக் கற்பிக்கும் பாரம்பரிய முறை.</p>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-[#346023]/15 flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#346023] uppercase">மின்னணு வடிவம்</span>
-                    <span className="bg-white/80 text-[#346023] text-xs font-bold px-2 py-1 rounded border border-[#346023]/10">காணொளி உரை (e-Tutorial)</span>
-                  </div>
-                </div>
-
-                {/* Quadrant 2 */}
-                <div className="bg-[#F4F8F5] border border-[#346023]/20 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-                  <div className="space-y-2">
-                    <span className="bg-[#346023]/80 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                      Quadrant II
-                    </span>
-                    <h4 className="text-lg font-bold text-[#346023]">பிழைபாடிலா கற்றல்</h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">சுய வாசிப்பு மற்றும் மீண்டும் மீண்டும் படித்து பிழை இல்லாமல் தெளிவு பெறுதல்.</p>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-[#346023]/15 flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#346023] uppercase">மின்னணு வடிவம்</span>
-                    <span className="bg-white/80 text-[#346023] text-xs font-bold px-2 py-1 rounded border border-[#346023]/10">மின்னணு பாடக்குறிப்பு (e-Content)</span>
-                  </div>
-                </div>
-
-                {/* Quadrant 3 */}
-                <div className="bg-[#D6E4D9] border border-[#346023]/25 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-                  <div className="space-y-2">
-                    <span className="bg-[#346023] text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                      Quadrant III
-                    </span>
-                    <h4 className="text-lg font-bold text-[#346023]">சக மாணவர்கள் விவாதம்</h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">கற்றதை ஒத்த பண்புடைய மாணவர்களுடன் கலந்துரையாடி அறிவை முழுமையாக்குதல்.</p>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-[#346023]/15 flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#346023] uppercase">மின்னணு வடிவம்</span>
-                    <span className="bg-white/80 text-[#346023] text-xs font-bold px-2 py-1 rounded border border-[#346023]/10">கலந்துரையாடல் களம் (Forum)</span>
-                  </div>
-                </div>
-
-                {/* Quadrant 4 */}
-                <div className="bg-[#F4F8F5] border border-[#346023]/20 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
-                  <div className="space-y-2">
-                    <span className="bg-[#346023]/80 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                      Quadrant IV
-                    </span>
-                    <h4 className="text-lg font-bold text-[#346023]">தேர்வு மற்றும் மதிப்பீடு</h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">மாணவன் பெற்ற அறிவை சோதித்து, பிறருக்கு விளக்கும் திறனை மதிப்பீடு செய்தல்.</p>
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-[#346023]/15 flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#346023] uppercase">மின்னணு வடிவம்</span>
-                    <span className="bg-white/80 text-[#346023] text-xs font-bold px-2 py-1 rounded border border-[#346023]/10">அக/புற மதிப்பீடு (Self-Assessment)</span>
-                  </div>
-                </div>
+              <div className="flex justify-center w-full my-6 px-4">
+                <Image
+                  src={getAssetPath("/syllabus/image3.png")}
+                  alt="நன்னூல் மற்றும் UGC நான்கு முனை கற்றல் ஒப்பீடு"
+                  width={600}
+                  height={900}
+                  className="w-full max-w-md h-auto rounded-2xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow bg-white p-2"
+                />
               </div>
 
               <div className="bg-[#F4F8F5] p-5 rounded-2xl border border-[#346023]/10 text-sm text-slate-700 leading-relaxed">
@@ -551,40 +513,14 @@ export default function SyllabusPage() {
               </div>
 
               {/* Visual Rating Gauge / Scale */}
-              <div className="bg-[#F4F8F5] p-6 rounded-3xl border border-[#346023]/10 shadow-sm max-w-2xl mx-auto space-y-8">
-                <div className="grid grid-cols-4 gap-2 text-center text-xs font-bold text-[#346023]/80 uppercase tracking-wider">
-                  <div>0 - 39</div>
-                  <div>40 - 74</div>
-                  <div>75 - 89</div>
-                  <div>90 - 100</div>
-                </div>
-
-                {/* Horizontal Progress Gauge representation */}
-                <div className="relative h-4 rounded-full bg-slate-200 overflow-hidden flex">
-                  <div className="w-[39%] bg-rose-500 h-full"></div>
-                  <div className="w-[35%] bg-emerald-500 h-full border-l border-white"></div>
-                  <div className="w-[15%] bg-sky-500 h-full border-l border-white"></div>
-                  <div className="w-[11%] bg-amber-500 h-full border-l border-white"></div>
-                </div>
-
-                <div className="grid grid-cols-4 gap-2 text-center">
-                  <div className="space-y-1">
-                    <span className="text-[11px] font-bold text-rose-600 uppercase">தேர்ச்சி இல்லை</span>
-                    <p className="text-xs text-slate-500 font-semibold">-</p>
-                  </div>
-                  <div className="space-y-1">
-                    <span className="text-[11px] font-bold text-emerald-600 uppercase">நன்று</span>
-                    <p className="text-xs text-slate-600 font-bold">Good</p>
-                  </div>
-                  <div className="space-y-1">
-                    <span className="text-[11px] font-bold text-sky-600 uppercase">மிகநன்று</span>
-                    <p className="text-xs text-slate-600 font-bold">Very Good</p>
-                  </div>
-                  <div className="space-y-1">
-                    <span className="text-[11px] font-bold text-amber-600 uppercase">நனிநன்று</span>
-                    <p className="text-xs text-slate-600 font-bold">Excellent</p>
-                  </div>
-                </div>
+              <div className="flex justify-center w-full my-6 px-4">
+                <Image
+                  src={getAssetPath("/syllabus/image5.png")}
+                  alt="மதிப்பீடு மற்றும் தேர்ச்சி விவரங்கள்"
+                  width={600}
+                  height={900}
+                  className="w-full max-w-md h-auto rounded-2xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow bg-white p-2"
+                />
               </div>
             </div>
 
@@ -616,7 +552,7 @@ export default function SyllabusPage() {
                     <h4 className="text-sm font-bold text-[#346023] mt-1.5">வினாத்தாள் வடிவங்கள் (Question Patterns)</h4>
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-center text-xs">
+                  {/* <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-center text-xs">
                     <div className="p-3 bg-[#F4F8F5] rounded-xl border border-[#346023]/10 font-bold text-[#346023] shadow-sm">
                       சரியானதைத் தேர்வு செய்க
                     </div>
@@ -632,6 +568,15 @@ export default function SyllabusPage() {
                     <div className="p-3 bg-[#F4F8F5] rounded-xl border border-[#346023]/10 font-bold text-[#346023] shadow-sm col-span-2">
                       படத்தைப் பார்த்துத் தேர்ந்தெடுக்கவும்
                     </div>
+                  </div> */}
+                  <div className="flex justify-center w-full my-6">
+                    <Image
+                      src={getAssetPath("/syllabus/image4.png")}
+                      alt="வினாத்தாள் வடிவங்கள்"
+                      width={800}
+                      height={533}
+                      className="w-full max-w-2xl h-auto rounded-2xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow bg-white p-2"
+                    />
                   </div>
                 </div>
               </div>
@@ -659,33 +604,14 @@ export default function SyllabusPage() {
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    {/* Rubric 1 */}
-                    <div className="bg-[#F4F8F5] border border-[#346023]/15 p-5 rounded-2xl shadow-sm text-center space-y-2">
-                      <div className="w-10 h-10 rounded-full bg-[#346023]/10 text-[#346023] flex items-center justify-center font-bold mx-auto">
-                        1
-                      </div>
-                      <h4 className="text-base font-bold text-[#346023]">ஆய்வுத் தலைப்பின் தெளிவு</h4>
-                      <p className="text-xs text-slate-500 leading-relaxed">தேர்ந்தெடுத்த ஆய்வுப் பொருள் மற்றும் தலைப்பு சார்ந்த அடிப்படைத் தெளிவும் அறிவும்.</p>
-                    </div>
-
-                    {/* Rubric 2 */}
-                    <div className="bg-[#F4F8F5] border border-[#346023]/15 p-5 rounded-2xl shadow-sm text-center space-y-2">
-                      <div className="w-10 h-10 rounded-full bg-[#346023]/10 text-[#346023] flex items-center justify-center font-bold mx-auto">
-                        2
-                      </div>
-                      <h4 className="text-base font-bold text-[#346023]">விளக்கவுரைத் திறன்</h4>
-                      <p className="text-xs text-slate-500 leading-relaxed">15 நிமிட கால வரம்பிற்குள் கருத்துக்களை மிகச் தெளிவாக எடுத்துரைக்கும் பேச்சுத் திறன்.</p>
-                    </div>
-
-                    {/* Rubric 3 */}
-                    <div className="bg-[#F4F8F5] border border-[#346023]/15 p-5 rounded-2xl shadow-sm text-center space-y-2">
-                      <div className="w-10 h-10 rounded-full bg-[#346023]/10 text-[#346023] flex items-center justify-center font-bold mx-auto">
-                        3
-                      </div>
-                      <h4 className="text-base font-bold text-[#346023]">உரையாடல் & விடை தருதல்</h4>
-                      <p className="text-xs text-slate-500 leading-relaxed">வகுப்பில் எழும்பும் கேள்விகளுக்கு உரிய விளக்கங்களுடன் விடையளித்து உரையாடுதல்.</p>
-                    </div>
+                  <div className="flex justify-center w-full my-6">
+                    <Image
+                      src={getAssetPath("/syllabus/image7.png")}
+                      alt="செய்முறைத்தேர்வு மதிப்பெண் விளக்கம்"
+                      width={800}
+                      height={368}
+                      className="w-full max-w-3xl h-auto rounded-2xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow bg-white p-2"
+                    />
                   </div>
                 </div>
               </div>
@@ -759,7 +685,7 @@ export default function SyllabusPage() {
                     <h4 className="text-base font-bold text-[#346023]">ஒட்டுமொத்த மதிப்பெண்கள் (Total Marks: 120)</h4>
                   </div>
 
-                  <div className="bg-[#E8EFE9] border border-[#346023]/15 rounded-3xl p-6 shadow-sm flex justify-around text-center gap-4">
+                  {/* <div className="bg-[#E8EFE9] border border-[#346023]/15 rounded-3xl p-6 shadow-sm flex justify-around text-center gap-4">
                     <div className="space-y-1">
                       <span className="text-[10px] font-extrabold text-[#346023]/60 uppercase tracking-wider">Part A</span>
                       <h5 className="text-2xl font-black text-[#346023]">30</h5>
@@ -777,6 +703,15 @@ export default function SyllabusPage() {
                       <h5 className="text-2xl font-black text-[#346023]">50</h5>
                       <p className="text-xs text-slate-600 font-semibold">மதிப்பெண்கள்</p>
                     </div>
+                  </div> */}
+                  <div className="flex justify-center w-full my-6">
+                    <Image
+                      src={getAssetPath("/syllabus/image6.jpg")}
+                      alt="இறுதித்தேர்வு மதிப்பெண் விளக்கம்"
+                      width={800}
+                      height={533}
+                      className="w-full max-w-2xl h-auto rounded-2xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow bg-white p-2"
+                    />
                   </div>
                 </div>
               </div>
@@ -839,92 +774,14 @@ export default function SyllabusPage() {
               </div>
 
               {/* Stacked Stepped Hierarchy representing Bloom's Pyramid */}
-              <div className="max-w-3xl mx-auto space-y-3">
-                
-                {/* Level 6 - Create */}
-                <div className="bg-[#244417] text-white p-4 rounded-2xl shadow-sm hover:scale-[1.01] transition-transform flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border border-white/10">
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center font-black text-sm">6</span>
-                    <div>
-                      <h4 className="font-bold text-base md:text-lg">உருவாக்கம் (Create)</h4>
-                      <p className="text-xs text-white/80">புதிய சூழலுக்குத் தக்கவாறு கற்ற திறன்களைப் பயன்படுத்திப் புதிய படைப்புகளை உருவாக்குதல்.</p>
-                    </div>
-                  </div>
-                  <span className="bg-[#346023] text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/20 shrink-0">
-                    மடம்நனி இகக்கும்
-                  </span>
-                </div>
-
-                {/* Level 5 - Evaluate */}
-                <div className="bg-[#346023] text-white p-4 rounded-2xl shadow-sm hover:scale-[1.01] transition-transform flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border border-white/10">
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center font-black text-sm">5</span>
-                    <div>
-                      <h4 className="font-bold text-base md:text-lg">மதிப்பீடு (Evaluate)</h4>
-                      <p className="text-xs text-white/85">நெடுவினாக்கள் மூலம் மாணவர்கள் தங்களுக்குள் கருத்துக்களைப் பகிர்ந்து மதிப்பிடுதல்.</p>
-                    </div>
-                  </div>
-                  <span className="bg-[#244417] text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/20 shrink-0">
-                    தம்மொடு பயிறல்
-                  </span>
-                </div>
-
-                {/* Level 4 - Analyze */}
-                <div className="bg-[#D6E4D9] text-[#346023] p-4 rounded-2xl shadow-sm hover:scale-[1.01] transition-transform flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border border-[#346023]/20">
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-[#346023]/10 text-[#346023] flex items-center justify-center font-black text-sm">4</span>
-                    <div>
-                      <h4 className="font-bold text-[#346023] text-base md:text-lg">பகுப்பாய்வு (Analyze)</h4>
-                      <p className="text-xs text-[#346023]/80">விவாதப் பூர்வமான வினாக்கள் மூலம் பகுப்பாய்வுத் திறனைத் தூண்டுதல்.</p>
-                    </div>
-                  </div>
-                  <span className="bg-white text-[#346023] text-xs font-bold px-3 py-1.5 rounded-full border border-[#346023]/20 shrink-0">
-                    வினாதல் & வினாயவை விடுத்தல்
-                  </span>
-                </div>
-
-                {/* Level 3 - Apply */}
-                <div className="bg-[#F4F8F5] text-slate-800 p-4 rounded-2xl shadow-sm hover:scale-[1.01] transition-transform flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border border-[#346023]/15">
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-[#346023]/10 text-[#346023] flex items-center justify-center font-black text-sm">3</span>
-                    <div>
-                      <h4 className="font-bold text-[#346023] text-base md:text-lg">பயன்பாடு (Apply)</h4>
-                      <p className="text-xs text-slate-500">கண்டறியச் சொல்லும் வினாக்கள் மூலம் இலக்கண மற்றும் கருத்துப் பயன்பாட்டைச் சோதித்தல்.</p>
-                    </div>
-                  </div>
-                  <span className="bg-[#E8EFE9] text-[#346023] text-xs font-bold px-3 py-1.5 rounded-full border border-[#346023]/15 shrink-0">
-                    வழக்கறிதல் & பயன்பாடு
-                  </span>
-                </div>
-
-                {/* Level 2 - Understand */}
-                <div className="bg-[#F4F8F5] text-slate-800 p-4 rounded-2xl shadow-sm hover:scale-[1.01] transition-transform flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border border-[#346023]/10">
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-[#346023]/5 text-[#346023]/80 flex items-center justify-center font-black text-sm">2</span>
-                    <div>
-                      <h4 className="font-bold text-[#346023]/90 text-base md:text-lg">புரிதல் (Understand)</h4>
-                      <p className="text-xs text-slate-500">பாடலின் பொருளை விளக்கும் வினாக்கள் மூலம் மாணவர்களின் புரிதலை உறுதி செய்தல்.</p>
-                    </div>
-                  </div>
-                  <span className="bg-[#E8EFE9]/50 text-[#346023]/80 text-xs font-bold px-3 py-1.5 rounded-full border border-[#346023]/10 shrink-0">
-                    கேட்டவை நினைத்தல்
-                  </span>
-                </div>
-
-                {/* Level 1 - Remember */}
-                <div className="bg-white text-slate-800 p-4 rounded-2xl shadow-sm hover:scale-[1.01] transition-transform flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border border-slate-100">
-                  <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-black text-sm">1</span>
-                    <div>
-                      <h4 className="font-bold text-slate-700 text-base md:text-lg">நினைவில் இருத்துதல் (Remember)</h4>
-                      <p className="text-xs text-slate-500">ஒரு மதிப்பெண் வினாக்கள் மூலம் மாணவர்களின் நினைவுத் திறனைச் சோதித்தல்.</p>
-                    </div>
-                  </div>
-                  <span className="bg-slate-50 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 shrink-0">
-                    பாடம் போற்றல்
-                  </span>
-                </div>
-
+              <div className="flex justify-center w-full my-6 px-4">
+                <Image
+                  src={getAssetPath("/syllabus/image8.jpg")}
+                  alt="புளூமின் மதிப்பீட்டு நிலை விளக்க வரைபடம் & நன்னூல் ஒப்பீடு"
+                  width={650}
+                  height={714}
+                  className="w-full max-w-xl h-auto rounded-2xl border border-slate-200/80 shadow-md hover:shadow-lg transition-shadow bg-white p-2"
+                />
               </div>
 
               <div className="bg-[#F4F8F5] p-5 rounded-2xl border border-[#346023]/10 text-sm text-slate-700 leading-relaxed text-justify">

@@ -8,7 +8,7 @@ const SECRET_KEY = new TextEncoder().encode(
 
 export type Role = "admin" | "club"
 
-export type MandramType = "panuval" | "mazhalai" | "magalir" | "kural" | "manavar" | "all"
+export type MandramType = "panuval" | "mazhalai" | "magalir" | "kural" | "manavar" | "senthur-nurmati" | "all"
 
 export interface User {
   id: string
@@ -71,6 +71,14 @@ export const MOCK_USERS: User[] = [
     passwordHash: bcrypt.hashSync("club123", 10),
     role: "club",
     mandram: "manavar",
+  },
+  {
+    id: "u7",
+    name: "Senthur Nurmati Admin",
+    email: "senthurnurmati@vaagai.com",
+    passwordHash: bcrypt.hashSync("club123", 10),
+    role: "club",
+    mandram: "senthur-nurmati",
   },
 ]
 

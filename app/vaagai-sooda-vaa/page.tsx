@@ -6,6 +6,7 @@ import { getAssetPath } from "@/lib/paths"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { BookOpen, Calendar, Award, Banknote, Download, Users, Phone, Mail, FileText } from "lucide-react"
+import { OlympiadGallery } from "@/components/sections/olympiad-gallery"
 
 export const metadata: Metadata = {
   title: "வாகை சூட வா - மாபெரும் தமிழ் ஒலிம்பியாட்",
@@ -229,6 +230,9 @@ export default function VaagaiSoodaVaaPage() {
           </div>
         </div>
       </section>
+
+      {/* Media Gallery Section */}
+      <OlympiadGallery />
 
       {/* Payment & Contact Section */}
       <section className="py-16 bg-primary text-white">
