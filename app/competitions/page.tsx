@@ -3,7 +3,7 @@ import Image from "next/image"
 import { PageShell } from "@/components/layout/page-shell"
 import { PageHeader } from "@/components/shared/page-header"
 import { getAssetPath } from "@/lib/paths"
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog"
+import { RoadmapDialog } from "@/components/shared/roadmap-dialog"
 
 export const metadata: Metadata = {
   title: "போட்டிகளும் விருதுகளும் - Competitions & Awards",
@@ -23,12 +23,12 @@ const competitions = [
     content: "சிறுவத்திலேயே செந்தமிழின் சுவையுணர்த்தி, விதையாய் உறங்கும் மொழித்திறன்களையும் கவின்கலைத் திறன்களையும் விருட்சமாக்க வாய்ப்பென்னும் நீரூற்றி வளர்க்கிறது வாகை சங்கம். ஆனித் திங்களில் அன்பிற்குரிய மழலைகளுக்குத் தமிழ்ப் பேச்சு, ஓவியம் முதலிய போட்டிகளை நடத்தி 'மழலைமொழி மதியரசன்' / 'மழலைமொழி மதியரசி' என்ற விருதுகள் வழங்கப்படுகின்றன.",
     image: "/images/activities/aani.png"
   },
-  {
-    title: "அருந்தமிழ் ஆடி",
-    quote: "'மாந்தர்தம் உள்ளத்துனைய உயர்வு'",
-    content: "-என்ற பொதுமறை போதனைக்கேற்ப நமது திறமைகள் நாம் கொள்ளும் ஊக்கத்தின் அளவே ஆகும். ஒவ்வொருவருக்குள்ளும் பல திறமைகள் உறங்கிக்கொண்டிருக்கின்றன, வாயுமைந்தனுக்கு வலிமையுணர்த்திய சாம்பவானைப் போல நம் திறமைகளை அடையாளங்காட்டி ஊக்கப்படுத்திக் களமமைத்துக்கொடுத்து வழிநடத்தி ஏற்படுத்தி வெற்றி வாகை சூட்டி மகிழ்கிறது தமிழ்ச்சங்க வாகை! ஆடித்திங்களில் அருந்தமிழ்ப் போட்டிகள் வைத்து வெற்றி பெறுவோருக்குக் 'கவின்றமிழ்' விருதுகள் வழங்கப்படுகின்றன.",
-    image: "/images/activities/aadi.png"
-  },
+  // {
+  //   title: "அருந்தமிழ் ஆடி",
+  //   quote: "'மாந்தர்தம் உள்ளத்துனைய உயர்வு'",
+  //   content: "-என்ற பொதுமறை போதனைக்கேற்ப நமது திறமைகள் நாம் கொள்ளும் ஊக்கத்தின் அளவே ஆகும். ஒவ்வொருவருக்குள்ளும் பல திறமைகள் உறங்கிக்கொண்டிருக்கின்றன, வாயுமைந்தனுக்கு வலிமையுணர்த்திய சாம்பவானைப் போல நம் திறமைகளை அடையாளங்காட்டி ஊக்கப்படுத்திக் களமமைத்துக்கொடுத்து வழிநடத்தி ஏற்படுத்தி வெற்றி வாகை சூட்டி மகிழ்கிறது தமிழ்ச்சங்க வாகை! ஆடித்திங்களில் அருந்தமிழ்ப் போட்டிகள் வைத்து வெற்றி பெறுவோருக்குக் 'கவின்றமிழ்' விருதுகள் வழங்கப்படுகின்றன.",
+  //   image: "/images/activities/aadi.png"
+  // },
   {
     title: "ஆண்டுவிழா ஆவணி",
     quote: "'தோகை விரித்தாடும் தொல்தமிழாம் மாமயிலின் மோகச் சிறகுகளில் முத்தான ஓரிறகாம் வாகை தமிழ்ச்சங்கம் வந்துதித்த பொன்னாளாம் ஆகத்துத் திங்களென்று ஆர்! [இன்னிசை வெண்பா]**'",
@@ -52,6 +52,12 @@ const competitions = [
     quote: "'சொல்லில் தீவளர்த்துச் சுதந்திர யாகம் அல்லும் பகலும் ஆற்றிய வீரன், அன்னைத் தமிழின் அடிமுதல் முடிவரை இன்னும் பலப்புது இலக்கிய அணிகளைச் சார்த்தி மகிழ்ந்த சரித்திர நாயகன், பழமைக்கும் புதுமைக்கும் பாலமாய் நின்றோன், குழையாத சிங்கம், கொள்கை மேலோன், சகாவெனக் கண்ணனைக் காளியைச் சார்ந்த மகாகவி யோகி, மரணத்தை வென்றோன்...' [நிலைமண்டில ஆசிரியப்பா]*",
     content: "அந்த முண்டாசு கவியின் பிறந்த நாளைக் (திசம்பர் 11) கொண்டாடும் வகையில் மரபு, புதுக்கவிதை போட்டிகள் நடத்தப்பட்டு, வெற்றியாளர்களுக்குக் 'கவிச்செம்மல்' விருதுகள் வழங்கப்படும்.",
     image: "/images/activities/karthigai.png"
+  },
+  {
+    title: "மங்கள மார்கழி",
+    quote: "'ஆண்டாள் அருளால் அமரும் திருப்பாவை, மாணிக்கவாசகர் மலரும் திருவெம்பாவை - இரு திருவாய்மொழிகளும் ஒலிக்கும் புனிதமான மார்கழி மாதம்!'",
+    content: "ஆண்டாள் அருளிய திருப்பாவையும், மாணிக்கவாசகர் அருளிய திருவெம்பாவையும் தினமும் பக்தியுடன் பாராயணம் செய்து, இறையருள், நல்லிணக்கம், செழிப்பு மற்றும் மன அமைதி பெறும் நிகழ்விது. மார்கழி மாதம் முழுவதும் நடைபெறும் திருப்பாவை – திருவெம்பாவை பாராயண நிகழ்வுகள் மூலம், தமிழ் மொழியின் இனிமையையும், பக்தி இலக்கியங்களின் மகத்துவத்தையும், நம் பாரம்பரிய பண்பாட்டு விழுமியங்களையும் அடுத்த தலைமுறைக்கு எடுத்துச் செல்வோம். அனைவரும் இணைந்து தமிழின் பெருமையை உலகறியச் செய்வோம்.",
+    image: "/images/activities/margazhi.png"
   },
   {
     title: "தித்திக்கும் தை",
@@ -88,44 +94,19 @@ export default function CompetitionsPage() {
               </p>
 
               <div className="relative p-8 md:p-10 bg-primary/5 rounded-2xl border border-primary/10 mb-10">
-                <div className="absolute -top-4 -left-2 text-6xl text-primary/20 font-serif">"</div>
+                <div className="absolute -top-4 -left-2 text-6xl text-primary/20 font-serif">&ldquo;</div>
                 <div className="text-center font-medium text-lg md:text-xl text-primary leading-loose italic">
                   <p>கூட்டுஞ் சுவைக்கனி கொள்ள முருகனும் கொம்புடனே</p>
                   <p>நீட்டும் முகத்தவன் நேரும் ஒருதனிப் போட்டியைப்போல்</p>
                   <p>நாட்டும் சுவைத்தமிழ் நன்கு தெரிவுற நாட்டிடும்பல்</p>
                   <p>போட்டி விருதுகள் புல்லும் பரிசுடன் வாகையிலே!</p>
                 </div>
-                <div className="absolute -bottom-8 -right-2 text-6xl text-primary/20 font-serif">"</div>
+                <div className="absolute -bottom-8 -right-2 text-6xl text-primary/20 font-serif">&rdquo;</div>
                 <p className="text-right mt-6 text-foreground/70 font-semibold text-sm md:text-base">-- கட்டளைக் கலித்துறை</p>
               </div>
 
-              {/* Yearly Roadmap Image */}
-              <Dialog>
-                <DialogTrigger asChild>
-                  <button type="button" className="relative w-full aspect-[6/6] md:aspect-video rounded-2xl overflow-hidden border border-primary/10 shadow-sm bg-slate-50/50 cursor-pointer hover:shadow-md transition-all group">
-                    <Image
-                      src={getAssetPath("/images/activities/d_page-0001.jpg")}
-                      alt="வருடாந்திர நிகழ்வுகள் மற்றும் விருதுகள்"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 80vw"
-                      className="object-contain transition-transform group-hover:scale-[1.01] duration-300"
-                      priority
-                    />
-                  </button>
-                </DialogTrigger>
-                <DialogContent className="max-w-[95vw] md:max-w-7xl h-[90vh] p-2 md:p-6 bg-white/95 backdrop-blur-sm border-0">
-                  <DialogTitle className="sr-only">வருடாந்திர நிகழ்வுகள் மற்றும் விருதுகள்</DialogTitle>
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={getAssetPath("/images/activities/d_page-0001.jpg")}
-                      alt="வருடாந்திர நிகழ்வுகள் மற்றும் விருதுகள்"
-                      fill
-                      sizes="95vw"
-                      className="object-contain"
-                    />
-                  </div>
-                </DialogContent>
-              </Dialog>
+              {/* Yearly Roadmap Image - client component to avoid SSR hydration mismatch */}
+              <RoadmapDialog />
             </div>
           </div>
         </div>
@@ -152,7 +133,7 @@ export default function CompetitionsPage() {
                     <div className={`w-full md:w-1/2 flex flex-col ${isEven ? 'md:pr-10 md:items-end text-left md:text-right' : 'md:pl-10 md:items-start text-left'}`}>
                       <div className="max-w-3xl space-y-4 bg-white p-6 md:px-10 md:py-8 rounded-3xl shadow-xl border border-primary/5 hover:border-primary/20 hover:shadow-2xl transition-all z-10 relative w-full">
                         <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-bold text-sm border border-primary/20 shadow-sm">
-                          போட்டி & விருது
+                          போட்டி &amp; விருது
                         </div>
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-800 leading-tight">
                           {comp.title}

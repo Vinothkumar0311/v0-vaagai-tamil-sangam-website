@@ -30,6 +30,16 @@ const nextConfig = {
         hostname: "lh3.googleusercontent.com",
       },
     ],
+
+    // Allow query parameters on local images for cache busting
+    localPatterns: [
+      {
+        pathname: "/images/**",
+      },
+      {
+        pathname: "/syllabus/**",
+      },
+    ],
   },
 
   // Explicitly set the Turbopack root to the project directory
