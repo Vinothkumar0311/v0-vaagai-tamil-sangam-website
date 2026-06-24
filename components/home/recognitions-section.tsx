@@ -59,7 +59,7 @@ export function RecognitionsSection() {
 
     const interval = setInterval(() => {
       handleNext()
-    }, 4000)
+    }, 2000)
 
     return () => clearInterval(interval)
   }, [selectedRecognition, isHovered, handleNext])
@@ -175,8 +175,8 @@ export function RecognitionsSection() {
                   }}
                   transition={{
                     type: "spring",
-                    stiffness: 260,
-                    damping: 26,
+                    stiffness: 300,
+                    damping: 28,
                   }}
                   drag="x"
                   dragConstraints={{ left: 0, right: 0 }}

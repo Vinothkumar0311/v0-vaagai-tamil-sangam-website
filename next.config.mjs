@@ -34,10 +34,7 @@ const nextConfig = {
     // Allow query parameters on local images for cache busting
     localPatterns: [
       {
-        pathname: "/images/**",
-      },
-      {
-        pathname: "/syllabus/**",
+        pathname: "/**",
       },
     ],
   },
