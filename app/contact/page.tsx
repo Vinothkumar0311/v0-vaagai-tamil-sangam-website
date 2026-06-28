@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "வாகை தமிழ்ச்சங்கத்துடன் தொடர்புகொள்ளுங்கள்",
 }
 
+import { EmailLink } from "@/components/shared/email-link"
+
 const contactInfo = [
   {
     icon: MapPin,
@@ -29,7 +31,7 @@ const contactInfo = [
     title: "தொடர்பு விவரங்கள்",
     details: [
       "தொலைபேசி: +91 82482 72880",
-      "மின்னஞ்சல்: vaagaitamilsangam@gmail.com"
+      <span key="email">மின்னஞ்சல்: <EmailLink email="vaagaitamilsangam" domain="gmail.com" className="hover:underline text-primary" /></span>
     ],
   },
 ]

@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { PageShell } from "@/components/layout/page-shell"
 import { PageHeader } from "@/components/shared/page-header"
 import { Shield, Lock, Eye, FileText, Globe, Info } from "lucide-react"
+import { EmailLink } from "@/components/shared/email-link"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | வாகை தமிழ்ச்சங்கம்",
@@ -186,7 +187,7 @@ export default function PrivacyPolicyPage() {
                   <h4 className="font-bold mb-4">9. தொடர்புக்கு</h4>
                   <div className="space-y-2 text-sm opacity-90">
                     <p className="font-bold">வாகை தமிழ்ச்சங்கம்</p>
-                    <p>மின்னஞ்சல்: <a href="mailto:vaagaitamilsangam@gmail.com" className="text-white hover:text-gold-light underline underline-offset-4 decoration-white/30 transition-colors">vaagaitamilsangam@gmail.com</a></p>
+                    <p>மின்னஞ்சல்: <EmailLink email="vaagaitamilsangam" domain="gmail.com" className="text-white hover:text-gold-light underline underline-offset-4 decoration-white/30 transition-colors" /></p>
                     <p>இணையதளம்: <a href="https://vaagaitamilsangam.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold-light underline underline-offset-4 decoration-white/30 transition-colors">vaagaitamilsangam.com</a></p>
                   </div>
                 </div>
@@ -308,7 +309,7 @@ export default function PrivacyPolicyPage() {
                   <h4 className="font-bold mb-4 font-mono">9. Contact Information</h4>
                   <div className="space-y-2 text-sm opacity-80">
                     <p className="font-bold">Vaagai Tamil Sangam</p>
-                    <p>Email: <a href="mailto:vaagaitamilsangam@gmail.com" className="text-gold-light hover:text-white underline underline-offset-4 decoration-gold-light/30 transition-all">vaagaitamilsangam@gmail.com</a></p>
+                    <p>Email: <EmailLink email="vaagaitamilsangam" domain="gmail.com" className="text-gold-light hover:text-white underline underline-offset-4 decoration-gold-light/30 transition-all" /></p>
                     <p>Website: <a href="https://vaagaitamilsangam.com" target="_blank" rel="noopener noreferrer" className="text-gold-light hover:text-white underline underline-offset-4 decoration-gold-light/30 transition-all">vaagaitamilsangam.com</a></p>
                   </div>
                 </div>

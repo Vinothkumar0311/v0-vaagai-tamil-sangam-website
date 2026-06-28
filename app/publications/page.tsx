@@ -6,6 +6,7 @@ import { PageHeader } from "@/components/shared/page-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FileText, BookOpen, Users, ScrollText, Archive, Target, CheckCircle2, Award } from "lucide-react"
 import { ArchivesSection } from "@/components/publications/archives-section"
+import { EmailLink } from "@/components/shared/email-link"
 
 export const metadata: Metadata = {
   title: "வெளியீடுகள்",
@@ -471,7 +472,13 @@ export default function PublicationsPage() {
                     {detail.label}
                   </div>
                   <div className="p-4 text-muted-foreground sm:w-2/3 break-words">
-                    {detail.value}
+                    {detail.label === "Email Address" ? (
+                      <div className="flex flex-col gap-1 sm:flex-row sm:gap-2">
+                        <EmailLink email="info" domain="vaagaitamilsangam.com" className="underline hover:text-[#346023]" />
+                        <span className="hidden sm:inline">, </span>
+                        <EmailLink email="vaagaitamilsangam" domain="gmail.com" className="underline hover:text-[#346023]" />
+                      </div>
+                    ) : detail.value}
                   </div>
                 </div>
               ))}
@@ -637,7 +644,15 @@ export default function PublicationsPage() {
                       </div>
 
                       <div className="space-y-2 text-left">
-                        <p className="text-[#346023] break-all text-xs font-semibold text-left">{member.email}</p>
+                        <p className="text-[#346023] break-all text-xs font-semibold text-left">
+                          {member.email ? (
+                            <EmailLink
+                              email={member.email.split("@")[0]}
+                              domain={member.email.split("@")[1]}
+                              className="hover:underline"
+                            />
+                          ) : null}
+                        </p>
                         <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#346023]/5 text-[#346023] text-xs font-semibold border border-[#346023]/10 shadow-sm mt-1 text-left">
                           Vidwan-ID : {member.vidwanId}
                         </span>
@@ -696,7 +711,13 @@ export default function PublicationsPage() {
                           </a>
                         )}
                         {member.email && (
-                          <p className="text-slate-700 break-all text-xs font-semibold text-left">{member.email}</p>
+                          <p className="text-slate-700 break-all text-xs font-semibold text-left">
+                            <EmailLink
+                              email={member.email.split("@")[0]}
+                              domain={member.email.split("@")[1]}
+                              className="hover:underline hover:text-primary"
+                            />
+                          </p>
                         )}
                         {member.vidwanId && (
                           <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary/5 text-primary text-xs font-semibold border border-primary/10 shadow-sm mt-1 text-left">
@@ -781,12 +802,13 @@ export default function PublicationsPage() {
             வாகை தமிழ்ச்சங்கத்தின் வெளியீடுகளில் பிரசுரிக்க விரும்பினால் எங்களை தொடர்புகொள்ளுங்கள்.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="mailto:publications@vaagaitamilsangam.com"
+            <EmailLink
+              email="publications"
+              domain="vaagaitamilsangam.com"
               className="inline-flex items-center justify-center rounded-lg bg-[#346023] px-6 py-3 text-sm font-medium text-white shadow-md hover:bg-[#244417] transition-colors"
             >
               கட்டுரை சமர்ப்பிக்க
-            </a>
+            </EmailLink>
             <a
               href="/contact"
               className="inline-flex items-center justify-center rounded-lg border border-primary px-6 py-3 text-sm font-medium text-primary hover:bg-[#346023]/10 transition-colors"

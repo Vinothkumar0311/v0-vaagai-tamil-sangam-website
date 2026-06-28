@@ -25,6 +25,7 @@ export function HeroSection() {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-6 md:px-8 lg:px-12 pb-20 sm:pb-24 md:pb-32 text-left w-full">
           <div className="max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-3xl">
+            <h1 className="sr-only">வாகை தமிழ்ச்சங்கம் | Vaagai Tamilsangam</h1>
             <blockquote className="mb-4 md:mb-6">
               <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-white leading-relaxed md:text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 {'"தேமதுரத் தமிழோசை உலகமெல்லாம் பரவும் வகை செய்தல் வேண்டும்"'}

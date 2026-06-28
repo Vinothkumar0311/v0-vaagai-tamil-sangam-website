@@ -3,6 +3,7 @@ import Image from "next/image"
 import { PageShell } from "@/components/layout/page-shell"
 import { PageHeader } from "@/components/shared/page-header"
 import { getAssetPath } from "@/lib/paths"
+import { EmailLink } from "@/components/shared/email-link"
 
 export const metadata: Metadata = {
   title: "ஆதரவு நல்குக | Sponsorship & Donations",
@@ -154,10 +155,10 @@ export default function SponsorshipPage() {
                 {/* Note / Instruction */}
                 <div className="p-4 bg-primary/5 border border-primary/10 rounded-2xl text-xs leading-relaxed text-foreground/80 space-y-2 text-justify">
                   <p>
-                    <strong>குறிப்பு:</strong> நிதியை மாற்றிய பிறகு, உங்களது பரிவர்த்தனை ரசீது மற்றும் நிரந்தர வங்கிக் கணக்கு எண் (PAN Card) விவரங்களை <a href="mailto:vaagaitamilsangam@gmail.com" className="text-primary hover:underline font-extrabold">vaagaitamilsangam@gmail.com</a> என்ற மின்னஞ்சல் முகவரிக்கு அனுப்பவும். அதன் மூலம் உங்களின் 80G வரி விலக்கு சான்றிதழைப் பெற்றுக் கொள்ளலாம்.
+                    <strong>குறிப்பு:</strong> நிதியை மாற்றிய பிறகு, உங்களது பரிவர்த்தனை ரசீது மற்றும் நிரந்தர வங்கிக் கணக்கு எண் (PAN Card) விவரங்களை <EmailLink email="vaagaitamilsangam" domain="gmail.com" className="text-primary hover:underline font-extrabold" /> என்ற மின்னஞ்சல் முகவரிக்கு அனுப்பவும். அதன் மூலம் உங்களின் 80G வரி விலக்கு சான்றிதழைப் பெற்றுக் கொள்ளலாம்.
                   </p>
                   <p className="italic text-muted-foreground border-t border-primary/10 pt-2">
-                    <strong>Note:</strong> After making a transfer, please email your transaction receipt along with your PAN Card details to <a href="mailto:vaagaitamilsangam@gmail.com" className="text-primary hover:underline font-bold">vaagaitamilsangam@gmail.com</a> to receive your 80G Tax Exemption Certificate.
+                    <strong>Note:</strong> After making a transfer, please email your transaction receipt along with your PAN Card details to <EmailLink email="vaagaitamilsangam" domain="gmail.com" className="text-primary hover:underline font-bold" /> to receive your 80G Tax Exemption Certificate.
                   </p>
                 </div>
               </div>

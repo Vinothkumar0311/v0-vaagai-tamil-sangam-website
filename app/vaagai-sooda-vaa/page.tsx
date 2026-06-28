@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { BookOpen, Calendar, Award, Banknote, Download, Users, Phone, Mail, FileText } from "lucide-react"
 import { OlympiadGallery } from "@/components/sections/olympiad-gallery"
+import { EmailLink, ObfuscatedEmailBlock } from "@/components/shared/email-link"
 
 export const metadata: Metadata = {
   title: "வாகை சூட வா - மாபெரும் தமிழ் ஒலிம்பியாட்",
@@ -137,7 +138,7 @@ export default function VaagaiSoodaVaaPage() {
               "பங்கேற்கும் அனைத்து மாணாக்கர்களுக்கும் சான்றிதழ் வழங்கப்படும். ஒவ்வொரு பிரிவிலும் முதல் 05 இடங்களைப்பெறும் தமிழ்ச்செல்வங்களுக்கு 'சிறந்த தமிழ் மாணவர்' விருதும், நிலைக்கேற்ப சிறப்புப் பரிசுகளும், சான்றிதழ்களும் வழங்கப்படும்.",
               "அதிகப்படியான பங்கேற்பாளர்களைப் பங்குபெறச்செய்யும் கல்வி நிறுவனம், அதிகப்படியான தேர்ச்சி மாணாக்கர்களைக் கொண்ட கல்வி நிறுவனங்களின் பள்ளித் தலைமையாசிரியர் மற்றும் ஒருங்கிணைப்பாளர்களுக்கு சிறப்பு முன்னெடுப்பிற்கான பாராட்டு மற்றும் விருதுச் சான்றிதழ் வழங்கப்படும்.",
               "ஒவ்வொரு நிலையிலும் போட்டிகளில் கலந்துகொள்வதற்கான விரிவான நெறிமுறைகள் மற்றும் மாதிரி வினாத்தாள்கள் அவ்வப்போது வழங்கப்படும்.",
-              "ஒரு வகுப்பிலிருந்து எத்தனை மாணாக்கர்கள் வேண்டுமெனினும் உரிய கட்டணத்தைச் செலுத்தி பங்கேற்றுக்கொள்ளலாம். மாணாக்கர்களின் பட்டியலை விரிதாளில் பூர்த்திசெய்து info@vaagaitamilsangam.com மின்னஞ்சலுக்கு அனுப்பவேண்டும்."
+              <span>ஒரு வகுப்பிலிருந்து எத்தனை மாணாக்கர்கள் வேண்டுமெனினும் உரிய கட்டணத்தைச் செலுத்தி பங்கேற்றுக்கொள்ளலாம். மாணாக்கர்களின் பட்டியலை விரிதாளில் பூர்த்திசெய்து <EmailLink email="info" domain="vaagaitamilsangam.com" className="underline font-semibold text-primary" /> மின்னஞ்சலுக்கு அனுப்பவேண்டும்.</span>
             ].map((rule, i) => (
               <div key={i} className="flex gap-4 p-6 bg-white rounded-2xl shadow-sm border border-black/5 hover:border-primary/20 transition-colors">
                 <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold shrink-0 mt-0.5">
@@ -278,15 +279,7 @@ export default function VaagaiSoodaVaaPage() {
               </div>
 
               <div className="space-y-4">
-                <a href="mailto:info@vaagaitamilsangam.com" className="flex items-center gap-4 p-4 rounded-xl hover:bg-white/10 transition-colors border border-transparent hover:border-white/20">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center shrink-0">
-                    <Mail className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-white/60 mb-1">மின்னஞ்சல்</div>
-                    <div className="text-xl font-medium">info@vaagaitamilsangam.com</div>
-                  </div>
-                </a>
+                <ObfuscatedEmailBlock email="info" domain="vaagaitamilsangam.com" label="மின்னஞ்சல்" />
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a href="tel:+918248272880" className="flex-1 flex items-center gap-4 p-4 rounded-xl hover:bg-white/10 transition-colors border border-transparent hover:border-white/20">

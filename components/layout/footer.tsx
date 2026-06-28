@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { getAssetPath } from "@/lib/paths"
 import { Facebook, Instagram, Mail, Phone, MapPin, Linkedin, Youtube } from "lucide-react"
+import { EmailLink } from "@/components/shared/email-link"
 
 const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
@@ -101,9 +102,11 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#0F766E] dark:text-teal-400 flex-shrink-0" />
-                <a href="mailto:vaagaitamilsangam@gmail.com" className="text-[#4A6B67] hover:text-[#0F766E] dark:text-slate-300 dark:hover:text-teal-300 text-sm transition-colors">
-                  vaagaitamilsangam@gmail.com
-                </a>
+                <EmailLink
+                  email="vaagaitamilsangam"
+                  domain="gmail.com"
+                  className="text-[#4A6B67] hover:text-[#0F766E] dark:text-slate-300 dark:hover:text-teal-300 text-sm transition-colors"
+                />
               </li>
             </ul>
           </div>
