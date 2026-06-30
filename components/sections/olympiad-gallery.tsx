@@ -243,13 +243,10 @@ const mediaItems: MediaItem[] = [
 ]
 
 export function OlympiadGallery() {
-  const [activeTab, setActiveTab] = useState<"all" | "poster" | "exam">("all")
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  const filteredItems = mediaItems.filter(
-    (item) => activeTab === "all" || item.category === activeTab
-  )
+  const filteredItems = mediaItems
 
   const handlePrev = (e?: React.MouseEvent) => {
     e?.stopPropagation()
@@ -275,7 +272,7 @@ export function OlympiadGallery() {
     }
     window.addEventListener("keydown", handleKeyDown)
     return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [lightboxIndex, activeTab])
+  }, [lightboxIndex])
 
   // Prevent scroll when lightbox open
   useEffect(() => {
@@ -307,30 +304,6 @@ export function OlympiadGallery() {
           </p>
         </div>
 
-        {/* Filters */}
-        <div className="flex justify-center gap-2 md:gap-4 mb-10 overflow-x-auto py-2">
-          {[
-            { id: "all", label: "அனைத்தும்", count: mediaItems.length },
-            { id: "poster", label: "நிகழ்வுகள்", count: mediaItems.filter(i => i.category === "poster").length },
-            { id: "exam", label: "தேர்வு நினைவுகள் (சேலம் காமராஜர் பள்ளி)", count: mediaItems.filter(i => i.category === "exam").length }
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => {
-                setActiveTab(tab.id as any)
-                setLightboxIndex(null)
-              }}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap cursor-pointer shadow-sm ${
-                activeTab === tab.id
-                  ? "bg-primary text-white scale-[1.03]"
-                  : "bg-white text-foreground/75 hover:bg-slate-100 hover:text-foreground border border-black/5"
-              }`}
-              id={`tab-filter-${tab.id}`}
-            >
-              {tab.label} <span className="ml-1 text-xs opacity-75 font-semibold">({tab.count})</span>
-            </button>
-          ))}
-        </div>
 
         {/* Grid */}
         <motion.div

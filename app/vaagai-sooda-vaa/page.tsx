@@ -249,7 +249,7 @@ export default function VaagaiSoodaVaaPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <p className="text-lg">ஒரு மாணாக்கருக்கான கட்டணம் <span className="font-bold text-gold-light text-2xl ml-2">₹150</span></p>
+                <p className="text-lg">ஒரு மாணாக்கருக்கான கட்டணம் <span className="font-bold text-gold-light text-2xl ml-2">₹125</span></p>
                 <div className="space-y-3 bg-black/20 p-6 rounded-xl">
                   <div className="grid grid-cols-3 gap-2">
                     <span className="text-white/70">Account Name</span>

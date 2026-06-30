@@ -226,13 +226,13 @@ export function EventsAndMemoriesClient() {
       <section className="relative -mt-10 z-20 max-w-6xl mx-auto px-4">
         <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-8 shadow-xl border border-slate-100 dark:border-slate-800 backdrop-blur-md">
           <div className="flex flex-col items-center gap-6">
-            
+
             {/* Year Filters */}
             <div className="flex flex-wrap gap-3 justify-center w-full">
               {[
-                { id: "3rd-annual", label: "3-ஆம் ஆண்டு விழா (2025/2026)", count: googleDrivePhotos["3rd-annual"].length },
-                { id: "2025-annual", label: "2025 பட்டமளிப்பு & ஆண்டு விழா", count: googleDrivePhotos["2025-annual"].length },
-                { id: "2024-annual", label: "2024 ஆண்டு விழா", count: googleDrivePhotos["2024-annual"].length },
+                { id: "3rd-annual", label: "2026", count: googleDrivePhotos["3rd-annual"].length },
+                { id: "2025-annual", label: "2025", count: googleDrivePhotos["2025-annual"].length },
+                { id: "2024-annual", label: "2024", count: googleDrivePhotos["2024-annual"].length },
                 // { id: "all", label: "அனைத்து நினைவுகளும்", count: googleDrivePhotos["3rd-annual"].length + googleDrivePhotos["2025-annual"].length + googleDrivePhotos["2024-annual"].length }
               ].map(tab => (
                 <button

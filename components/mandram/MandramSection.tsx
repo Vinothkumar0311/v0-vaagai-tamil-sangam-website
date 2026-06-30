@@ -81,12 +81,12 @@ export function MandramSection({
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl z-10 border-8 border-white dark:border-slate-900">
+            <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl z-10 border-8 border-white dark:border-slate-900 bg-slate-50 dark:bg-slate-900">
               <Image
                 src={getAssetPath(image)}
                 alt={title}
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             {/* Background decorative elements */}

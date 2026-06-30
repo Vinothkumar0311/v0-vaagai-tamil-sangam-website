@@ -20,6 +20,7 @@ export async function generateStaticParams() {
     { slug: "magalir" },
     { slug: "kural" },
     { slug: "manavar" },
+    { slug: "senthur-nurmati" },
   ]
 }
 
